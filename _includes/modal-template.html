@@ -1,0 +1,22 @@
+<script type="text/x-template" id="modal-template">
+  
+    <div class="modal">
+      <div class="modal__wrapper" v-on:click.self="$emit('close')">
+        <div class="modal__container">
+
+          <span class="modal__close"><a href="#" v-on:click="$emit('close')"><img src="assets/ui-icon/close.svg"></a></span>
+
+          <header class="modal__header">
+            <slot name="header">
+              <h1>Form</h1>
+            </slot>
+          </header>
+        
+          <slot name="form"></slot>
+
+          <slot name="footer"></slot>
+
+        </div>
+      </div>
+    </div>
+</script>
