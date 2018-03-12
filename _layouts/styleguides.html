@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Style Guides</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style type="text/css">
+    .blocks {
+      display: flex;
+      max-width: 100%;
+      flex-wrap: wrap;
+    }
+    .blocks_div_color  {
+      width: 100px;
+      height: 100px;
+      margin-right: 5px;
+      margin-top: 5px;
+    }
+    .blocks_div_color_hex {
+      font-size: 1.125rem;
+      margin: 0;
+    }
+    .blocks_div_color_rbg {
+      font-size: .75rem;
+      opacity: .5;
+    }
+    .blue {
+      background-color: var(--blue-color);
+    }
+    .black {
+      background-color: var(--black-color);
+    }
+    .light-gray {
+      background-color: var(--light-gray-color);
+    }
+    .dark-gray {
+      background-color: var(--dark-gray-color);
+    } 
+    .red {
+      background-color: var(--red-color);
+    }
+    .green {
+      background-color: var(--green-color);
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+
+<header>
+    <div class="info-block">
+      <div class="container">
+        <nav class="info-block_navbar">
+          <ul>
+            <li class="info-block_logo"><img src="img/logo.svg"></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  <header>
+
+<div class="container main-content">
+  <div class="row colors-btns">
+    <div class="col">
+      <h4>Colors</h4>
+      <div class="blocks">
+        <div class="blocks_div">
+          <div class="blocks_div_color blue"></div>
+          <p class="blocks_div_color_hex">388dfe</p>
+          <p class="blocks_div_color_rbg">56 141 254</p>
+        </div>
+        <div class="blocks_div">
+          <div class="blocks_div_color black"></div>
+          <p class="blocks_div_color_hex">000000</p>
+          <p class="blocks_div_color_rbg">0 0 0</p>
+        </div>
+        <div class="blocks_div">
+          <div class="blocks_div_color light-gray"></div>
+          <p class="blocks_div_color_hex">a8b2b9</p>
+          <p class="blocks_div_color_rbg">168 178 185</p>
+        </div>
+        <div class="blocks_div">
+          <div class="blocks_div_color dark-gray"></div>
+          <p class="blocks_div_color_hex">404040</p>
+          <p class="blocks_div_color_rbg">25 25 25</p>
+        </div>
+        <div class="blocks_div">
+          <div class="blocks_div_color red"></div>
+          <p class="blocks_div_color_hex">ff5555</p>
+          <p class="blocks_div_color_rbg">56 141 254</p>
+        </div>
+        <div class="blocks_div">
+          <div class="blocks_div_color green"></div>
+          <p class="blocks_div_color_hex">20dc86</p>
+          <p class="blocks_div_color_rbg">32 220 134</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>

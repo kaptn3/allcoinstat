@@ -1,0 +1,33 @@
+.info-block {
+  padding: 25px 0;
+}
+.info-block__logo a {
+  display: block;
+}
+.info-block__item {
+  text-align: center;  
+  color: var(--blue-color);
+}
+.info-block__item__title {
+  color: var(--light-gray-color);
+  font-size: $font-size-14;
+}
+.info-block__item__value {
+  padding-top: 7px;
+  display: block;
+  font-size: $font-size-22;
+  font-weight: bold;
+}
+.info-block__item__value:hover,
+.info-block__item_value:active {
+  color: inherit;
+}
+.info-block__log {
+  font-size: $font-size-15;
+  font-weight: bold;
+  color: var(--blue-color);
+  padding-right: 29px;
+}
+.info-block__input {
+  max-width: 230px;
+}
