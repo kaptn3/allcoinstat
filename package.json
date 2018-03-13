@@ -1,0 +1,94 @@
+{
+  "name": "AllCoinStat",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "serve": "vue-cli-service serve --open",
+    "build": "vue-cli-service build",
+    "lint": "vue-cli-service lint"
+  },
+  "dependencies": {
+    "normalize.css": "^8.0.0",
+    "vue": "^2.5.13",
+    "vue-meta": "^1.4.3",
+    "vue-router": "^3.0.1"
+  },
+  "devDependencies": {
+    "@vue/cli-plugin-babel": "^3.0.0-beta.6",
+    "@vue/cli-plugin-eslint": "^3.0.0-beta.6",
+    "@vue/cli-service": "^3.0.0-beta.6",
+    "css-loader": "^0.28.10",
+    "eslint": "^4.18.2",
+    "eslint-plugin-import": "^2.9.0",
+    "postcss-html": "^0.14.0",
+    "postcss-import": "^11.1.0",
+    "postcss-nesting": "^4.2.1",
+    "postcss-preset-env": "^3.2.2",
+    "postcss-reporter": "^5.0.0",
+    "stylelint": "^9.1.1",
+    "stylelint-config-standard": "^18.2.0",
+    "vue-template-compiler": "^2.5.13"
+  },
+  "babel": {
+    "presets": [
+      "@vue/app"
+    ]
+  },
+  "vue": {
+    "lintOnSave": "error"
+  },
+  "eslintConfig": {
+    "root": true,
+    "extends": [
+      "plugin:vue/recommended",
+      "eslint:recommended"
+    ],
+    "rules": {
+      "vue/max-attributes-per-line": "off",
+      "no-unused-vars": "off",
+      "vue/no-unused-vars": "off"
+    }
+  },
+  "stylelint": {
+    "extends": "stylelint-config-standard",
+    "rules": {
+      "font-family-no-missing-generic-family-keyword": null,
+      "declaration-block-no-duplicate-properties": null,
+      "declaration-block-semicolon-newline-after": null,
+      "declaration-block-trailing-semicolon": null,
+      "block-closing-brace-newline-before": null,
+      "block-opening-brace-newline-after": null,
+      "block-closing-brace-newline-after": null,
+      "font-family-no-duplicate-names": null,
+      "comment-whitespace-inside": null,
+      "rule-empty-line-before": null,
+      "number-leading-zero": null,
+      "max-empty-lines": null,
+      "no-empty-source": null,
+      "indentation": null
+    }
+  },
+  "postcss": {
+    "plugins": {
+      "postcss-html": {},
+      "postcss-import": {},
+      "postcss-nesting": {},
+      "postcss-preset-env": {},
+      "autoprefixer": {},
+      "stylelint": {},
+      "postcss-reporter": {
+        "clearReportedMessages": true,
+        "throwError": true,
+        "plugins": [
+          "stylelint",
+          "postcss-import"
+        ]
+      }
+    }
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "not ie <= 8"
+  ]
+}

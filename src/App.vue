@@ -1,0 +1,106 @@
+<template>
+  <div id="app">
+    <router-view/>
+
+    <NormalizeCss/>
+  </div>
+</template>
+
+<script>
+  import NormalizeCss from './components/NormalizeCss';
+
+  export default {
+    name: 'App',
+    components: {
+      NormalizeCss
+    }
+  };
+</script>
+
+<style>
+@import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700&subset=cyrillic);
+:root {
+  --blue-color: #388dfe;
+  --black-color: #000;
+  --light-gray-color: #a8b2b9;
+  --dark-gray-color: #404040;
+  --red-color: #f55;
+  --green-color: #20dc86;
+  --light-color: #efefef;
+}
+* {
+  box-sizing: border-box;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: middle;
+}
+html {
+  font-size: 16px;
+  font-family: Roboto, sans-serif;
+}
+div {
+  display: block;
+}
+button {
+  outline: none;
+  border: 0;
+  cursor: pointer;
+}
+p {
+  margin: 0 0 1rem 0;
+  font-size: $font-size-15;
+  line-height: 1.7;
+  color: var(--dark-gray-color);
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--dark-gray-color);
+  line-height: 1.2;
+  font-weight: 500;
+  letter-spacing: normal;
+  }
+h1 {
+  margin-bottom: 1.5rem;
+  font-size: calc((32 / 16) * 1rem);
+}
+h2 {
+  margin-bottom: 1.125rem;
+}
+h3 {
+  margin: 0;
+}
+h4,
+h5,
+h6 {
+  margin: 0 0 .5rem 0;
+}
+a {
+  text-decoration: none;
+  transition: .5s all ease;
+  cursor: pointer;
+  color: inherit;
+  &:visited,
+  &:active {
+    color: inherit;
+  },
+  &:hover,
+  &:focus {
+    color: var(--blue-color);
+  }
+}
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: center;
+}
+</style>
