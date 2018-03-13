@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Style Guides</title>
+  <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+  <link rel="icon" href="favicon.png" type="image/png">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <style type="text/css">
+    .blocks {
+      display: flex;
+      max-width: 100%;
+      flex-wrap: wrap;
+    }
+    .blocks_div_color  {
+      width: 100px;
+      height: 100px;
+      margin-right: 5px;
+      margin-top: 5px;
+    }
+    .blocks_div_color_hex {
+      font-size: 1.125rem;
+      margin: 0;
+    }
+    .blocks_div_color_rbg {
+      font-size: .75rem;
+      opacity: .5;
+    }
+    .blue {
+      background-color: var(--blue-color);
+    }
+    .black {
+      background-color: var(--black-color);
+    }
+    .light-gray {
+      background-color: var(--light-gray-color);
+    }
+    .dark-gray {
+      background-color: var(--dark-gray-color);
+    } 
+    .red {
+      background-color: var(--red-color);
+    }
+    .green {
+      background-color: var(--green-color);
+    }
+  </style>
+</head>
+<body>
+<div id="app">
+
+<header>
+    <div class="info-block">
+      <div class="container">
+        <nav class="info-block_navbar">
+          <ul>
+            <li class="info-block_logo"><img src="img/logo.svg"></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+  <header>
+
+<div class="container main-content">
+  <div class="row colors-btns">
+    <div class="col">
+      <h4>Colors</h4>
+      <div class="blocks">
+        <div class="blocks_div">
+          <div class="blocks_div_color blue"></div>
+          <p class="blocks_div_color_hex">388dfe</p>
+          <p class="blocks_div_color_rbg">56 141 254</p>
+        </div>
+        <div class="blocks_div">
+          <div class="blocks_div_color black"></div>
+          <p class="blocks_div_color_hex">000000</p>
+          <p class="blocks_div_color_rbg">0 0 0</p>
+        </div>
+        <div class="blocks_div">
+          <div class="blocks_div_color light-gray"></div>
+          <p class="blocks_div_color_hex">a8b2b9</p>
+          <p class="blocks_div_color_rbg">168 178 185</p>
+        </div>
+        <div class="blocks_div">
+          <div class="blocks_div_color dark-gray"></div>
+          <p class="blocks_div_color_hex">404040</p>
+          <p class="blocks_div_color_rbg">25 25 25</p>
+        </div>
+        <div class="blocks_div">
+          <div class="blocks_div_color red"></div>
+          <p class="blocks_div_color_hex">ff5555</p>
+          <p class="blocks_div_color_rbg">56 141 254</p>
+        </div>
+        <div class="blocks_div">
+          <div class="blocks_div_color green"></div>
+          <p class="blocks_div_color_hex">20dc86</p>
+          <p class="blocks_div_color_rbg">32 220 134</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <h4>Buttons</h4>
+      <div class="row">
+        <div class="col"><button class="btn">Send comment</button></div>
+        <div class="col"><button class="btn">Send comment</button></div>
+        <div class="col"><button class="btn disabled">Send comment</button></div>
+      </div>
+      <div class="row">
+        <div class="col"><button class="btn btn-add">Add to portfolio</button></div>
+        <div class="col"><button class="btn btn-add">Add to portfolio</button></div>
+        <div class="col"><button class="btn btn-add disabled">Add to portfolio</button></div>
+      </div>
+      <div class="row">
+        <div class="col"><button class="btn btn-view">View all</button></div>
+        <div class="col"><button class="btn btn-view">View all</button></div>
+        <div class="col"><button class="btn btn-view disabled">View all</button></div>
+      </div>
+    </div>
+  </div><!-- end color and buttons -->
+  <div class="row fonts">
+    <div class="col">
+      <h1>Lorem ipsum dolor sit amet</h1>
+      <h2>Lorem ipsum dolor sit amet</h2>
+      <p>consectetur adipisicing elit, sed do </p>
+    </div>
+    <div class="col"> 
+      <h2>Lorem ipsum dolor sit amet</h2>
+      <p>Consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+    </div>
+  </div><!-- end fonts -->
+  <div>
+    <h4>Navigation</h4>
+     <div class="top-menu">
+        <nav class="top-menu__navbar">
+          <ul>
+            <li class="top-menu__item"><a href="#">Growing</a></li>
+            <li class="top-menu__item"><a href="#">Falling</a></li>
+            <li class="top-menu__item"><a href="#">Arbitrage</a></li>
+            <li class="top-menu__item"><a href="#">Exchanges</a></li>
+            <li class="top-menu__item"><a href="#">Whatchlist</a></li>
+            <li class="top-menu__item"><a href="#">Forum</a></li>
+            <li class="top-menu__item"><a href="#">Portfolio</a></li>
+            <li class="top-menu__item"><a href="#">Alerts</a></li>
+          </ul>
+        </nav>
+      </div><!-- end top menu -->
+  </div>
+  <div class="row">
+    <div class="col">
+      <p>Tags
+      <a class="tag" href="#"># tag</a>
+      <a class="tag" href="#"># longtag</a></p>
+    </div>
+    <div class="col">
+      <p>Zoom отдельно в плагине графиков</p>
+    </div>
+  </div><!-- end tags and zoom -->
+  <ul class="list">
+    <li class="list__item"><img class="list__item__icon" src="img/bitcoin.png"><span class="list__item__short-name">BTC</span><span>Bitcoin</span></li>
+    <li class="list__item"><img class="list__item__icon" src="img/ark.png"><span class="list__item__short-name">ARK</span><span>Arkcoin</span></li>
+    <li class="list__item"><img class="list__item__icon" src="img/bitcoin-gold.png"><span class="list__item__short-name">BTG</span><span>Bitcoin Gold</span></li>
+    <li class="list__item"><img class="list__item__icon" src="img/bitcoin.png"><span class="list__item__short-name">BTC</span><span>Bitcoin</span></li>
+    <li class="list__item"><img class="list__item__icon" src="img/bitcoin.png"><span class="list__item__short-name">BTC</span><span>Bitcoin</span></li>
+  </ul>
+  <div>
+    <h4>Tables</h4>
+    <h4>Пока прежняя вёрстка</h4>
+  </div>
+
+  <div class="forms">
+    <input class="form-input" type="email" name="email" placeholder="Email" style="width: 50%;">
+    <textarea class="form-comment" type="text" name="text" placeholder="Lorem ipsum">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. </textarea>
+  </div>
+
+  <div>
+    <h4>Mobile</h4>
+    <p>Пока прежняя вёрстка</p>
+    <p><a href="#">Ссылка</a>
+      <a href="#">Ссылка</a></p>
+  </div>
+
+</div><!-- end main content -->
+<footer class="footer">   
+    <div class="container">
+      <div class="banner">
+        <div class="banner__content">
+          <h1>BANNER</h1>
+        </div>
+      </div>
+      <nav class="footer-menu">
+        <ul>
+          <li class="footer-menu__copyright">&copy; 2018 AllCoinStat</li>
+          <li class="footer-menu__item"><a href="#">About</a></li>
+          <li class="footer-menu__item"><a href="#">About</a></li>
+          <li class="footer-menu__item"><a href="#">About</a></li>
+          <li class="footer-menu__item"><a href="#">About</a></li>
+        </ul>
+      </nav>  
+    </div>
+  </footer>
+</div><!-- end app -->
+<script src="js/vue.js"></script>
+<script src="js/script.js"></script>
+</body>
+</html>

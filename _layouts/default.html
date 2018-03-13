@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+  {% include head.html %}
+
+  <body>
+    {% include modal-template.html %}
+    <div id="app">
+
+    {% include header.html %}
+
+    {{ content }}
+
+    {% include footer.html %}
+    
+    {% include modals.html %}
+    </div>
+    {% include scripts.html %}
+  
+  <div role="status" aria-live="assertive" aria-relevant="additions" class="ui-helper-hidden-accessible"></div><div></div>
+  </body>
+
+</html>
