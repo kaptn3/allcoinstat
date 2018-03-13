@@ -16,7 +16,7 @@
     text-align: center;
     color: var(--black-color);
     h1 {
-      margin-top: 23px;
+      margin: 30px;
       font-weight: 500;
     }
   }

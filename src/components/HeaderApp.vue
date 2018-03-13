@@ -4,7 +4,7 @@
       <Banner/>
       <InfoBlock/>
       <TopHeader/>
-      <TopMenu/>
+      <TopMenu class="TopMenu"/>
       <Banner/>
     </div>
   </header>
@@ -26,3 +26,9 @@
     }
   }
 </script>
+
+<style scoped>
+  .TopMenu {
+    margin-bottom: 30px;
+  }
+</style>

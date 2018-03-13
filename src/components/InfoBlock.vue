@@ -37,7 +37,7 @@
 
 <style scoped>
   .info-block {
-    padding: 25px 0;
+    padding: 30px 0;
   }
   .info-block__logo a {
     display: block;
