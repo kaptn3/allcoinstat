@@ -1,11 +1,11 @@
 <template>
   <header>
     <div class="container">
-      <Banner/>
+      <Banner class="banner_pink"/>
       <InfoBlock/>
       <TopHeader/>
       <TopMenu class="TopMenu"/>
-      <Banner/>
+      <Banner class="banner__content"/>
     </div>
   </header>
 </template>

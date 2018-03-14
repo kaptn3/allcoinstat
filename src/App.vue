@@ -1,23 +1,17 @@
 <template>
   <div id="app">
     <router-view/>
-
-    <NormalizeCss/>
   </div>
 </template>
 
 <script>
-  import NormalizeCss from './components/NormalizeCss';
-
   export default {
-    name: 'App',
-    components: {
-      NormalizeCss
-    }
+    name: 'App'
   };
 </script>
 
 <style>
+@import "normalize.css/normalize.css";
 @import url(https://fonts.googleapis.com/css?family=Roboto:400,500,700&subset=cyrillic);
 :root {
   --blue-color: #388dfe;

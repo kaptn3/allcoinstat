@@ -1,6 +1,6 @@
 <template>
   <div class="banner">
-    <div class="banner_pink">
+    <div>
       <h1>BANNER</h1>
     </div>
   </div>
@@ -17,18 +17,21 @@
   display: flex;
   justify-content: center;
 }
-.banner_pink,
-.banner__content {
+.banner_pink > div,
+.banner__content > div {
   opacity: .4;
   height: 90px;
   text-align: center;
 }
-.banner__content {
+.banner__content > div {
   background: linear-gradient(to right, #1c31ef, #50ed17);
   width: 50%;
 }
-.banner_pink {
+.banner_pink > div {
   background: linear-gradient(to right, #e61cef, #ed1717);
   width: 100%;
+}
+h1 {
+  margin: 0;
 }
 </style>

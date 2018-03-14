@@ -24,12 +24,11 @@
     justify-content: center;
     align-items: center;
     height: 50px;
-    font-size: $font-size-15;
+    font-size: calc((15 / 16) * 1rem);
     font-weight: 500;
     border-radius: 100px;
     transition: .3s all ease;
     background-color: var(--blue-color);
-    margin: 5px 0;
     &:hover {
       opacity: .8;
       color: #fff;
@@ -44,8 +43,6 @@
   .btn-view {
     border-radius: 6px;
     max-width: 160px;
-    margin-left: auto;
-    margin-right: auto;
   }
   .btn-add:hover,
   .btn-view:hover {
