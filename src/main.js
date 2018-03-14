@@ -6,6 +6,7 @@ Vue.use(VueRouter);
 Vue.use(Meta);
 
 import App from './App.vue';
+import MainPage from './components/MainPage.vue';
 import WhatchList from './components/WhatchList.vue';
 
 Vue.config.productionTip = false;
@@ -13,10 +14,10 @@ Vue.config.productionTip = false;
 const router = new VueRouter({
   mode: 'history',
   routes: [
-    /*{
+    {
       path: '/',
-      component: HomePage
-    },*/
+      component: MainPage
+    },
     {
       path: '/whatchlist',
       component: WhatchList

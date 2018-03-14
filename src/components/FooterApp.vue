@@ -24,6 +24,7 @@
 <style scoped>
   .footer-menu {
     padding: 40px 0;
+    font-weight: 500;
   }
   .footer-menu__copyright,
   .footer-menu__item {

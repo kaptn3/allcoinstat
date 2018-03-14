@@ -4,10 +4,11 @@
 
 <script>
   export default {
-    name: 'NormalizeCss'
+    name: 'Styles'
   };
 </script>
 
 <style>
   @import "normalize.css/normalize.css";
+  @import "../assets/css/main.css";
 </style>
