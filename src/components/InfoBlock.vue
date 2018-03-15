@@ -2,7 +2,7 @@
   <div class="info-block">
     <nav class="info-block__navbar">
       <ul>
-        <li class="info-block__logo"><a href="#"><img src="img/logo.svg"></a></li>
+        <li class="info-block__logo"><a href="#"><img src="../assets/img/logo.svg"></a></li>
         <li class="info-block__item col">
           <span class="info-block__item__title">Market cap</span>
           <a class="info-block__item__value" href="#">$150B</a>
@@ -16,7 +16,7 @@
           <a class="info-block__item__value" href="#">$150B</a>
         </li>
         <li class="info-block__log">
-          <a href="#" @click="open('signIn')">sign in</a> / <a href="#" @click="open('signUp')">sign up</a>
+          <a href="javascript:void(0)" @click="al">sign in</a> / <a href="javascript:void(0)" @click="open('signUp')">sign up</a>
         </li>
         <InputForm type="search" name="search" placeholder="Search coins" class="info-block__input" />
       </ul>
@@ -31,6 +31,12 @@
     name: 'InfoBlock',
     components: {
       InputForm
+    },
+    methods: {
+      al: function () {
+        console.log(this.$emit('close'));
+        this.$emit('close');
+      }
     }
   };
 </script>
