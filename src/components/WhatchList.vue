@@ -2,7 +2,7 @@
   <div class="WhatchList">
     <div class="main-content__top-content">
       <h2>Watchlist</h2>
-      <ButtonApp text="+ Add coin" class="top-content__btn btn" @click="open('addCoin')"/>
+      <Modal name="addCoin"/>
     </div>
     <div class="table-main">
       <div class="table-main-row th-row">
@@ -38,6 +38,7 @@
   import HeaderApp from './HeaderApp';
   import Banner from './Banner';
   import ButtonApp from './ButtonApp';
+  import Modal from './Modal';
   import FooterApp from './FooterApp';
 
   export default {
@@ -46,6 +47,7 @@
       HeaderApp,
       Banner,
       ButtonApp,
+      Modal,
       FooterApp
     }
   };

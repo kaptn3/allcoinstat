@@ -1,6 +1,6 @@
 <template>
-  <div>
-    <ButtonApp v-if="name === 'addCoin'" :text="name" class="btn" @click="open(name)"/>
+  <div class="Modal">
+    <ButtonApp v-if="name === 'addCoin'" text="+ Add Coin" class="btn" @click="open(name)"/>
     <div v-else><a href="javascript:void(0)" @click="open('login')">Sign In</a> / <a href="javascript:void(0)" @click="open('sign')">Sign Up</a></div>
     <transition name="fade" mode="out-in">
       <ModalTemp v-if="modalName === 'login'" key="modal1" @close="close">

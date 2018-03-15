@@ -16,7 +16,7 @@
           <a class="info-block__item__value" href="#">$150B</a>
         </li>
         <li class="info-block__log">
-          <a href="javascript:void(0)" @click="al">sign in</a> / <a href="javascript:void(0)" @click="open('signUp')">sign up</a>
+          <Modal/>
         </li>
         <InputForm type="search" name="search" placeholder="Search coins" class="info-block__input" />
       </ul>
@@ -26,11 +26,13 @@
 
 <script>
   import InputForm from './InputForm.vue';
+  import Modal from './Modal';
 
   export default {
     name: 'InfoBlock',
     components: {
-      InputForm
+      InputForm,
+      Modal
     },
     methods: {
       al: function () {
