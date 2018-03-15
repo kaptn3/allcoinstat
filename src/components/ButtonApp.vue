@@ -29,6 +29,7 @@
     border-radius: 100px;
     transition: .3s all ease;
     background-color: var(--blue-color);
+    line-height: 0;
     &:hover {
       opacity: .8;
       color: #fff;
