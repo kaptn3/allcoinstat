@@ -1,36 +1,61 @@
 <template>
   <div>
     <button @click="open(login)">{{ login }}</button>
-    <transition name="modal" mode="out-in">
+    <transition name="fade" mode="out-in">
       <ModalTemp v-if="modalName === 'login'" key="modal1" @close="close">
         <h3 slot="header">Sign in</h3>
-        <form slot="main">
-          <div class="modal__main">
-            <div class="modal__signup-api">
+        <div slot="main">
+          <form>
+            <div class="modal__main">
               <ButtonApp class="btn btn_red" text="Login with Google"/>
               <ButtonApp class="btn btn_blue" text="Login with Facebook"/>
+              <p class="modal__or">or</p>
+              <InputForm 
+                type="email" 
+                name="email" 
+                class="form-input" 
+                placeholder="Email address"/>
+              <InputForm 
+                type="password" 
+                name="password" 
+                class="form-input" 
+                placeholder="Password"/>
+              <ButtonApp class="btn btn_light-blue" text="Sign in"/>
             </div>
-            <p class="modal__or">or</p>
-            <InputForm 
-              type="email" 
-              name="email" 
-              class="form-input" 
-              placeholder="Email address"/>
-            <InputForm 
-              type="password" 
-              name="password" 
-              class="form-input" 
-              placeholder="Password"/>
-            <ButtonApp class="btn btn_light-blue" text="Sign in"/>
-          </div>
-        </form>
-        <footer slot="footer" class="modal__footer">
-          <a href="#">Forgot you password</a>
-          <p>Do not have an account? <a href="#" @click="open('sign')">Create now</a></p> 
-        </footer>  
+          </form>
+          <footer class="modal__footer">
+            <a href="#">Forgot you password</a>
+            <p>Do not have an account? <a href="#" @click="open('sign')">Create now</a></p> 
+          </footer>  
+        </div>
       </ModalTemp>
       <ModalTemp v-if="modalName === 'sign'" key="modal2" @close="close">
-        <div slot="header"><h1>Второй</h1></div>
+        <h3 slot="header">Sign up</h3>
+        <div slot="main">
+          <form>
+            <div class="modal__main">
+              <ButtonApp class="btn btn_red" text="Sign up with Google"/>
+              <ButtonApp class="btn btn_blue" text="Sign up with Facebook"/>
+              <p class="modal__or">or</p>
+              <InputForm 
+                type="email" 
+                name="email" 
+                class="form-input" 
+                placeholder="Email address"/>
+              <InputForm 
+                type="password" 
+                name="password" 
+                class="form-input" 
+                placeholder="Password"/>
+              <InputForm 
+                type="password" 
+                name="password" 
+                class="form-input" 
+                placeholder="Password again"/>
+              <ButtonApp class="btn btn_light-blue" text="Sign up"/>
+            </div>
+          </form>
+        </div>
       </ModalTemp>
     </transition>
   </div>
@@ -65,7 +90,7 @@
     overflow: hidden;
     text-align: center;
     color: #9b9b9b;
-    font-size: 16px;
+    font-size: 1rem;
     font-weight: 300;
   }
   .modal__or {
@@ -90,25 +115,13 @@
       margin: 0 -50% 0 0;
     }
   }
-  .btn_blue,
-  .btn_red,
-  .btn_light-blue,
-  .form-input {
-    max-width: 100%;
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity .5s;
   }
-  .open-modal {
-    overflow: hidden;
-  }
-  .modal-enter {
+  .fade-enter,
+  .fade-leave-to {
     opacity: 0;
-  }
-  .modal-leave-active {
-    opacity: 0;
-  }
-  .modal-enter .modal-container,
-  .modal-leave-active .modal-container {
-    -webkit-transform: scale(1.1);
-    transform: scale(1.1);
   }
   .modal__footer {
     display: flex;
@@ -116,15 +129,14 @@
     color: #333;
     margin-top: 50px;
     margin-bottom: 50px;
-    a,
-    p {
-      font-size: 12px;
-      margin: 0;
-      line-height: 1.5;
-      a {
-        color: #388dfe;
-        text-decoration: none;
-      }
-    }
+  }
+  a {
+    color: #388dfe;
+  }
+  a,
+  p {
+    font-size: calc((12 / 16) * 1rem);
+    margin: 0;
+    line-height: 1.5;
   }
 </style>

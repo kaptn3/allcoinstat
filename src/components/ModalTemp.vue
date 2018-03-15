@@ -62,4 +62,7 @@
     width: 15px;
     cursor: pointer;
   }
+  .open-modal {
+    overflow: hidden;
+  }
 </style>
