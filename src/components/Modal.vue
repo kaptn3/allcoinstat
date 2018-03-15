@@ -1,6 +1,7 @@
 <template>
   <div>
-    <button @click="open(login)">{{ login }}</button>
+    <ButtonApp v-if="name === 'addCoin'" :text="name" class="btn" @click="open(name)"/>
+    <div v-else><a href="javascript:void(0)" @click="open('login')">Sign In</a> / <a href="javascript:void(0)" @click="open('sign')">Sign Up</a></div>
     <transition name="fade" mode="out-in">
       <ModalTemp v-if="modalName === 'login'" key="modal1" @close="close">
         <h3 slot="header">Sign in</h3>
@@ -25,7 +26,7 @@
           </form>
           <footer class="modal__footer">
             <a href="#">Forgot you password</a>
-            <p>Do not have an account? <a href="#" @click="open('sign')">Create now</a></p> 
+            <p>Do not have an account? <a href="javascript:void(0)" @click="open('sign')">Create now</a></p> 
           </footer>  
         </div>
       </ModalTemp>
@@ -57,10 +58,20 @@
           </form>
         </div>
       </ModalTemp>
+      <ModalTemp v-if="modalName === 'addCoin'" key="modal3" @close="close">
+        <h3 slot="header">Choose coin and add to the watchlist</h3>
+        <form slot="main">
+          <div class="modal__main modal__main_whathlist">        
+            <div class="modal__main__input">
+              <InputForm/>  
+            </div>
+            <ButtonApp class="btn" text="Add coin"/>
+          </div>
+        </form>
+      </ModalTemp>
     </transition>
   </div>
 </template>
-
 
 <script>
   import { toggle } from './mixins/toggle';
@@ -77,7 +88,7 @@
     },
     mixins: [toggle],
     props: {
-      login: {
+      name: {
         type: String,
         default: 'none'
       }

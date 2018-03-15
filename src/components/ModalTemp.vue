@@ -9,7 +9,6 @@
           </slot>
         </header>        
         <slot name="main"/>
-        <slot name="footer"/>
       </div>
     </div>
   </div>
@@ -21,7 +20,7 @@
   }
 </script>
 
-<style>
+<style scoped>
   .modal {
     position: fixed;
     z-index: 889;
@@ -61,8 +60,5 @@
     height: 15px;
     width: 15px;
     cursor: pointer;
-  }
-  .open-modal {
-    overflow: hidden;
   }
 </style>
