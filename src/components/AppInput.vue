@@ -19,7 +19,6 @@
   font-size: 15px;
   transition: .3s all ease;
   color: var(--dark-gray-color);
-  margin: 5px 0;
   outline: 0;
 }
 .form-comment {

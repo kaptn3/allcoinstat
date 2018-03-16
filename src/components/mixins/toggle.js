@@ -12,12 +12,10 @@ export const toggle = {
     open(name) {
       document.body.classList.add('open-modal');
       this.modalName = name;
-      console.log(this.modalName);
     },
     close(name) {
       document.body.classList.remove('open-modal');
       this.modalName = '';
-      console.log('close');
     }
   }
 }

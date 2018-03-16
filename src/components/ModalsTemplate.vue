@@ -69,6 +69,7 @@
 @media (max-width: 767.99px) {
   .modal__wrapper {
     align-items: flex-start;
+    background-color: #fff;
   }
   .modal__footer {
     flex-direction: column;
