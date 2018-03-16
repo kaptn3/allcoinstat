@@ -1,7 +1,9 @@
 <template>
-  <router-link to="/whatchlist">
-    Whatchlist
-  </router-link>
+  <div class="MainPage">
+    <router-link to="/whatchlist">
+      Whatchlist
+    </router-link>
+  </div>
 </template>
 
 <script>
