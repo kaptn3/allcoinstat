@@ -1,9 +1,18 @@
 <template>
   <div class="Modals">
-    <AppButton v-if="name === 'addCoin'" text="+ Add Coin" class="btn" @click="open(name)"/>
-    <div v-else><a href="javascript:void(0)" @click="open('login')">Sign In</a> / <a href="javascript:void(0)" @click="open('sign')">Sign Up</a></div>
+    <AppButton 
+      v-if="name === 'addCoin'" 
+      text="+ Add Coin" 
+      class="btn" 
+      @click="open(name)"/>
+    <div v-else>
+      <a href="javascript:void(0)" @click="open('login')">sign in</a> / <a href="javascript:void(0)" @click="open('sign')">sign up</a>
+    </div>
     <transition name="fade" mode="out-in">
-      <ModalsTemplate v-if="modalName === 'login'" key="modal1" @close="close">
+      <ModalsTemplate 
+        v-if="modalName === 'login'" 
+        key="modal1" 
+        @close="close">
         <h3 slot="header">Sign in</h3>
         <div slot="main">
           <form>
@@ -30,7 +39,10 @@
           </footer>  
         </div>
       </ModalsTemplate>
-      <ModalsTemplate v-if="modalName === 'sign'" key="modal2" @close="close">
+      <ModalsTemplate 
+        v-else-if="modalName === 'sign'" 
+        key="modal2" 
+        @close="close">
         <h3 slot="header">Sign up</h3>
         <div slot="main">
           <form>
@@ -58,7 +70,10 @@
           </form>
         </div>
       </ModalsTemplate>
-      <ModalsTemplate v-if="modalName === 'addCoin'" key="modal3" @close="close">
+      <ModalsTemplate 
+        v-else-if="modalName === 'addCoin'" 
+        key="modal3" 
+        @close="close">
         <h3 slot="header">Choose coin and add to the watchlist</h3>
         <form slot="main">
           <div class="modal__main modal__main_whathlist">        
@@ -143,11 +158,11 @@
     margin-top: 40px;
     margin-bottom: 0;
   }
-  a {
+  .modal__footer > a {
     color: #388dfe;
   }
-  a,
-  p {
+  .modal__footer > a,
+  .modal__footer > p {
     font-size: calc((12 / 16) * 1rem);
     margin: 0;
     line-height: 1.5;
