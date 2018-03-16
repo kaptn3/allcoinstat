@@ -6,7 +6,7 @@
 
 <script>
   export default {
-    name: 'TopHeader'
+    name: 'TheTopHeading'
   }
 </script>
 

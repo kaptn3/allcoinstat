@@ -16,23 +16,23 @@
           <a class="info-block__item__value" href="#">$150B</a>
         </li>
         <li class="info-block__log">
-          <Modal/>
+          <Modals/>
         </li>
-        <InputForm type="search" name="search" placeholder="Search coins" class="info-block__input" />
+        <AppInput type="search" name="search" placeholder="Search coins" class="info-block__input" />
       </ul>
     </nav>
   </div>
 </template>
 
 <script>
-  import InputForm from './InputForm.vue';
-  import Modal from './Modal';
+  import AppInput from './AppInput.vue';
+  import Modals from './Modals';
 
   export default {
     name: 'InfoBlock',
     components: {
-      InputForm,
-      Modal
+      AppInput,
+      Modals
     },
     methods: {
       al: function () {

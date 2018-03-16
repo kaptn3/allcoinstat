@@ -1,28 +1,28 @@
 <template>
   <div id="app">
     <Styles/>
-    <HeaderApp/>
+    <TheHeader/>
     <div class="container main-content">
       <router-view/>
-      <Banner class="banner__content"/>
+      <AppBanner class="banner__content"/>
     </div>
-    <FooterApp/>  
+    <TheFooter/>  
   </div>
 </template>
 
 <script>
   import Styles from './components/Styles';
-  import HeaderApp from './components/HeaderApp';
-  import Banner from './components/Banner';
-  import FooterApp from './components/FooterApp';
+  import TheHeader from './components/TheHeader';
+  import AppBanner from './components/AppBanner';
+  import TheFooter from './components/TheFooter';
 
   export default {
     name: 'App',
     components: {
       Styles,
-      HeaderApp,
-      Banner,
-      FooterApp
+      TheHeader,
+      AppBanner,
+      TheFooter
     }
   };
 </script>

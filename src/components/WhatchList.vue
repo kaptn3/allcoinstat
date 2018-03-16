@@ -2,7 +2,7 @@
   <div class="WhatchList">
     <div class="main-content__top-content">
       <h2>Watchlist</h2>
-      <Modal name="addCoin"/>
+      <Modals name="addCoin"/>
     </div>
     <div class="table-main">
       <div class="table-main-row th-row">
@@ -30,25 +30,25 @@
         <div class="table-main-row-td sale">buy</div>
       </div>
     </div>
-    <ButtonApp text="View all" class="btn btn-view"/>
+    <AppButton text="View all" class="btn btn-view"/>
   </div><!-- end Whatchlist -->
 </template>
 
 <script>
-  import HeaderApp from './HeaderApp';
-  import Banner from './Banner';
-  import ButtonApp from './ButtonApp';
-  import Modal from './Modal';
-  import FooterApp from './FooterApp';
+  import TheHeader from './TheHeader';
+  import AppBanner from './AppBanner';
+  import AppButton from './AppButton';
+  import Modals from './Modals';
+  import TheFooter from './TheFooter';
 
   export default {
     name: 'WhatchList',
     components: {
-      HeaderApp,
-      Banner,
-      ButtonApp,
-      Modal,
-      FooterApp
+      TheHeader,
+      AppBanner,
+      AppButton,
+      Modals,
+      TheFooter
     }
   };
 </script>

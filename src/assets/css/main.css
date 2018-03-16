@@ -30,7 +30,7 @@ button {
 }
 p {
   margin: 0 0 1rem 0;
-  font-size: $font-size-15;
+  font-size: 1rem;
   line-height: 1.7;
   color: var(--dark-gray-color);
 }
@@ -82,4 +82,7 @@ nav ul {
   flex-flow: row wrap;
   justify-content: flex-start;
   align-items: center;
+}
+.open-modal {
+  overflow: hidden;
 }

@@ -1,15 +1,15 @@
 <template>
-  <input class="form-input">
+  <input class="AppInput">
 </template>
 
 <script>
   export default {
-    name: 'Input'
+    name: 'AppInput'
   }
 </script>
 
 <style scoped>
-.form-input,
+.AppInput,
 .form-comment {
   padding: 0 24px;
   height: 50px;
@@ -20,6 +20,7 @@
   transition: .3s all ease;
   color: var(--dark-gray-color);
   margin: 5px 0;
+  outline: 0;
 }
 .form-comment {
   border-radius: 6px;
@@ -39,20 +40,20 @@
 .form-comment:-ms-input-placeholder {
   opacity: .7;
 }
-.form-input::-webkit-input-placeholder {
+.AppInput::-webkit-input-placeholder {
   opacity: .7;
 }
-.form-input::-moz-placeholder {
+.AppInput::-moz-placeholder {
   opacity: .7;
 }
-.form-input:-moz-placeholder {
+.AppInput:-moz-placeholder {
   opacity: .7;
 }
-.form-input:-ms-input-placeholder {
+.AppInput:-ms-input-placeholder {
   opacity: .7;
 }
 .form-comment:focus,
-.form-input:focus {
+.AppInput:focus {
   border-color: #80bdff;
 }
 </style>

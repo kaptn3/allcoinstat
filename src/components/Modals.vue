@@ -1,27 +1,27 @@
 <template>
-  <div class="Modal">
-    <ButtonApp v-if="name === 'addCoin'" text="+ Add Coin" class="btn" @click="open(name)"/>
+  <div class="Modals">
+    <AppButton v-if="name === 'addCoin'" text="+ Add Coin" class="btn" @click="open(name)"/>
     <div v-else><a href="javascript:void(0)" @click="open('login')">Sign In</a> / <a href="javascript:void(0)" @click="open('sign')">Sign Up</a></div>
     <transition name="fade" mode="out-in">
-      <ModalTemp v-if="modalName === 'login'" key="modal1" @close="close">
+      <ModalsTemplate v-if="modalName === 'login'" key="modal1" @close="close">
         <h3 slot="header">Sign in</h3>
         <div slot="main">
           <form>
             <div class="modal__main">
-              <ButtonApp class="btn btn_red" text="Login with Google"/>
-              <ButtonApp class="btn btn_blue" text="Login with Facebook"/>
+              <AppButton class="btn btn_red" text="Login with Google"/>
+              <AppButton class="btn btn_blue" text="Login with Facebook"/>
               <p class="modal__or">or</p>
-              <InputForm 
+              <AppInput 
                 type="email" 
                 name="email" 
                 class="form-input" 
                 placeholder="Email address"/>
-              <InputForm 
+              <AppInput 
                 type="password" 
                 name="password" 
                 class="form-input" 
                 placeholder="Password"/>
-              <ButtonApp class="btn btn_light-blue" text="Sign in"/>
+              <AppButton class="btn btn_light-blue" text="Sign in"/>
             </div>
           </form>
           <footer class="modal__footer">
@@ -29,62 +29,62 @@
             <p>Do not have an account? <a href="javascript:void(0)" @click="open('sign')">Create now</a></p> 
           </footer>  
         </div>
-      </ModalTemp>
-      <ModalTemp v-if="modalName === 'sign'" key="modal2" @close="close">
+      </ModalsTemplate>
+      <ModalsTemplate v-if="modalName === 'sign'" key="modal2" @close="close">
         <h3 slot="header">Sign up</h3>
         <div slot="main">
           <form>
             <div class="modal__main">
-              <ButtonApp class="btn btn_red" text="Sign up with Google"/>
-              <ButtonApp class="btn btn_blue" text="Sign up with Facebook"/>
+              <AppButton class="btn btn_red" text="Sign up with Google"/>
+              <AppButton class="btn btn_blue" text="Sign up with Facebook"/>
               <p class="modal__or">or</p>
-              <InputForm 
+              <AppInput 
                 type="email" 
                 name="email" 
                 class="form-input" 
                 placeholder="Email address"/>
-              <InputForm 
+              <AppInput 
                 type="password" 
                 name="password" 
                 class="form-input" 
                 placeholder="Password"/>
-              <InputForm 
+              <AppInput 
                 type="password" 
                 name="password" 
                 class="form-input" 
                 placeholder="Password again"/>
-              <ButtonApp class="btn btn_light-blue" text="Sign up"/>
+              <AppButton class="btn btn_light-blue" text="Sign up"/>
             </div>
           </form>
         </div>
-      </ModalTemp>
-      <ModalTemp v-if="modalName === 'addCoin'" key="modal3" @close="close">
+      </ModalsTemplate>
+      <ModalsTemplate v-if="modalName === 'addCoin'" key="modal3" @close="close">
         <h3 slot="header">Choose coin and add to the watchlist</h3>
         <form slot="main">
           <div class="modal__main modal__main_whathlist">        
             <div class="modal__main__input">
-              <InputForm/>  
+              <AppInput/>  
             </div>
-            <ButtonApp class="btn" text="Add coin"/>
+            <AppButton class="btn" text="Add coin"/>
           </div>
         </form>
-      </ModalTemp>
+      </ModalsTemplate>
     </transition>
   </div>
 </template>
 
 <script>
   import { toggle } from './mixins/toggle';
-  import ModalTemp from './ModalTemp';
-  import InputForm from './InputForm';
-  import ButtonApp from './ButtonApp';
+  import ModalsTemplate from './ModalsTemplate';
+  import AppInput from './AppInput';
+  import AppButton from './AppButton';
 
   export default {
     name: 'Modal',
     components: {
-      ModalTemp,
-      InputForm,
-      ButtonApp
+      ModalsTemplate,
+      AppInput,
+      AppButton
     },
     mixins: [toggle],
     props: {
