@@ -8,8 +8,8 @@
         <div slot="main">
           <form>
             <div class="modal__main">
-              <AppButton class="btn btn_red" text="Login with Google"/>
-              <AppButton class="btn btn_blue" text="Login with Facebook"/>
+              <AppButton class="btn btn_red btn__sign" text="Login with Google"/>
+              <AppButton class="btn btn_blue btn__sign" text="Login with Facebook"/>
               <p class="modal__or">or</p>
               <AppInput 
                 type="email" 
@@ -21,7 +21,7 @@
                 name="password" 
                 class="form-input" 
                 placeholder="Password"/>
-              <AppButton class="btn btn_light-blue" text="Sign in"/>
+              <AppButton class="btn btn_light-blue btn__sign" text="Sign in"/>
             </div>
           </form>
           <footer class="modal__footer">
@@ -35,8 +35,8 @@
         <div slot="main">
           <form>
             <div class="modal__main">
-              <AppButton class="btn btn_red" text="Sign up with Google"/>
-              <AppButton class="btn btn_blue" text="Sign up with Facebook"/>
+              <AppButton class="btn btn_red btn__sign" text="Sign up with Google"/>
+              <AppButton class="btn btn_blue btn__sign" text="Sign up with Facebook"/>
               <p class="modal__or">or</p>
               <AppInput 
                 type="email" 
@@ -53,7 +53,7 @@
                 name="password" 
                 class="form-input" 
                 placeholder="Password again"/>
-              <AppButton class="btn btn_light-blue" text="Sign up"/>
+              <AppButton class="btn btn_light-blue btn__sign" text="Sign up"/>
             </div>
           </form>
         </div>
@@ -103,6 +103,8 @@
     color: #9b9b9b;
     font-size: 1rem;
     font-weight: 300;
+    margin-top: 10px;
+    margin-bottom: 20px;
   }
   .modal__or {
     &::after,
@@ -138,8 +140,8 @@
     display: flex;
     justify-content: space-between;
     color: #333;
-    margin-top: 50px;
-    margin-bottom: 50px;
+    margin-top: 40px;
+    margin-bottom: 0;
   }
   a {
     color: #388dfe;
@@ -149,5 +151,9 @@
     font-size: calc((12 / 16) * 1rem);
     margin: 0;
     line-height: 1.5;
+  }
+  .btn__sign,
+  .form-input {
+    margin-bottom: 10px;
   }
 </style>
