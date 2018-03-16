@@ -1,10 +1,10 @@
 <template>
-  <button>{{ text }}</button>
+  <button @click="$emit('click')">{{ text }}</button>
 </template>
 
 <script>
   export default {
-    name: 'ButtonApp',
+    name: 'AppButton',
     props: {
       text: {
         type: String,
@@ -18,11 +18,7 @@
   .btn {
     text-decoration: none;
     color: #fff;
-    width: 100%;
-    max-width: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 200px;
     height: 50px;
     font-size: calc((15 / 16) * 1rem);
     font-weight: 500;
@@ -34,6 +30,17 @@
       opacity: .8;
       color: #fff;
     }
+  }
+  .btn_red {
+    background-color: #e0523b;
+  }
+  .btn_blue {
+    background-color: #3968b5;
+  }
+  .btn_light-blue,
+  .btn_red,
+  .btn_blue {
+    width: 100%;
   }
   .btn-add,
   .btn-view {
@@ -49,12 +56,6 @@
   .btn-view:hover {
     opacity: 1;
     color: var(--blue-color);
-  }
-  .btn_red {
-    background-color: #e0523b;
-  }
-  .btn_blue {
-    background-color: #3968b5;
   }
   .disabled {
     cursor: default;
