@@ -2,14 +2,7 @@
   <div class="top-menu">
     <nav class="top-menu__navbar">
       <ul>
-        <li class="top-menu__item"><a href="#">Growing</a></li>
-        <li class="top-menu__item"><a href="#">Falling</a></li>
-        <li class="top-menu__item"><a href="#">Arbitrage</a></li>
-        <li class="top-menu__item"><a href="#">Exchanges</a></li>
-        <li class="top-menu__item"><a href="#">Whatchlist</a></li>
-        <li class="top-menu__item"><a href="#">Forum</a></li>
-        <li class="top-menu__item"><a href="#">Portfolio</a></li>
-        <li class="top-menu__item"><a href="#">Alerts</a></li>
+        <li v-for="(value, key) in topMenu" :key="value.link" class="top-menu__item"><a :href="value.link">{{ key }}</a></li>
       </ul>
     </nav>
   </div><!-- end top menu -->
@@ -17,7 +10,37 @@
 
 <script>
   export default {
-    name: 'TheTopMenu'
+    name: 'TheTopMenu',
+    data () {
+      return {
+        topMenu: {
+          Growing: {
+            link: '/'
+          },
+          Falling: {
+            link: '/'
+          },
+          Arbitrage: {
+            link: '/'
+          },
+          Exchanges: {
+            link: '/'
+          },
+          Whatchlist: {
+            link: '/whatchlist'
+          },
+          Forum: {
+            link: '/'
+          },
+          Portfolio: {
+            link: '/'
+          },
+          Alerts: {
+            link: '/'
+          }
+        }
+      }
+    }
   };
 </script>
 
