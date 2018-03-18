@@ -15,6 +15,7 @@
         <span>{{ props.option.name }}</span>
       </a>
     </template>
+    <span slot="noResult">No elements found.</span>
   </multiselect>
 </template>
 
@@ -84,9 +85,12 @@
     z-index: 100;
     width: 100%;
   }
-  .multiselect__element {
+  .multiselect__element,
+  .multiselect__content li {
     list-style: none;
     padding: 10px 0 10px 24px;
+  }
+  .multiselect__element {
     &:hover {
       background-color: var(--light-color);
       cursor: pointer;
