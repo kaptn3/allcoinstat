@@ -18,27 +18,23 @@
         <li class="info-block__log">
           <Modals/>
         </li>
-        <AppInput type="search" name="search" placeholder="Search coins" class="info-block__input" />
+        <InputCrypto/>
       </ul>
     </nav>
   </div>
 </template>
 
-<script>
-  import AppInput from './AppInput.vue';
+<script>  
+  import AppInput from './AppInput';
+  import InputCrypto from './InputCrypto';
   import Modals from './Modals';
 
   export default {
     name: 'InfoBlock',
     components: {
       AppInput,
-      Modals
-    },
-    methods: {
-      al: function () {
-        console.log(this.$emit('close'));
-        this.$emit('close');
-      }
+      Modals,
+      InputCrypto
     }
   };
 </script>
@@ -76,5 +72,15 @@
   }
   .info-block__input {
     max-width: 230px;
+  }
+  @media (max-width: 767.99px) {
+    .info-block__item,
+    .info-block__log {
+      display: none;
+    }
+    .info-block__input {
+      max-width: 100%;
+      margin-top: 30px;
+    }
   }
 </style>
