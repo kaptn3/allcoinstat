@@ -7,13 +7,20 @@
     label="name" 
     track-by="name">
     <template slot="option" slot-scope="props">
-      <a :href="props.option.link">
+      <a v-if="links" :href="props.option.link">
         <img 
           :src="'img/' + props.option.icon"
           class="multiselect__element__icon"> 
         <span class="multiselect__element__short">{{ props.option.short }}</span>
         <span>{{ props.option.name }}</span>
       </a>
+      <span v-else>
+        <img 
+          :src="'img/' + props.option.icon"
+          class="multiselect__element__icon"> 
+        <span class="multiselect__element__short">{{ props.option.short }}</span>
+        <span>{{ props.option.name }}</span>
+      </span>
     </template>
     <span slot="noResult">No elements found.</span>
   </multiselect>
@@ -26,6 +33,12 @@
     name: 'InputCrypto',
     components: {
       Multiselect
+    },    
+    props: {
+      links: {
+        type: Boolean,
+        default: false
+      }
     },
     data () {
       return {
@@ -84,11 +97,18 @@
     box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.16);
     z-index: 100;
     width: 100%;
-  }
-  .multiselect__element,
-  .multiselect__content li {
     list-style: none;
+    margin: 0;
+  }
+  .multiselect__option {
+    display: inline-block;
+    width: 100%;
     padding: 10px 0 10px 24px;
+  }
+  .multiselect__option a {
+    &:hover {
+      color: inherit;
+    }
   }
   .multiselect__element {
     &:hover {
@@ -105,10 +125,5 @@
   .multiselect__element__icon {
     vertical-align: top;
     margin-right: 8px;
-  }
-  .multiselect__option a {
-    &:hover {
-      color: inherit;
-    }
   }
 </style>

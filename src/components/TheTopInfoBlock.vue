@@ -18,7 +18,7 @@
         <li class="info-block__log">
           <Modals/>
         </li>
-        <InputCrypto/>
+        <InputCrypto links="true"/>
       </ul>
     </nav>
   </div>

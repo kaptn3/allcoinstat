@@ -72,15 +72,14 @@
       </ModalsTemplate>
       <ModalsTemplate 
         v-else-if="modalName === 'addCoin'" 
-        key="modal3" 
+        key="modal3"
+        class="add-coin"
         @close="close">
         <h3 slot="header">Choose coin and add to the watchlist</h3>
         <form slot="main">
           <div class="modal__main modal__main_whathlist">        
-            <div class="modal__main__input">
-              <AppInput/>  
-            </div>
-            <AppButton class="btn" text="Add coin"/>
+            <InputCrypto class="modal__main_whathlist__input"/>
+            <AppButton class="btn" text="Add coin" @click="text = '+'"/>
           </div>
         </form>
       </ModalsTemplate>
@@ -92,6 +91,7 @@
   import { toggle } from './mixins/toggle';
   import ModalsTemplate from './ModalsTemplate';
   import AppInput from './AppInput';
+  import InputCrypto from './InputCrypto';
   import AppButton from './AppButton';
 
   export default {
@@ -99,7 +99,8 @@
     components: {
       ModalsTemplate,
       AppInput,
-      AppButton
+      AppButton,
+      InputCrypto
     },
     mixins: [toggle],
     props: {
@@ -170,5 +171,11 @@
   .btn__sign,
   .form-input {
     margin-bottom: 10px;
+  }
+  .modal__main_whathlist {
+    display: flex;
+  }
+  .modal__main_whathlist__input {
+    margin-right: 20px;
   }
 </style>

@@ -26,7 +26,8 @@
     transition: .3s all ease;
     background-color: var(--blue-color);
     line-height: 0;
-    &:hover {
+    &:hover,
+    &:focus {
       opacity: .8;
       color: #fff;
     }
@@ -52,10 +53,13 @@
     border-radius: 6px;
     max-width: 160px;
   }
-  .btn-add:hover,
-  .btn-view:hover {
-    opacity: 1;
-    color: var(--blue-color);
+  .btn-add,
+  .btn-view {
+    &:hover,
+    &:focus {
+      opacity: 1;
+      color: var(--blue-color);
+    }
   }
   .disabled {
     cursor: default;

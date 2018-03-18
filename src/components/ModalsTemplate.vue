@@ -49,6 +49,9 @@
   border-radius: 10px;
   padding: 28px 40px;
 }
+.add-coin .modal__container {
+  max-width: 600px;
+}
 .modal__header {
   margin-bottom: 28px;
 }  
