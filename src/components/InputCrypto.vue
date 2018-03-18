@@ -7,11 +7,13 @@
     label="name" 
     track-by="name">
     <template slot="option" slot-scope="props">
-      <img 
-        :src="'img/' + props.option.icon"
-        class="multiselect__element__icon"> 
-      <span class="multiselect__element__short">{{ props.option.short }}</span>
-      <span>{{ props.option.name }}</span>
+      <a :href="props.option.link">
+        <img 
+          :src="'img/' + props.option.icon"
+          class="multiselect__element__icon"> 
+        <span class="multiselect__element__short">{{ props.option.short }}</span>
+        <span>{{ props.option.name }}</span>
+      </a>
     </template>
   </multiselect>
 </template>
@@ -27,11 +29,11 @@
     data () {
       return {
         options: [
-          { icon: 'bitcoin.png', short: 'BTC', name: 'Bitcoin' },
-          { icon: 'ethereum.png', short: 'ETH', name: 'Ethereum' },
-          { icon: 'monero.png', short: 'HMR', name: 'Monero' },
-          { icon: 'ripple.png', short: 'XMR', name: 'Ripple' },
-          { icon: 'bitcoin.png', short: 'BTC', name: 'Bitcoin' }
+          { icon: 'bitcoin.png', short: 'BTC', name: 'Bitcoin', link: '/' },
+          { icon: 'ethereum.png', short: 'ETH', name: 'Ethereum', link: '/' },
+          { icon: 'monero.png', short: 'HMR', name: 'Monero', link: '/' },
+          { icon: 'ripple.png', short: 'XMR', name: 'Ripple', link: '/' },
+          { icon: 'bitcoin.png', short: 'BTC', name: 'Bitcoin', link: '/' }
         ]
       }
     },
@@ -91,11 +93,18 @@
     }
   }
   .multiselect__element__short {
+    display: inline-block;
     margin-right: 18px;
     color: var(--light-gray-color);
+    width: 32px;
   }
   .multiselect__element__icon {
     vertical-align: top;
     margin-right: 8px;
+  }
+  .multiselect__option a {
+    &:hover {
+      color: inherit;
+    }
   }
 </style>
