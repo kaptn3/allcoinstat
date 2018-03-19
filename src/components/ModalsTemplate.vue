@@ -40,7 +40,7 @@
   overflow-y: auto;
 }
 .modal__container {
-  max-width: 450px;
+  width: 450px;
   margin: 0 auto;
   background-color: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
@@ -50,7 +50,9 @@
   padding: 28px 40px;
 }
 .add-coin .modal__container {
-  max-width: 600px;
+  width: 600px;
+  margin-bottom: auto;
+  margin-top: auto;
 }
 .modal__header {
   margin-bottom: 28px;
@@ -82,7 +84,8 @@
     top: 23px;
     right: 23px;
   }
-  .modal__container {
+  .modal__container,
+  .add-coin .modal__container {
     box-shadow: none;
     padding: 28px 20px;
     border-radius: 0;

@@ -42,6 +42,7 @@
     },
     data () {
       return {
+        value: [],
         options: [
           { icon: 'bitcoin.png', short: 'BTC', name: 'Bitcoin', link: '/' },
           { icon: 'ethereum.png', short: 'ETH', name: 'Ethereum', link: '/' },
@@ -62,6 +63,11 @@
 <style>
   .multiselect {
     position: relative;
+  }
+  @media (max-width: 767.99px) {
+    .multiselect {
+      width: 100%;
+    }
   }
   .multiselect__input {
     padding: 0 24px;
@@ -104,6 +110,11 @@
     display: inline-block;
     width: 100%;
     padding: 10px 0 10px 24px;
+  }
+  @media (max-width: 767.99px) {
+    .multiselect__option {
+      padding: 15px 0 15px 24px;
+    }
   }
   .multiselect__option a {
     &:hover {

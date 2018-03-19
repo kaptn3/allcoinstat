@@ -18,7 +18,8 @@
         <li class="info-block__log">
           <Modals/>
         </li>
-        <InputCrypto links="true"/>
+        <Modals name="mobileMenu" class="info-block__item__mobile-menu"/>
+        <InputCrypto class="info-block__search" links="true"/>
       </ul>
     </nav>
   </div>
@@ -70,10 +71,19 @@
     color: var(--blue-color);
     padding-right: 29px;
   }
-  .info-block__input {
-    max-width: 230px;
+  .info-block__item__mobile-menu {
+    display: none;
   }
-  @media (max-width: 767.99px) {
+  .info-block__navbar ul {
+    justify-content: space-between;
+  }
+  @media (max-width: 991.99px) {
+    .info-block__logo {
+      margin-bottom: 20px;
+    }
+    .info-block__search {
+      width: 100%;
+    }
     .info-block__item,
     .info-block__log {
       display: none;
@@ -81,6 +91,9 @@
     .info-block__input {
       max-width: 100%;
       margin-top: 30px;
+    }
+    .info-block__item__mobile-menu {
+      display: block;
     }
   }
 </style>

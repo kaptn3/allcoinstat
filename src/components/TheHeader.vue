@@ -31,4 +31,9 @@
   .TheTopMenu {
     margin-bottom: 30px;
   }
+  @media (max-width: 991.99px) {
+    .TheTopMenu {
+      display: none;
+    }
+  }
 </style>

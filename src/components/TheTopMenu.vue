@@ -45,27 +45,48 @@
 </script>
 
 <style scoped>
+  @media (min-width: 992px) {
+    .top-menu {
+      border: 2px solid var(--light-color);
+    }
+    .top-menu__item {
+      &:hover::after {
+        background-color: var(--blue-color);
+        height: 4px;
+        width: 100%;
+        content: "";
+        position: absolute;
+        margin: -2px auto;
+      }
+    }
+    .top-menu__item a {
+      &:hover {
+        color: var(--black-color);
+      }
+    }
+  }
   .top-menu {
-    border: 2px solid var(--light-color);
     color: var(--light-gray-color);
     font-weight: 500;
+    width: 100%;
+    text-align: center;
+  }
+  @media (max-width: 991.99px) {
+    .top-menu__navbar ul {
+      flex-direction: column;
+    }
   }
   .top-menu__item {
-    position: relative;
-  }
-  .top-menu__item:hover::after {
-    background-color: var(--blue-color);
-    height: 4px;
     width: 100%;
-    content: "";
-    position: absolute;
-    margin: -2px auto;
+    position: relative;
   }
   .top-menu__item a {
     padding: 20px 25px;
     display: block;
-  }
-  .top-menu__item a:hover {
-    color: var(--black-color);
+    border-radius: 100px;
+    &:hover {
+      background-color: var(--light-color);
+      color: var(--blue-color);
+    }
   }
 </style>

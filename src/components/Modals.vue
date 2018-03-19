@@ -1,10 +1,11 @@
 <template>
-  <div class="Modals">
+  <div :class="name" class="Modals">
     <AppButton 
       v-if="name === 'addCoin'" 
       text="+ Add Coin" 
       class="btn" 
       @click="open(name)"/>
+    <a v-else-if="name === 'mobileMenu'" href="javascript:void(0)" @click="open('mobileMenu')"><img src="../assets/ui-img/menu.svg"></a>
     <div v-else>
       <a href="javascript:void(0)" @click="open('login')">sign in</a> / <a href="javascript:void(0)" @click="open('sign')">sign up</a>
     </div>
@@ -70,18 +71,26 @@
           </form>
         </div>
       </ModalsTemplate>
+      <ModalsTemplate
+        v-else-if="modalName === 'mobileMenu'"
+        key="modal4"
+        @close="close">
+        <a slot="header" href="/" class="header__logo"><img src="../assets/img/logo.svg"></a>  
+        <div slot="main" class="modal__main">
+          <TheTopMenu/>
+          <Modals name="login" class="modal__mobile-login"/>
+        </div>
+      </ModalsTemplate>
       <ModalsTemplate 
         v-else-if="modalName === 'addCoin'" 
         key="modal3"
         class="add-coin"
         @close="close">
         <h3 slot="header">Choose coin and add to the watchlist</h3>
-        <form slot="main">
-          <div class="modal__main modal__main_whathlist">        
-            <InputCrypto class="modal__main_whathlist__input"/>
-            <AppButton class="btn" text="Add coin" @click="text = '+'"/>
-          </div>
-        </form>
+        <div slot="main" class="modal__main">        
+          <InputCrypto class="modal__main__input"/>
+          <AppButton class="btn" text="+ Add coin"/>
+        </div>
       </ModalsTemplate>
     </transition>
   </div>
@@ -93,14 +102,16 @@
   import AppInput from './AppInput';
   import InputCrypto from './InputCrypto';
   import AppButton from './AppButton';
+  import TheTopMenu from './TheTopMenu';
 
   export default {
-    name: 'Modal',
+    name: 'Modals',
     components: {
       ModalsTemplate,
       AppInput,
       AppButton,
-      InputCrypto
+      InputCrypto,
+      TheTopMenu
     },
     mixins: [toggle],
     props: {
@@ -113,6 +124,18 @@
 </script>
 
 <style scoped>
+  .Modals {
+    width: auto;
+  }
+  @media (max-width: 767.99px) {
+    .addCoin {
+      width: 100%;
+    }
+  }
+  .modal__main {
+    display: flex;
+    flex-wrap: wrap;
+  }
   .modal__or {
     overflow: hidden;
     text-align: center;
@@ -172,10 +195,24 @@
   .form-input {
     margin-bottom: 10px;
   }
-  .modal__main_whathlist {
-    display: flex;
-  }
-  .modal__main_whathlist__input {
+  .modal__main__input {
     margin-right: 20px;
+    max-width: 100%;
+    flex-grow: 1;
+  }
+  @media (max-width: 767.99px) {
+    .modal__main__input {
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+  }  
+  .header__logo {
+    text-align: center;
+    display: block;
+  }
+  .modal__mobile-login {
+    margin: 20px auto 0 auto;
+    font-weight: bold;
+    color: var(--blue-color);
   }
 </style>
