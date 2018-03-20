@@ -10,6 +10,7 @@
       <a href="javascript:void(0)" @click="open('login')">sign in</a> / <a href="javascript:void(0)" @click="open('sign')">sign up</a>
     </div>
     <transition name="fade" mode="out-in">
+      <!-- login -->
       <ModalsTemplate 
         v-if="modalName === 'login'" 
         key="modal1" 
@@ -40,6 +41,7 @@
           </footer>  
         </div>
       </ModalsTemplate>
+      <!-- sign -->
       <ModalsTemplate 
         v-else-if="modalName === 'sign'" 
         key="modal2" 
@@ -71,16 +73,20 @@
           </form>
         </div>
       </ModalsTemplate>
+      <!-- mobile menu -->
       <ModalsTemplate
         v-else-if="modalName === 'mobileMenu'"
         key="modal4"
         @close="close">
-        <a slot="header" href="/" class="header__logo"><img src="../assets/img/logo.svg"></a>  
+        <div slot="header" class="header__logo">
+          <a href="/"><img src="../assets/img/logo.svg"></a> 
+        </div> 
         <div slot="main" class="modal__main">
           <TheTopMenu/>
           <Modals name="login" class="modal__mobile-login"/>
         </div>
       </ModalsTemplate>
+      <!-- add coin -->
       <ModalsTemplate 
         v-else-if="modalName === 'addCoin'" 
         key="modal3"
@@ -208,7 +214,9 @@
   }  
   .header__logo {
     text-align: center;
-    display: block;
+  }
+  .header__logo > a {
+    display: inline-block;
   }
   .modal__mobile-login {
     margin: 20px auto 0 auto;

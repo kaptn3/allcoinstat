@@ -45,6 +45,35 @@
 </script>
 
 <style scoped>
+  .top-menu {
+    color: var(--light-gray-color);
+    font-weight: 500;
+    width: 100%;
+  }
+  @media (max-width: 991.99px) {
+    .top-menu {
+      text-align: center;
+    }
+    .top-menu__navbar ul {
+      flex-direction: column;
+    }
+    .top-menu__item {
+      width: 100%;
+    }
+    .top-menu__item a {
+      &:hover {
+        background-color: var(--light-color);
+      }
+    }
+  }
+  .top-menu__item {
+    position: relative;
+  }
+  .top-menu__item a {
+    padding: 20px 25px;
+    display: block;
+    border-radius: 100px;
+  }  
   @media (min-width: 992px) {
     .top-menu {
       border: 2px solid var(--light-color);
@@ -63,30 +92,6 @@
       &:hover {
         color: var(--black-color);
       }
-    }
-  }
-  .top-menu {
-    color: var(--light-gray-color);
-    font-weight: 500;
-    width: 100%;
-    text-align: center;
-  }
-  @media (max-width: 991.99px) {
-    .top-menu__navbar ul {
-      flex-direction: column;
-    }
-  }
-  .top-menu__item {
-    width: 100%;
-    position: relative;
-  }
-  .top-menu__item a {
-    padding: 20px 25px;
-    display: block;
-    border-radius: 100px;
-    &:hover {
-      background-color: var(--light-color);
-      color: var(--blue-color);
     }
   }
 </style>

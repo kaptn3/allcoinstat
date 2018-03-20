@@ -26,6 +26,7 @@
     transition: .3s all ease;
     background-color: var(--blue-color);
     line-height: 0;
+    display: block;
     &:hover,
     &:focus {
       opacity: .8;
@@ -51,7 +52,7 @@
   }
   .btn-view {
     border-radius: 6px;
-    max-width: 160px;
+    width: 160px;
   }
   .btn-add,
   .btn-view {
@@ -65,5 +66,11 @@
     cursor: default;
     pointer-events: none;
     opacity: .5;
+  }
+  @media (max-width: 767.99px) {
+    .btn,
+    .btn-view {
+      width: 100%;
+    }
   }
 </style>
