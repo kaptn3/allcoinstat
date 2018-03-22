@@ -7,6 +7,7 @@ Vue.use(Meta);
 
 import App from './App.vue';
 import MainPage from './components/MainPage.vue';
+import ExchangePage from './components/ExchangePage.vue';
 import WhatchList from './components/WhatchList.vue';
 
 Vue.config.productionTip = false;
@@ -21,6 +22,10 @@ const router = new VueRouter({
     {
       path: '/whatchlist',
       component: WhatchList
+    },
+    {
+      path: '/exchanges',
+      component: ExchangePage
     }
   ]
 });
