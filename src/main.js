@@ -7,7 +7,7 @@ Vue.use(Meta);
 
 import App from './App.vue';
 import MainPage from './components/MainPage.vue';
-import ExchangePage from './components/ExchangePage.vue';
+import ExchangesPage from './components/ExchangesPage.vue';
 import WhatchList from './components/WhatchList.vue';
 
 Vue.config.productionTip = false;
@@ -25,7 +25,7 @@ const router = new VueRouter({
     },
     {
       path: '/exchanges',
-      component: ExchangePage
+      component: ExchangesPage
     }
   ]
 });

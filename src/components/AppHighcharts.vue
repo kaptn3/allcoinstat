@@ -24,8 +24,10 @@
       }
     },
     mounted() {
-      this.chart = new Highcharts.stockChart(this.$el, this.options);
-      this.addData();
+      this.chart = new Highcharts.chart(this.$el, this.options);
+      if (this.source) {        
+        this.addData();
+      }
     },
     beforeDestroy () {
     // Destroy chart if exists
@@ -35,6 +37,7 @@
     },
     methods: {
       addData() {
+        console.log('add data foo');
         this.chart.showLoading('Loading data from server...');
         if (this.source) {
           fetch(this.source)
