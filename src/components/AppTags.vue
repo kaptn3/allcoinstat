@@ -26,9 +26,6 @@
 </script>
 
 <style scoped>
-  .AppTags {
-    display: flex;
-  }
   .tag,
   .tag:visited {
     font-weight: bold;
@@ -37,6 +34,7 @@
     border-radius: 100px;
     color: var(--blue-color);
     border: 1px solid var(--blue-color);
+    display: inline-block;
   }
   .tag:hover,
   .tag:focus {
