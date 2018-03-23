@@ -61,7 +61,8 @@
       width: 100%;
     }
     .top-menu__item a {
-      &:hover {
+      &:hover,
+      &:focus {
         background-color: var(--light-color);
       }
     }
@@ -89,7 +90,8 @@
       }
     }
     .top-menu__item a {
-      &:hover {
+      &:hover,
+      &:focus {
         color: var(--black-color);
       }
     }
