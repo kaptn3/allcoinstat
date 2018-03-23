@@ -105,6 +105,8 @@
     width: 100%;
     list-style: none;
     margin: 0;
+    max-height: 400px;
+    overflow-y: auto;
   }
   .multiselect__option {
     display: inline-block;
