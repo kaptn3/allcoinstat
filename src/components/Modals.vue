@@ -2,9 +2,8 @@
   <div :class="name" class="Modals">
     <AppButton 
       v-if="name === 'addCoin'" 
-      text="+ Add Coin" 
       class="btn" 
-      @click="open(name)"/>
+      @click="open(name)">+ Add Coin</AppButton>
     <a v-else-if="name === 'mobileMenu'" href="javascript:void(0)" @click="open('mobileMenu')"><img src="../assets/ui-img/menu.svg"></a>
     <div v-else>
       <a href="javascript:void(0)" @click="open('login')">sign in</a> / <a href="javascript:void(0)" @click="open('sign')">sign up</a>
@@ -19,8 +18,8 @@
         <div slot="main">
           <form>
             <div class="modal__main">
-              <AppButton class="btn btn_red btn__sign" text="Login with Google"/>
-              <AppButton class="btn btn_blue btn__sign" text="Login with Facebook"/>
+              <AppButton class="btn btn_red btn__sign">Login with Google</AppButton>
+              <AppButton class="btn btn_blue btn__sign">Login with Facebook</AppButton>
               <p class="modal__or">or</p>
               <AppInput 
                 type="email" 
@@ -32,7 +31,7 @@
                 name="password" 
                 class="form-input" 
                 placeholder="Password"/>
-              <AppButton class="btn btn_light-blue btn__sign" text="Sign in"/>
+              <AppButton class="btn btn_light-blue btn__sign">Sign in</AppButton>
             </div>
           </form>
           <footer class="modal__footer">
@@ -50,8 +49,8 @@
         <div slot="main">
           <form>
             <div class="modal__main">
-              <AppButton class="btn btn_red btn__sign" text="Sign up with Google"/>
-              <AppButton class="btn btn_blue btn__sign" text="Sign up with Facebook"/>
+              <AppButton class="btn btn_red btn__sign">Sign up with Google</AppButton>
+              <AppButton class="btn btn_blue btn__sign">Sign up with Facebook</AppButton>
               <p class="modal__or">or</p>
               <AppInput 
                 type="email" 
@@ -68,7 +67,7 @@
                 name="password" 
                 class="form-input" 
                 placeholder="Password again"/>
-              <AppButton class="btn btn_light-blue btn__sign" text="Sign up"/>
+              <AppButton class="btn btn_light-blue btn__sign">Sign up</AppButton>
             </div>
           </form>
         </div>
@@ -95,7 +94,7 @@
         <h3 slot="header">Choose coin and add to the watchlist</h3>
         <div slot="main" class="modal__main">        
           <InputCrypto class="modal__main__input"/>
-          <AppButton class="btn" text="+ Add coin"/>
+          <AppButton class="btn">+ Add coin</AppButton>
         </div>
       </ModalsTemplate>
     </transition>
@@ -148,6 +147,7 @@
     color: #9b9b9b;
     font-size: 1rem;
     font-weight: 300;
+    width: 100%;
     margin-top: 10px;
     margin-bottom: 20px;
   }
@@ -162,7 +162,7 @@
       vertical-align: middle;
       background-clip: content-box;
       background-color: #d8d8d8;
-      opacity: .4px;
+      opacity: .4;
     }
     &::before {
       left: -.5em;

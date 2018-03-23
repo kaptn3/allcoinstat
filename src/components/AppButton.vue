@@ -1,14 +1,16 @@
 <template>
-  <button @click="$emit('click')">{{ text }}</button>
+  <button @click="onClick || $emit('click')">
+    <slot>Button</slot>
+  </button>
 </template>
 
 <script>
   export default {
     name: 'AppButton',
     props: {
-      text: {
-        type: String,
-        default: 'Кнопка'
+      onClick: {
+        type: Function,
+        default: null
       }
     }
   }
