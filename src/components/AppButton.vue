@@ -1,5 +1,5 @@
 <template>
-  <button @click="onClick || $emit('click')">
+  <button @click="callback($event)">
     <slot>Button</slot>
   </button>
 </template>
@@ -11,6 +11,11 @@
       onClick: {
         type: Function,
         default: null
+      }
+    },
+    methods: {
+      callback(e) {
+        this.$emit('click', e);
       }
     }
   }
