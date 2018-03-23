@@ -2,7 +2,7 @@
   <div class="top-menu">
     <nav class="top-menu__navbar">
       <ul>
-        <li v-for="(value, key) in topMenu" :key="value.link" class="top-menu__item"><a :href="value.link">{{ key }}</a></li>
+        <li v-for="(value, key) in topMenu" :key="key" class="top-menu__item"><a :href="value.link">{{ key }}</a></li>
       </ul>
     </nav>
   </div><!-- end top menu -->
@@ -24,7 +24,7 @@
             link: '/'
           },
           Exchanges: {
-            link: '/'
+            link: '/exchanges'
           },
           Whatchlist: {
             link: '/whatchlist'

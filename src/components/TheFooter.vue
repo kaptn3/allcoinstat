@@ -4,7 +4,7 @@
       <nav class="footer-menu">
         <ul>
           <li class="footer-menu__copyright">&copy; 2018 AllCoinStat</li>
-          <li v-for="(value, key) in footerMenu" :key="value.link" class="footer-menu__item"><a :href="value.link">{{ key }}</a></li>
+          <li v-for="(value, key) in footerMenu" :key="key" class="footer-menu__item"><a :href="value.link">{{ key }}</a></li>
           <li class="footer-menu__item">
             <Language/>
           </li>
