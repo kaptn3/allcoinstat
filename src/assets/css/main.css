@@ -7,6 +7,8 @@
   --red-color: #f55;
   --green-color: #20dc86;
   --light-color: #efefef;
+  --border-gray: #d6d6d8;
+  --hover-table-tr: #f7f7fb;
 }
 * {
   box-sizing: border-box;
@@ -27,12 +29,6 @@ button {
   outline: none;
   border: 0;
   cursor: pointer;
-}
-p {
-  margin: 0 0 1rem 0;
-  font-size: 1rem;
-  line-height: 1.7;
-  color: var(--dark-gray-color);
 }
 h1,
 h2,
@@ -66,10 +62,22 @@ h6 {
   margin: 0 0 .5rem 0;
 }
 a {
-  text-decoration: none;
   transition: .5s all ease;
   cursor: pointer;
   color: inherit;
+  text-decoration: none;
+}
+p {
+  margin: 0 0 1rem 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--dark-gray-color);
+}
+p > a {
+  text-decoration: underline;
+  color: var(--blue-color);
+}
+a {
   &:visited,
   &:active {
     color: inherit;
