@@ -14,7 +14,7 @@
           <tr 
             v-for="(value, key) in tableData.data"
             :key="key">
-            <td>{{ key + 1 }}</td>
+            <td class="num">{{ key + 1 }}</td>
             <td class="icon"><img :src="value.icon"></td>
             <td class="name">{{ value.name }}</td>
             <td class="market">{{ value.market }}</td>
@@ -65,7 +65,7 @@ table {
   border-collapse: collapse;
 }
 td {
-  padding: 16px 0;
+  padding: 16px 7px;
   font-weight: 500;
   color: var(--dark-gray-color);
 }
@@ -76,7 +76,7 @@ th {
   transition: .3s all ease;
 }
 th {
-  padding: 12px 0 16px;
+  padding: 12px 7px 16px 7px;
   font-weight: bold;
   border-top: 4px solid transparent;
   &:hover {
