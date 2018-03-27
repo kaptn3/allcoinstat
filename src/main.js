@@ -6,6 +6,7 @@ Vue.use(VueRouter);
 Vue.use(Meta);
 
 import App from './App.vue';
+import UiPage from './components/UiPage.vue';
 import MainPage from './components/MainPage.vue';
 import ExchangesPage from './components/ExchangesPage.vue';
 import WhatchList from './components/WhatchList.vue';
@@ -26,6 +27,10 @@ const router = new VueRouter({
     {
       path: '/exchanges',
       component: ExchangesPage
+    },
+    {
+      path: '/ui',
+      component: UiPage
     }
   ]
 });
