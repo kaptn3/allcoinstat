@@ -15,10 +15,14 @@
             v-for="(value, key) in tableData.data"
             :key="key">
             <td>{{ key + 1 }}</td>
-            <td 
-              v-for="(value, key) in value"
-              :key="key"
-              :class="key">{{ value }}</td>
+            <td class="icon"><img :src="value.icon"></td>
+            <td class="name">{{ value.name }}</td>
+            <td class="market">{{ value.market }}</td>
+            <td class="price">{{ value.price }}</td>
+            <td class="volume">{{ value.volume }}</td>
+            <td :class="colorValue(value.hour)" class="hour">{{ value.hour }}</td>
+            <td :class="colorValue(value.day)" class="day">{{ value.day }}</td>
+            <td :class="colorValue(value.seven_days)" class="seven_days">{{ value.seven_days }}</td>
             <td class="sale">buy</td>          
           </tr>
         </tbody>
@@ -41,6 +45,15 @@
       tableData: {
         type: Object,
         default: null
+      }
+    },
+    methods: {
+      colorValue (value) {
+        if (value > 0) {
+          return 'price_plus'
+        } else {
+          return 'price_minus'
+        }
       }
     }
   }
@@ -94,6 +107,12 @@ td.price {
 th:hover,
 tbody tr:hover {
   background: var(--hover-table-tr);
+}
+.price_plus {
+  color: var(--green-color);
+}
+.price_minus {
+  color: var(--red-color);
 }
 .AppTable {
   margin-bottom: 30px;
