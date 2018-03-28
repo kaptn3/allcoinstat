@@ -1,13 +1,16 @@
 <template>
   <div class="MainPage">
-    <router-link to="/whatchlist">
-      Whatchlist
-    </router-link>
+    <TableSale/>
   </div>
 </template>
 
 <script>
+  import TableSale from './TableSale';
+
   export default {
-    name: 'MainPage'
-  }
+    name: 'MainPage',
+    components: {
+      TableSale
+    }
+  };
 </script>
