@@ -29,6 +29,7 @@
 
 <style>
   .main-content {
+    padding-top: 30px;
     padding-bottom: 30px;
   }
 </style>

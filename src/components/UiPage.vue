@@ -197,7 +197,6 @@
 </script>
 
 <style scoped>
-  .UiPage,
   .Navigation,
   .tags-zoom,
   .links {

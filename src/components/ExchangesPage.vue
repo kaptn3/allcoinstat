@@ -124,9 +124,6 @@
   </script>
 
 <style>
-  .ExchangesPage {
-    padding-top: 30px;
-  }
   .trading__content {
     padding-bottom: 70px;
   }

@@ -7,7 +7,7 @@
           <tr><td>No data!</td></tr>
         </slot>
       </table>      
-      <AppButton class="btn btn-view">View more</AppButton>
+      <AppButton v-if="showButton" class="btn btn-view">View more</AppButton>
     </div>    
   </div>
 </template>
@@ -20,6 +20,12 @@
     name: 'AppTable',
     components: {
       AppButton
+    },
+    props: {
+      showButton: {
+        type: Boolean,
+        default: false
+      }
     }
   }
 </script>
@@ -54,7 +60,8 @@ th {
 td.price {
   color: var(--blue-color);
 }
-.name {
+.name,
+.currency {
   text-align: left;
 }
 .num,
