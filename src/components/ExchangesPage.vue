@@ -2,9 +2,31 @@
   <div class="ExchangesPage">
     <h2>Trading volume by currency</h2>
     <p>Volume is arguably the most important metric for a cryptocurrency, because of the amount of ways it can be broken down. From volume, you can infer the direction and movements of a coin. It’s an essential metric for traders. Volume can examined in minute detail. </p>
-    <div class="currency__content">
-      <div class="currency__table">Здесь таблица</div>
-      <div class="currency__pie">
+    <div class="trading__content row justify-content-between">
+      <div class="trading__table col-lg-5">
+        <AppTable>
+          <thead slot="table-header">
+            <tr>
+              <th 
+                v-for="(value, key) in tableData.header" 
+                :key="key"
+                :class="key">{{ value }}</th>
+            </tr>
+          </thead>
+          <tbody slot="table-body">
+            <tr 
+              v-for="(value, key) in tableData.data"
+              :key="key">
+              <td class="currency">
+                <a :href="value.currency">{{ value.currency }}</a>
+              </td>
+              <td class="volume">{{ value.volume }}</td>
+              <td class="share">{{ value.share }}</td>
+            </tr>
+          </tbody>
+        </AppTable>
+      </div>
+      <div class="trading__pie col-lg-6">
         <AppHighcharts :options="options"/>
       </div>
     </div>
@@ -16,11 +38,13 @@
 <script>
   import AppHighcharts from './AppHighcharts';
   import Highcharts from 'highcharts/highstock';
+  import AppTable from './AppTable';
 
   export default {
     name: 'ExchangesPage',
     components: {
-      AppHighcharts
+      AppHighcharts,
+      AppTable
     },
     data () {
       return {
@@ -58,19 +82,32 @@
         series: [{
             name: 'Share',
             data: [
-                { name: 'Chrome', y: 61.41 },
-                { name: 'Internet Explorer', y: 11.84 },
-                { name: 'Firefox', y: 10.85 },
-                { name: 'Edge', y: 4.67 }
+                { name: 'USD', y: 61.41 },
+                { name: 'RUB', y: 11.84 },
+                { name: 'JPY', y: 10.85 },
+                { name: 'Other', y: 4.67 }
             ]
         }]
+      },
+      tableData: {
+        header: {
+          currency: 'Currency',
+          volume: 'Volume 24',
+          share: 'Share'
+        },
+        data: [
+          { currency: 'USD', volume: '1234', share: '59%' },
+          { currency: 'USD', volume: '1234', share: '59%' },
+          { currency: 'USD', volume: '1234', share: '59%' },
+          { currency: 'USD', volume: '1234', share: '59%' }
+        ]
       }
     }
   }
   };
 
-  var pieColors = (function () {
-    var colors = [],
+  let pieColors = (function () {
+    let colors = [],
         base = Highcharts.getOptions().colors[0],
         i;
 
@@ -83,17 +120,14 @@
 }());
   </script>
 
-  <style>
-    .currency__content {
-      display: flex;
-    }
-    .currency__table {
-      width: 50%;
-    }
-    .currency__pie {
-      width: 50%;
-    }
-    .highcharts-container {
-      border: 2px solid var(--light-color);
-    }
-  </style>
+<style>
+  .ExchangesPage {
+    padding-top: 30px;
+  }
+  .trading__content {
+    padding-bottom: 70px;
+  }
+  .highcharts-container {
+    border: 2px solid var(--light-color);
+  }
+</style>
