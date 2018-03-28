@@ -41,7 +41,10 @@
   import AppTable from './AppTable';
 
   export default {
-    name: 'ExchangesPage',
+    name: 'ExchangesPage',    
+    metaInfo: {
+      title: 'Exchanges',
+    },
     components: {
       AppHighcharts,
       AppTable
