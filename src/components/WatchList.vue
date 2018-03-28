@@ -4,19 +4,22 @@
       <h2>Watchlist</h2>
       <Modals name="addCoin"/>
     </div>
-    <AppTable/>
+    <TableSale/>
   </div><!-- end Whatchlist -->
 </template>
 
 <script>
   import Modals from './Modals';
-  import AppTable from './AppTable';
+  import TableSale from './TableSale';
 
   export default {
-    name: 'WhatchList',
+    name: 'WatchList',
+    metaInfo: {
+      title: 'Watchlist',
+    },
     components: {
       Modals,
-      AppTable
+      TableSale
     }
   };
 </script>

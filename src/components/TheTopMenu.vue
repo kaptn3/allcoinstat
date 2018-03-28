@@ -26,8 +26,8 @@
           Exchanges: {
             link: '/exchanges'
           },
-          Whatchlist: {
-            link: '/whatchlist'
+          Watchlist: {
+            link: '/watchlist'
           },
           Forum: {
             link: '/'

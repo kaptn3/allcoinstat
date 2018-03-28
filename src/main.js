@@ -9,7 +9,7 @@ import App from './App.vue';
 import UiPage from './components/UiPage.vue';
 import MainPage from './components/MainPage.vue';
 import ExchangesPage from './components/ExchangesPage.vue';
-import WhatchList from './components/WhatchList.vue';
+import WatchList from './components/WatchList.vue';
 
 Vue.config.productionTip = false;
 
@@ -21,8 +21,8 @@ const router = new VueRouter({
       component: MainPage
     },
     {
-      path: '/whatchlist',
-      component: WhatchList
+      path: '/watchlist',
+      component: WatchList
     },
     {
       path: '/exchanges',
