@@ -2,7 +2,7 @@
   <div class="top-menu">
     <nav class="top-menu__navbar">
       <ul>
-        <li v-for="(value, key) in topMenu" :key="key" class="top-menu__item"><a :href="value.link">{{ key }}</a></li>
+        <li v-for="(value, key) in topMenu" :key="key" class="top-menu__item"><router-link :to="value.link">{{ key }}</router-link></li>
       </ul>
     </nav>
   </div><!-- end top menu -->
@@ -91,7 +91,8 @@
     }
     .top-menu__item a {
       &:hover,
-      &:focus {
+      &:focus,
+      &:active {
         color: var(--black-color);
       }
     }

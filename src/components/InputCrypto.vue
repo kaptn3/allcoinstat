@@ -7,13 +7,13 @@
     label="name" 
     track-by="name">
     <template slot="option" slot-scope="props">
-      <a v-if="links" :href="props.option.link">
+      <router-link v-if="links" :to="props.option.link">
         <img 
           :src="'img/' + props.option.icon"
           class="multiselect__element__icon"> 
         <span class="multiselect__element__short">{{ props.option.short }}</span>
         <span>{{ props.option.name }}</span>
-      </a>
+      </router-link>
       <span v-else>
         <img 
           :src="'img/' + props.option.icon"
