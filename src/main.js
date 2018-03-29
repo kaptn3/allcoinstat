@@ -8,6 +8,7 @@ Vue.use(Meta);
 import App from './App.vue';
 import UiPage from './components/UiPage.vue';
 import MainPage from './components/MainPage.vue';
+import ExchangePage from './components/ExchangePage.vue';
 import ExchangesPage from './components/ExchangesPage.vue';
 import WatchList from './components/WatchList.vue';
 
@@ -31,6 +32,10 @@ const router = new VueRouter({
     {
       path: '/ui',
       component: UiPage
+    },
+    {
+      path: '/exchange',
+      component: ExchangePage
     }
   ]
 });

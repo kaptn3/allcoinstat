@@ -1,6 +1,6 @@
 <template>
   <div class="ExchangePage">
-    <AppHighcharts :options="options" :source="source"/>
+    <AppHighcharts :options="options" :source="source" :type-chart="'stockChart'"/>
   </div>
 </template>
 

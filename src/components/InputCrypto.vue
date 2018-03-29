@@ -44,7 +44,7 @@
       return {
         value: [],
         options: [
-          { icon: 'bitcoin.png', short: 'BTC', name: 'Bitcoin', link: '/' },
+          { icon: 'bitcoin.png', short: 'BTC', name: 'Bitcoin', link: '/exchange' },
           { icon: 'ethereum.png', short: 'ETH', name: 'Ethereum', link: '/' },
           { icon: 'monero.png', short: 'HMR', name: 'Monero', link: '/' },
           { icon: 'ripple.png', short: 'XMR', name: 'Ripple', link: '/' },

@@ -16,6 +16,10 @@
       source: {
         type: String,
         default: null
+      },
+      typeChart: {
+        type: String,
+        default: 'chart'
       }
     },
     data () {
@@ -24,7 +28,11 @@
       }
     },
     mounted() {
-      this.chart = new Highcharts.chart(this.$el, this.options);
+      if (this.typeChart === 'stockChart') {
+        this.chart = new Highcharts.stockChart(this.$el, this.options);
+      } else {
+        this.chart = new Highcharts.chart(this.$el, this.options);
+      }
       if (this.source) {        
         this.addData();
       }
