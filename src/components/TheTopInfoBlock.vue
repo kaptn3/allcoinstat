@@ -19,7 +19,7 @@
           <Modals/>
         </li>
         <Modals name="mobileMenu" class="info-block__item__mobile-menu"/>
-        <InputCrypto class="info-block__search" links="true"/>
+        <InputCrypto :links="true" class="info-block__search"/>
       </ul>
     </nav>
   </div>
