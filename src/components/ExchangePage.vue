@@ -9,6 +9,10 @@
       <div class="block-info">
         <span class="block-info__head">Website</span>
         <a :href="data.site" class="block-info__value">{{ data.site }}</a>
+        <AppTooltip>
+          <a slot="link" class="tooltip-icon"><img src="/img/info.svg"></a>
+          <div slot="content" class="tooltip-help">Volume is arguably the most important metric for a cryptocurrency, because of the amount of ways it can be broken down.</div>
+        </AppTooltip>
       </div>
       <div class="block-info">
         <span class="block-info__head">Twitter</span>
@@ -32,12 +36,14 @@
   import Highcharts from 'highcharts';
   import TableExchange from './TableExchange';
   import AppTags from './AppTags';
+  import AppTooltip from './AppTooltip';
 
   export default {
     name: 'ExchangePage',
     components: {
       TableExchange,
-      AppTags
+      AppTags,
+      AppTooltip
     },
     props: {
       id: {
@@ -218,11 +224,8 @@
   .block-info {
     padding: 15px 30px;
   }
-  .block-info__head,
-  .block-info__value {
-    display: block;
-  }
   .block-info__head {
+    display: block;
     padding-bottom: 7px;
     color: #b1b1b1;
   }
@@ -231,5 +234,16 @@
   }
   a.block-info__value {
     color: var(--blue-color);
+  }
+  .tooltip-icon {
+    height: 22px;
+    width: 22px;
+    display: inline-block;
+    vertical-align: bottom;
+    margin-left: 12px;
+    margin-right: 12px;
+  }
+  .tooltip-help {
+    width: 300px;
   }
 </style>
