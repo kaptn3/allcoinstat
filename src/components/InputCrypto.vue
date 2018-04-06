@@ -7,22 +7,22 @@
     label="name" 
     track-by="name">
     <template slot="option" slot-scope="props">
-      <router-link v-if="links" :to="props.option.link">
+      <router-link v-if="links" :to="{ name: 'exchange', params: { id: props.option.short } }" class="options__link">
         <img 
-          :src="'img/' + props.option.icon"
+          :src="'//allcoinstat.com/img/icons/16x16/' + props.option.icon"
           class="multiselect__element__icon"> 
         <span class="multiselect__element__short">{{ props.option.short }}</span>
         <span>{{ props.option.name }}</span>
       </router-link>
       <span v-else>
         <img 
-          :src="'img/' + props.option.icon"
+          :src="'//allcoinstat.com/img/icons/16x16/' + props.option.icon"
           class="multiselect__element__icon"> 
         <span class="multiselect__element__short">{{ props.option.short }}</span>
         <span>{{ props.option.name }}</span>
       </span>
     </template>
-    <span slot="noResult">No elements found.</span>
+    <span slot="noResult">No elements found.</span>s
   </multiselect>
 </template>
 
@@ -43,18 +43,32 @@
     data () {
       return {
         value: [],
-        options: [
-          { icon: 'bitcoin.png', short: 'BTC', name: 'Bitcoin', link: '/exchange' },
-          { icon: 'ethereum.png', short: 'ETH', name: 'Ethereum', link: '/' },
-          { icon: 'monero.png', short: 'HMR', name: 'Monero', link: '/' },
-          { icon: 'ripple.png', short: 'XMR', name: 'Ripple', link: '/' },
-          { icon: 'bitcoin.png', short: 'BTC', name: 'Bitcoin', link: '/' }
-        ]
+        options: []
       }
+    },
+    created() {
+      this.fetchData('/data/exchanges.json');
     },
     methods: {
       nameWithLang ({ name }) {
         return `${name}`
+      },
+      fetchData (source) {
+        if (source) {
+          fetch(source)
+            .then(response => response.json())
+            .then(data => {
+              this.distribution(data);
+            })
+            .catch(error => console.error(error));
+        } else {
+          console.log('No source');
+        }
+      },
+      distribution (data) {
+        for (let key in data) {
+          this.options.push(data[key]);
+        }
       }
     }
   };
@@ -111,7 +125,10 @@
   .multiselect__option {
     display: inline-block;
     width: 100%;
-    padding: 10px 0 10px 24px;
+  }
+  .options__link {
+  padding: 10px 0 10px 24px;
+  display: block;
   }
   @media (max-width: 767.99px) {
     .multiselect__option {
@@ -134,6 +151,7 @@
     margin-right: 18px;
     color: var(--light-gray-color);
     width: 32px;
+    text-transform: uppercase;
   }
   .multiselect__element__icon {
     vertical-align: top;
