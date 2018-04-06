@@ -1,0 +1,22 @@
+{
+  "btc": { 
+    "icon": "bitcoin.png", 
+    "short": "btc", 
+    "name": "Bitcoin" 
+  },
+  "eth": { 
+    "icon": "ethereum.png", 
+    "short": "eth", 
+    "name": "Ethereum" 
+  },
+  "hmr": { 
+    "icon": "monero.png", 
+    "short": "hmr", 
+    "name": "Monero" 
+  },
+  "xmr": { 
+    "icon": "ripple.png", 
+    "short": "xmr", 
+    "name": "Ripple" 
+  }
+}

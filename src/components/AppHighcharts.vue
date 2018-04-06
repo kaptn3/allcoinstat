@@ -3,49 +3,56 @@
 </template>
 
 <script>
-  import Highcharts from 'highcharts/highstock';
+  import Highcharts from 'highcharts';
   import stockInit from 'highcharts/modules/stock';
+  stockInit(Highcharts);
 
   export default {
-    name: 'Highcharts',
+    name: 'AppHighcharts',
     props: {
-      options: {
-        type: Object,
-        default: null
+      typeChart: {
+        type: String,
+        default: 'chart'
       },
       source: {
         type: String,
         default: null
       },
-      typeChart: {
-        type: String,
-        default: 'chart'
+      options: {
+        type: Object,
+        required: true
+      }/*,
+      callback: Function*/
+    },
+    watch: {
+      options: {
+        handler (newValue, oldValue) {
+          this.chart.showLoading('Loading data from server...');
+          this.chart.update(newValue);
+          this.chart.hideLoading();
+        },
+        deep: true
       }
     },
-    data () {
-      return {
-        chart: null
-      }
-    },
-    mounted() {
-      if (this.typeChart === 'stockChart') {
-        this.chart = new Highcharts.stockChart(this.$el, this.options);
+    mounted () {
+      // Check wheather the chart configuration object is passed, as well as the constructor is valid
+      if (this.options && Highcharts[this.typeChart]) {
+        this.chart = new Highcharts[this.typeChart](this.$el, this.options)
+        if (this.source) {
+          this.addData();
+        }
       } else {
-        this.chart = new Highcharts.chart(this.$el, this.options);
-      }
-      if (this.source) {        
-        this.addData();
+        (!this.options) ? console.warn('The "options" parameter was not passed.') : console.warn(`'${this.typeChart}' constructor-type is incorrect. Sometimes this error is casued by the fact, that the corresponding module wasn't imported.`)
       }
     },
     beforeDestroy () {
-    // Destroy chart if exists
+      // Destroy chart if exists
       if (this.chart) {
         this.chart.destroy()
       }
     },
     methods: {
       addData() {
-        console.log('add data foo');
         this.chart.showLoading('Loading data from server...');
         if (this.source) {
           fetch(this.source)
@@ -60,5 +67,5 @@
         }
       }
     }
-  }
+  };
 </script>
