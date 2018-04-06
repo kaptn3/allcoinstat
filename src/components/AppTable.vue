@@ -7,7 +7,7 @@
           <tr><td>No data!</td></tr>
         </slot>
       </table>      
-      <AppButton v-if="showButton" class="btn btn-view">View more</AppButton>
+      <AppButton v-if="showButton" class="btn btn-view">{{ textButton }}</AppButton>
     </div>    
   </div>
 </template>
@@ -25,6 +25,10 @@
       showButton: {
         type: Boolean,
         default: false
+      },
+      textButton: {
+        type: String,
+        default: 'View more'
       }
     }
   }
