@@ -1,5 +1,5 @@
 <template>
-  <AppTable>
+  <AppTable :text-button="'View more'">
     <thead slot="table-header">
       <tr>
         <th 
