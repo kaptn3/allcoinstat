@@ -34,8 +34,10 @@ const router = new VueRouter({
       component: UiPage
     },
     {
-      path: '/exchange',
-      component: ExchangePage
+      path: '/exchange/:id',
+      component: ExchangePage,
+      name: 'exchange',
+      props: true,
     }
   ]
 });

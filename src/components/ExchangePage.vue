@@ -1,27 +1,39 @@
 <template>
   <div class="ExchangePage">
-    <AppHighcharts :options="options" :source="source" :type-chart="'stockChart'"/>
+    <h2>{{ data.name }}</h2>
+    <AppHighcharts :options="options" :id="nameId" :type-chart="'StockChart'" :source="source"/>
   </div>
 </template>
 
 <script>
   import AppHighcharts from './AppHighcharts';
-  import Highcharts from 'highcharts/highstock';
+  import Highcharts from 'highcharts';
 
   export default {
     name: 'ExchangePage',
     components: {
       AppHighcharts
     },
+    props: {
+      id: {
+        type: String,
+        default: null
+      }
+    },
     data () {
       return {
-        source: 'https://cdn.rawgit.com/highcharts/highcharts/057b672172ccc6c08fe7dbb27fc17ebca3f5b770/samples/data/new-intraday.json',
+        nameId: 'exchange',
+        metaInfo: {
+          title: ''
+        },
+        data: {},
+        source: '/data/exchanges/' + this.id + '.json',
         options: {
           title: {
-            text: 'AAPL stock price by minute'
+            text: 'Exchange rate over time'
           },
           subtitle: {
-             text: 'Using ordinal X axis'
+              text: 'Exchange rate'
           },
           xAxis: {
               gapGridLineWidth: 0
@@ -29,44 +41,86 @@
           rangeSelector: {
               buttons: [{
                   type: 'hour',
-                  count: 1,
-                  text: '1h'
+                  count: 6,
+                  text: '6h'
               }, {
                   type: 'day',
                   count: 1,
-                  text: '1D'
+                  text: '24h'
               }, {
+                  type: 'day',
+                  count: 2,
+                  text: '2d'
+              },{
+                  type: 'day',
+                  count: 4,
+                  text: '4d'
+              },{
+                  type: 'month',
+                  count: 1,
+                  text: '1m'
+              },{
                   type: 'all',
                   count: 1,
                   text: 'All'
               }],
-              selected: 1,
+              selected: 5,
               inputEnabled: false
           },
           series: [{
-            name: 'AAPL',
-            type: 'area',
-            data: [0],
-            gapSize: 5,
-            tooltip: {
-              valueDecimals: 2
-            },
-            fillColor: {
-              linearGradient: {
-                x1: 0,
-                y1: 0,
-                x2: 0,
-                y2: 1
+              name: this.id,
+              type: 'area',
+              data: [0],
+              gapSize: 5,
+              tooltip: {
+                  valueDecimals: 2
               },
-              stops: [
-                [0, Highcharts.getOptions().colors[0]],
-                [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
-              ]
-            },
-            threshold: null
+              fillColor: {
+                  linearGradient: {
+                      x1: 0,
+                      y1: 0,
+                      x2: 0,
+                      y2: 1
+                  },
+                  stops: [
+                      [0, Highcharts.getOptions().colors[0]],
+                      [1, Highcharts.Color(Highcharts.getOptions().colors[0]).setOpacity(0).get('rgba')]
+                  ]
+              },
+              threshold: null
           }]
         }
       }
+    },
+    watch: {
+      '$route'() {
+        this.fetchData('/data/exchanges.json');
+      }
+    },
+    created() {
+      this.fetchData('/data/exchanges.json');
+    },
+    mounted() {
+      console.log(this.id);
+    },
+    methods: {
+      fetchData (source) {
+        if (source) {
+          fetch(source)
+            .then(response => response.json())
+            .then(data => {
+              this.distribution(data);
+            })
+            .catch(error => console.error(error));
+        } else {
+          console.log('No source');
+        }
+      },
+      distribution (data) {
+        this.data = data[this.id];
+        this.metaInfo.title = this.data.name;
+        console.log(this.metaInfo);
+      }
     }
-  }
+  };
 </script>
