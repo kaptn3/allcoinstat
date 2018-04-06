@@ -8,19 +8,19 @@
       </div>
       <div class="block-info">
         <span class="block-info__head">Website</span>
-        <a class="block-info__value" href="//allcoinstat.com">https://allcoinstat.com</a>
+        <a :href="data.site" class="block-info__value">{{ data.site }}</a>
       </div>
       <div class="block-info">
         <span class="block-info__head">Twitter</span>
-        <a class="block-info__value" href="//allcoinstat.com">@Twitter</a>
+        <a :href="'//twitter.com/' + data.twitter" class="block-info__value">@{{ data.twitter }}</a>
       </div>
       <div class="block-info">
         <span class="block-info__head">Country</span>
-        <span class="block-info__value">USA</span>
+        <span class="block-info__value">{{ data.country }}</span>
       </div>
       <div class="block-info">
         <span class="block-info__head">Tags</span>
-        <AppTags :tags="tags"/>
+        <AppTags :tags="data.tags"/>
       </div>
     </div>
     <div :id="nameId" class="chart" />
@@ -61,7 +61,7 @@
         chart: null,
         nameId: 'exchange',
         metaInfo: {
-          title: 'title'
+          title: 'Exchange'
         },
         data: {},
         source: '/data/exchanges/' + this.id + '.json',
@@ -97,7 +97,6 @@
       },
       distribution (data) {
         this.data = data[this.id];
-        //this.source = '/data/exchanges/' + this.id + '.json';
       },
       destroyChart () {
         if (this.chart) {
@@ -109,7 +108,6 @@
           fetch(source)
             .then(response => response.json())
             .then(data => {
-              console.log(source);
               this.chart = new Highcharts.StockChart(this.nameId, {
                 chart: {
                   borderColor: 'var(--light-color)',
@@ -167,7 +165,7 @@
                   y: 30
                 },
                 series: [{
-                  name: 'dfd',
+                  name: this.data.name,
                   type: 'area',
                   data: data,
                   gapSize: 5,
@@ -225,10 +223,13 @@
     display: block;
   }
   .block-info__head {
-    padding-bottom: 4px;
+    padding-bottom: 7px;
     color: #b1b1b1;
   }
   .block-info__value {
-    font-size: calc((20 / 16) * 1rem)
+    font-size: calc((20 / 16) * 1rem);
+  }
+  a.block-info__value {
+    color: var(--blue-color);
   }
 </style>

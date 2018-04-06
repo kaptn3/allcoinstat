@@ -1,6 +1,6 @@
 <template>
   <div class="AppTags">
-    <a v-for="(value, key) in tags" :key="key" class="tag" href="value.link">#{{ key }}</a>
+    <router-link v-for="(value, key) in tags" :key="key" :to="value.link" class="tag">#{{ key }}</router-link>
   </div>
 </template>
 

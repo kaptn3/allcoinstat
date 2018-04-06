@@ -2,21 +2,65 @@
   "btc": { 
     "icon": "bitcoin.png", 
     "short": "btc", 
-    "name": "Bitcoin" 
+    "name": "Bitcoin",
+    "site": "https://bitcoin.com",
+    "twitter": "bitcoin",
+    "country": "USA",
+    "tags": {
+      "tag": {
+        "link": "/"
+      },
+      "nice": {
+        "link": "/"
+      }
+    }
   },
   "eth": { 
     "icon": "ethereum.png", 
     "short": "eth", 
-    "name": "Ethereum" 
+    "name": "Ethereum",
+    "site": "https://eth.com",
+    "twitter": "eth",
+    "country": "USA",
+    "tags": {
+      "tag": {
+        "link": "/"
+      },
+      "nice": {
+        "link": "/"
+      }
+    }
   },
   "hmr": { 
     "icon": "monero.png", 
     "short": "hmr", 
-    "name": "Monero" 
+    "name": "Monero",
+    "site": "https://monero.com",
+    "twitter": "monero",
+    "country": "USA",
+    "tags": {
+      "tag": {
+        "link": "/"
+      },
+      "nice": {
+        "link": "/"
+      }
+    }
   },
   "xmr": { 
     "icon": "ripple.png", 
     "short": "xmr", 
-    "name": "Ripple" 
+    "name": "Ripple",
+    "site": "https://ripple.com",
+    "twitter": "ripple",
+    "country": "USA",
+    "tags": {
+      "tag": {
+        "link": "/"
+      },
+      "nice": {
+        "link": "/"
+      }
+    }
   }
 }
