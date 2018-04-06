@@ -94,7 +94,7 @@
         <h3 slot="header">Choose coin and add to the watchlist</h3>
         <div slot="main" class="modal__main">        
           <InputCrypto class="modal__main__input"/>
-          <AppButton class="btn btn__add-coin" @click="success">+ Add coin</AppButton>
+          <AppButton class="btn btn__add-coin" @click="success"><span class="btn-text">+ Add coin</span></AppButton>
         </div>
       </ModalsTemplate>
     </transition>
@@ -128,8 +128,12 @@
     methods: {
       success () {
         let button = document.querySelector('.btn__add-coin');
+        document.querySelector('.btn-text').remove();
         button.style.background = 'var(--green-color)';
-        button.innerHTML = '&#10004;';
+        let tick = document.createElement('img');
+        tick.src = '/assets/ui-img/tick.svg';
+        tick.style.height = '60%';
+        button.appendChild(tick);
       }
     }
   };
