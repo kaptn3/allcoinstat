@@ -1,15 +1,44 @@
 <template>
   <div class="ExchangePage">
     <h2>{{ data.name }}</h2>
+    <div class="blocks-info row">
+      <div class="block-info">
+        <span class="block-info__head">Vol 24</span>
+        <span class="block-info__value">$ 2222</span>
+      </div>
+      <div class="block-info">
+        <span class="block-info__head">Website</span>
+        <a class="block-info__value" href="//allcoinstat.com">https://allcoinstat.com</a>
+      </div>
+      <div class="block-info">
+        <span class="block-info__head">Twitter</span>
+        <a class="block-info__value" href="//allcoinstat.com">@Twitter</a>
+      </div>
+      <div class="block-info">
+        <span class="block-info__head">Country</span>
+        <span class="block-info__value">USA</span>
+      </div>
+      <div class="block-info">
+        <span class="block-info__head">Tags</span>
+        <AppTags :tags="tags"/>
+      </div>
+    </div>
     <div :id="nameId" class="chart" />
+    <TableExchange/><!-- таблица только для примера, без данных -->
   </div>
 </template>
 
 <script>
   import Highcharts from 'highcharts';
+  import TableExchange from './TableExchange';
+  import AppTags from './AppTags';
 
   export default {
     name: 'ExchangePage',
+    components: {
+      TableExchange,
+      AppTags
+    },
     props: {
       id: {
         type: String,
@@ -18,6 +47,17 @@
     },
     data () {
       return {
+        tags: {
+          tag: {
+            link: '/'
+          },
+          longtag: {
+            link: '/'
+          },
+          longtags: {
+            link: '/'
+          }
+        },
         chart: null,
         nameId: 'exchange',
         metaInfo: {
@@ -119,6 +159,9 @@
                     text: 'All'
                   }],
                   selected: 1,
+                  buttonTheme: {
+                    padding: 12
+                  },
                   inputEnabled: false,
                   verticalAlign: 'bottom',
                   y: 30
@@ -165,5 +208,27 @@
   }
   .highcharts-button {
     padding: 20px;
+  }
+  .chart {
+    padding-bottom: 120px;
+  }
+  .blocks-info {
+    margin-right: -30px;
+    margin-left: -30px;
+    padding-bottom: 50px;
+  }
+  .block-info {
+    padding: 15px 30px;
+  }
+  .block-info__head,
+  .block-info__value {
+    display: block;
+  }
+  .block-info__head {
+    padding-bottom: 4px;
+    color: #b1b1b1;
+  }
+  .block-info__value {
+    font-size: calc((20 / 16) * 1rem)
   }
 </style>

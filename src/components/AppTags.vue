@@ -1,25 +1,16 @@
 <template>
   <div class="AppTags">
-    <a v-for="(value, key) in tags" :key="key" class="tag" href="value.link"># {{ key }}</a>
+    <a v-for="(value, key) in tags" :key="key" class="tag" href="value.link">#{{ key }}</a>
   </div>
 </template>
 
 <script>
   export default {
     name: 'AppTags',
-    data () {
-      return {
-        tags: {
-          tag: {
-            link: '/'
-          },
-          longtag: {
-            link: '/'
-          },
-          longtags: {
-            link: '/'
-          }
-        }
+    props: {
+      tags: {
+        type: Object,
+        default: null
       }
     }
   };
@@ -35,6 +26,7 @@
     color: var(--blue-color);
     border: 1px solid var(--blue-color);
     display: inline-block;
+    margin-right: 10px;
   }
   .tag:hover,
   .tag:focus {
