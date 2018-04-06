@@ -14,7 +14,7 @@
         <span class="multiselect__element__short">{{ props.option.short }}</span>
         <span>{{ props.option.name }}</span>
       </router-link>
-      <span v-else>
+      <span v-else class="options__link">
         <img 
           :src="'//allcoinstat.com/img/icons/16x16/' + props.option.icon"
           class="multiselect__element__icon"> 
@@ -127,8 +127,8 @@
     width: 100%;
   }
   .options__link {
-  padding: 10px 0 10px 24px;
-  display: block;
+    padding: 10px 0 10px 24px;
+    display: block;
   }
   @media (max-width: 767.99px) {
     .multiselect__option {
