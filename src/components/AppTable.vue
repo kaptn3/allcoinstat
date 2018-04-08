@@ -7,8 +7,8 @@
           <tr><td>No data!</td></tr>
         </slot>
       </table>      
-      <AppButton v-if="textButton" class="btn btn-view">{{ textButton }}</AppButton>
-    </div>    
+    </div> 
+    <AppButton v-if="textButton" class="btn btn-view">{{ textButton }}</AppButton>
   </div>
 </template>
 
@@ -35,6 +35,11 @@
 </script>
 
 <style scoped>
+.table-main {
+  overflow-x: auto;
+  margin-left: 11px;
+  width: 100%;
+}
 table {
   width: 100%;
   border-collapse: collapse;
@@ -79,6 +84,14 @@ td.price {
   padding-left: 10px;
   padding-right: 10px;
 }
+.fix-mobile {
+  position: absolute;
+  left: 0;
+  top: auto;
+  background: #fff;
+  border-top: 1px solid var(--border-gray);
+  margin-top: -1px;
+}
 .icon > img {
   vertical-align: top;
 }
@@ -94,6 +107,8 @@ tbody tr:hover {
   color: var(--red-color);
 }
 .AppTable {
+  width: 100%;
+  position: relative;
   margin-bottom: 30px;
 }
 .table-main-row-td.p-1h,
