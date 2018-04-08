@@ -38,7 +38,7 @@
         <tr 
           v-for="(value, key) in tableData.data"
           :key="key">
-          <td class="icon"><img :src="'//allcoinstat.com/img/icons/16x16/' + key.toLowerCase() + '.png'"></td>
+          <td class="icon fix-mobile"><img :src="'//allcoinstat.com/img/icons/16x16/' + key.toLowerCase() + '.png'"></td>
           <td class="name"><router-link :to="{ name: 'exchange', params: { id: key.toLowerCase() } }" class="link">{{ key }}</router-link></td>
 
           <td v-for="(value, key) in value" :key="key" :class="key">{{ value }}</td> 
@@ -169,5 +169,26 @@
   }
   .currency__exchanges {
     margin-top: 30px;
+  }
+  @media (max-width: 767.99px) {
+    .currency__data {
+      flex-wrap: wrap;
+    }
+  }
+  @media (max-width: 991.99px) {
+    .currency__top {
+      flex-direction: column;
+    }
+    .currency__data {
+      justify-content: center;
+      padding-top: 46px;
+      flex-basis: auto;
+    }
+    .currency__data span {
+      padding-bottom: 12px;
+    }
+    .btn {
+      margin-bottom: 10px;
+    }
   }
 </style>
