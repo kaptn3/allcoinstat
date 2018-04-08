@@ -1,0 +1,22 @@
+{
+  "name": "Ethereum",
+  "rank": 2,
+  "short": "eth",
+  "usd": [233, 33],
+  "btc": [14, 14],
+  "market": ["7,444", -55],
+  "volume": "44,333",
+  "dayHigh": "7,444",
+  "dayLow": "42,23",
+  "coin": "100,66",
+  "poloniex": {
+    "name": "Poloniex",
+    "pair": "BTC/USD",
+    "pricePair": 14,
+    "priceUsd": "7,444",
+    "dayHigh": "44,333",
+    "dayLow": "7,444",
+    "volume": "42,23",
+    "volumePerc": 44
+  }
+}

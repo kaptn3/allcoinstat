@@ -64,6 +64,9 @@ th {
 td.price {
   color: var(--blue-color);
 }
+.name {
+  font-weight: bold;
+}
 .name,
 .currency {
   text-align: left;
