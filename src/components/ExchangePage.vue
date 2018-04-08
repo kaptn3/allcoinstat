@@ -10,7 +10,7 @@
         <span class="block-info__head">Website</span>
         <a :href="data.site" class="block-info__value">{{ data.site }}</a>
         <AppTooltip>
-          <a slot="link" class="tooltip-icon"><img src="/img/info.svg"></a>
+          <a slot="link" class="tooltip-icon"><img src="/assets/ui-img/info.svg"></a>
           <div slot="content" class="tooltip-help">Volume is arguably the most important metric for a cryptocurrency, because of the amount of ways it can be broken down.</div>
         </AppTooltip>
       </div>
@@ -28,7 +28,7 @@
       </div>
     </div>
     <div :id="nameId" class="chart" />
-    <TableExchange/><!-- таблица только для примера, без данных -->
+    <TableExchange :exchange="id"/><!-- таблица только для примера, без данных -->
   </div>
 </template>
 
@@ -49,6 +49,10 @@
       id: {
         type: String,
         default: null
+      },
+      currency: {
+        type: String,
+        default: 'btc'
       }
     },
     data () {
@@ -70,19 +74,20 @@
           title: 'Exchange'
         },
         data: {},
-        source: '/data/exchanges/' + this.id + '.json',
+        source: '/data/exchanges/'+ this.id + '/' + this.currency+ '.json',
       }
     },
     watch: {
       '$route'() {
         this.fetchData('/data/exchanges.json');
-        this.source = '/data/exchanges/' + this.id + '.json';
+        this.source = '/data/exchanges/'+ this.id + '/' + this.currency+ '.json';
         this.initChart(this.source);
       }
     },
     created() {
       this.fetchData('/data/exchanges.json');
       this.initChart(this.source);
+       console.log(this.source);
     },
     beforeDestroy () {
       // Destroy chart if exists

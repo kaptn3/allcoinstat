@@ -13,15 +13,13 @@
         v-for="(value, key) in tableData.data"
         :key="key">
         <td class="num">{{ key + 1 }}</td>
-        <td class="icon"><img :src="value.icon"></td>
-        <td class="name">{{ value.name }}</td>
-        <td class="market">{{ value.market }}</td>
-        <td class="price">{{ value.price }}</td>
+        <td class="icon"><img :src="'//allcoinstat.com/img/icons/16x16/' + value.name.toLowerCase() + '.png'"></td>
+        <td class="market"><router-link :to="'/exchange/' + exchange + '/' + value.short" class="link">{{ value.name }}</router-link></td>
+        <td class="pair">{{ value.pair }}</td>
+        <td class="priceBtc">{{ value.priceBtc }}</td>
         <td class="volume">{{ value.volume }}</td>
-        <td :class="colorValue(value.hour)" class="hour">{{ value.hour }}</td>
-        <td :class="colorValue(value.day)" class="day">{{ value.day }}</td>
-        <td :class="colorValue(value.seven_days)" class="seven_days">{{ value.seven_days }}</td>
-        <td class="sale">buy</td>          
+        <td class="calcPrice">{{ value.calcPrice }}</td>
+        <td class="calc24">{{ value.calc24 }}</td>          
       </tr>
     </tbody>
   </AppTable>
@@ -31,43 +29,51 @@
   import AppTable from './AppTable';
 
   export default {
-    name: 'TableSale',
+    name: 'TableExchange',
     components: {
       AppTable
+    },
+    props: {
+      exchange: {
+        type: String,
+        default: null
+      }
     },
     data () {
       return {
         tableData: {
-          data: [
-            { icon: '/img/bitcoin.png', name: 'Titcoin', market: '191,023,476,496.00', price: '11 301,10', volume: '6,250,120,000.00', hour: -0.2, day: -1.46, seven_days: 6.39 },
-            { icon: '/img/monero.png', name: 'Litcoin', market: '181,023,476,496.00', price: '1 301,10', volume: '6,250,120,000.00', hour: -0.2, day: -1.46, seven_days: 3.39 },
-            { icon: '/img/ripple.png', name: 'Bitcoin', market: '191,023,476,496.00', price: '11 301,10', volume: '6,250,120,000.00', hour: -0.2, day: -1.46, seven_days: 6.39 },
-            { icon: '/img/ethereum.png', name: 'Litcoin', market: '181,023,476,496.00', price: '1 301,10', volume: '6,250,120,000.00', hour: -0.2, day: -1.46, seven_days: 3.39 },
-            { icon: '', name: 'Bitcoin', market: '191,023,476,496.00', price: '11 301,10', volume: '6,250,120,000.00', hour: -0.2, day: -1.46, seven_days: 6.39 },
-            { icon: '', name: 'Litcoin', market: '181,023,476,496.00', price: '1 301,10', volume: '6,250,120,000.00', hour: -0.2, day: -1.46, seven_days: 3.39 }
-          ],        
+          data: null,   
           header: {
             num: '№', 
-            icon: ' ', 
-            name: 'Name', 
-            market: 'Market Cap',
-            price: 'Price',
-            volume: 'Volume (24h)',
-            hour: '% 1h',
-            day: '% 24h',
-            seven_days: '% 7d',
-            sale: 'Sale'
+            icon: ' ',
+            market: 'Market',
+            pair: 'Pair',
+            priceBtc: 'Price BTC',
+            volume: '24h volume BTC',
+            calcPrice: 'Calc Price',
+            calc24: 'Calc 24h volume'
           }
         }
       }
     },
+    created () {
+      this.fetchData('/data/exchanges/tableData.json');
+    },
     methods: {
-      colorValue (value) {
-        if (value > 0) {
-          return 'price_plus'
+      fetchData (source) {
+        if (source) {
+          fetch(source)
+            .then(response => response.json())
+            .then(data => {
+              this.distribution(data);
+            })
+            .catch(error => console.error(error));
         } else {
-          return 'price_minus'
+          console.log('No source');
         }
+      },
+      distribution (data) {
+        this.tableData.data = data;
       }
     }
   };

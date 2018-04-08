@@ -9,6 +9,7 @@ import App from './App.vue';
 import UiPage from './components/UiPage.vue';
 import MainPage from './components/MainPage.vue';
 import ExchangePage from './components/ExchangePage.vue';
+import CurrencyPage from './components/CurrencyPage.vue';
 import ExchangesPage from './components/ExchangesPage.vue';
 import WatchList from './components/WatchList.vue';
 
@@ -34,7 +35,13 @@ const router = new VueRouter({
       component: UiPage
     },
     {
-      path: '/exchange/:id',
+      path: '/currency/:id',
+      component: CurrencyPage,
+      name: "currency",
+      props: true
+    },
+    {
+      path: '/exchange/:id/:currency?',
       component: ExchangePage,
       name: 'exchange',
       props: true,

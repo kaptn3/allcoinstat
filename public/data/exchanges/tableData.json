@@ -1,0 +1,22 @@
+[
+  { 
+    "name": "Bitcoin", 
+    "short": "btc",
+    "market": "191,023,476,496.00", 
+    "pair": "XVG/BTC", 
+    "priceBtc": "434,333,22", 
+    "volume": "6,250,120,000.00", 
+    "calcPrice": "0,333,32",
+    "calc24": "4343,434,33"
+  },
+  { 
+    "name": "Ethereum", 
+    "short": "eth",
+    "market": "191,476,496.00", 
+    "pair": "XVG/USD", 
+    "priceBtc": "434,333", 
+    "volume": "6,250,120,000.00", 
+    "calcPrice": "0,333,32",
+    "calc24": "4343,33"
+  }
+]
