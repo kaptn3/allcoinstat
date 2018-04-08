@@ -24,7 +24,7 @@
       </div>
       <div class="block-info">
         <span class="block-info__head">Tags</span>
-        <AppTags :tags="data.tags"/>
+        <AppTags :tags="data.tags" class="block-info__tags"/>
       </div>
     </div>
     <div :id="nameId" class="chart" />
@@ -250,5 +250,23 @@
   }
   .tooltip-help {
     width: 300px;
+  }
+  @media (max-width: 767.99px) {
+    .blocks-info {
+      flex-direction: column;
+    }
+    .block-info {
+      width: 100%;
+    }
+    .block-info__head {
+      width: 25%;
+      display: inline-block;
+    }
+    .block-info__tags {
+      display: inline-block;
+    }
+    .tooltip-help {
+      width: auto;
+    }
   }
 </style>
