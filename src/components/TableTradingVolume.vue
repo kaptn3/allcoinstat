@@ -15,7 +15,7 @@
           v-for="(value, key) in data"
           :key="key">
           <td v-if="typeData === 'exchange'" class="name">
-            <router-link :to="'/exchange/' + value.name.toLowerCase() + '/btc'" class="link">{{ value.name }}</router-link>            
+            <router-link :to="'/exchange/' + value.name.toLowerCase()" class="link">{{ value.name }}</router-link>            
           </td>
           <td v-if="typeData === 'currency'" class="name">{{ value.name }}</td>
           <td class="volume">$ {{ value.volume }}</td>
