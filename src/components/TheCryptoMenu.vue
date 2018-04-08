@@ -2,7 +2,7 @@
   <div class="crypto-menu">
     <nav class="crypto-menu__navbar">
       <ul>
-        <li v-for="(value, key) in cryptoMenu" :key="value" class="crypto-menu__item"><router-link :to="{ name: 'currency', params: { menu: value.link } }">{{ key }}</router-link></li>
+        <li v-for="(value, key) in cryptoMenu" :key="key" class="crypto-menu__item"><router-link :to="{ name: 'currency', params: { menu: value.link } }">{{ key }}</router-link></li>
       </ul>
     </nav>
   </div><!-- end top menu -->
