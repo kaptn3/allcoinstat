@@ -8,16 +8,12 @@
     track-by="name">
     <template slot="option" slot-scope="props">
       <router-link v-if="links" :to="{ name: 'currency', params: { id: props.option.short } }" class="options__link">
-        <img 
-          :src="'//allcoinstat.com/img/icons/16x16/' + props.option.name.toLowerCase() + '.png'"
-          class="multiselect__element__icon"> 
+        <img :src="'//allcoinstat.com/img/icons/16x16/' + props.option.name.toLowerCase() + '.png'" class="multiselect__element__icon"> 
         <span class="multiselect__element__short">{{ props.option.short }}</span>
         <span>{{ props.option.name }}</span>
       </router-link>
       <span v-else class="options__link">
-        <img 
-          :src="'//allcoinstat.com/img/icons/16x16/' + props.option.name.toLowerCase()"
-          class="multiselect__element__icon"> 
+        <img :src="'//allcoinstat.com/img/icons/16x16/' + props.option.name.toLowerCase() + '.png'" class="multiselect__element__icon"> 
         <span class="multiselect__element__short">{{ props.option.short }}</span>
         <span>{{ props.option.name }}</span>
       </span>

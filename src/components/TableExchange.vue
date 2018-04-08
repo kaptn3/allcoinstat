@@ -14,7 +14,7 @@
         :key="key">
         <td class="num">{{ key + 1 }}</td>
         <td class="icon"><img :src="'//allcoinstat.com/img/icons/16x16/' + value.name.toLowerCase() + '.png'"></td>
-        <td class="market"><router-link :to="{ name: 'exchange', params: { id: exchange, currency: value.short } }" class="link">{{ value.name }}</router-link></td>
+        <td class="market"><router-link :to="{ name: 'exchange', params: { currency: value.short } }" class="link">{{ value.name }}</router-link></td>
         <td class="pair">{{ value.pair }}</td>
         <td class="priceBtc">{{ value.priceBtc }}</td>
         <td class="volume">{{ value.volume }}</td>
@@ -32,12 +32,6 @@
     name: 'TableExchange',
     components: {
       AppTable
-    },
-    props: {
-      exchange: {
-        type: String,
-        default: null
-      }
     },
     data () {
       return {

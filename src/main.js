@@ -35,7 +35,7 @@ const router = new VueRouter({
       component: UiPage
     },
     {
-      path: '/currency/:id?',
+      path: '/currency/:id/:menu?',
       component: CurrencyPage,
       name: "currency",
       props: true

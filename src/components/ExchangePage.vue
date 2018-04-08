@@ -28,7 +28,7 @@
       </div>
     </div>
     <div :id="nameId" class="chart" />
-    <TableExchange :exchange="id"/><!-- таблица только для примера, без данных -->
+    <TableExchange/><!-- таблица только для примера, без данных -->
   </div>
 </template>
 
