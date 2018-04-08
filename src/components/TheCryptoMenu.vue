@@ -1,7 +1,7 @@
 <template>
   <div class="crypto-menu">
     <nav class="crypto-menu__navbar">
-      <ul>
+      <ul class="crypto-menu__ul">
         <li v-for="(value, key) in cryptoMenu" :key="key" class="crypto-menu__item"><router-link :to="{ name: 'currency', params: { menu: value.link } }">{{ key }}</router-link></li>
       </ul>
     </nav>
@@ -46,6 +46,12 @@
     color: var(--light-gray-color);
     font-weight: 500;
     width: 100%;
+    overflow-y: auto;
+  }
+  .crypto-menu__ul {
+    flex-wrap: nowrap;
+  }
+  .crypto-menu__item {
     border-bottom: 2px solid var(--light-color);
   }
   .crypto-menu__item a {
