@@ -29,7 +29,7 @@
 
 <style>
   .main-content {
-    padding-top: 30px;
+    padding-top: 40px;
     padding-bottom: 30px;
   }
 </style>

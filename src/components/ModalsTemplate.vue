@@ -42,6 +42,7 @@
 .modal__container {
   width: 450px;
   margin: 0 auto;
+  margin-top: 30px;
   background-color: #fff;
   box-shadow: 0 2px 8px rgba(0, 0, 0, .33);
   transition: all .3s ease;
