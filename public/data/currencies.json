@@ -1,0 +1,18 @@
+{
+  "btc": {
+    "short": "btc", 
+    "name": "Bitcoin"
+  },
+  "eth": { 
+    "short": "eth", 
+    "name": "Ethereum"
+  },
+  "hmr": {
+    "short": "hmr", 
+    "name": "Monero"
+  },
+  "xmr": {
+    "short": "xmr", 
+    "name": "Ripple"
+  }
+}
