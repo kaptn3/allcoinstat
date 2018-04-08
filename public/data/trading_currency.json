@@ -1,0 +1,6 @@
+[
+  { "name": "USD", "y": 61.41, "volume": 55.555 },
+  { "name": "RUB", "y": 11.84, "volume": 55.777 },
+  { "name": "JPY", "y": 10.85, "volume": 55.1 },
+  { "name": "Other", "y": 4.67, "volume": 5 }
+]

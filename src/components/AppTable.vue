@@ -1,7 +1,7 @@
 <template>
   <div class="AppTable">
     <div class="table-main">
-      <table>
+      <table :data-table="nameTable">
         <slot name="table-header"/>
         <slot name="table-body">
           <tr><td>No data!</td></tr>
@@ -25,6 +25,10 @@
       textButton: {
         type: String,
         default: null
+      },
+      nameTable: {
+        type: String,
+        default: 'table'
       }
     }
   }

@@ -1,10 +1,8 @@
 {
-  "btc": { 
-    "icon": "bitcoin.png", 
-    "short": "btc", 
-    "name": "Bitcoin",
-    "site": "https://bitcoin.com",
-    "twitter": "bitcoin",
+  "poloniex": {
+    "name": "Poloniex",
+    "site": "https://poloniex.com",
+    "twitter": "Poloniex",
     "country": "USA",
     "tags": {
       "tag": {
@@ -15,12 +13,10 @@
       }
     }
   },
-  "eth": { 
-    "icon": "ethereum.png", 
-    "short": "eth", 
-    "name": "Ethereum",
-    "site": "https://eth.com",
-    "twitter": "eth",
+  "binance": {
+    "name": "Binance",
+    "site": "https://binance.com",
+    "twitter": "binance",
     "country": "USA",
     "tags": {
       "tag": {
@@ -31,28 +27,10 @@
       }
     }
   },
-  "hmr": { 
-    "icon": "monero.png", 
-    "short": "hmr", 
-    "name": "Monero",
-    "site": "https://monero.com",
-    "twitter": "monero",
-    "country": "USA",
-    "tags": {
-      "tag": {
-        "link": "/"
-      },
-      "nice": {
-        "link": "/"
-      }
-    }
-  },
-  "xmr": { 
-    "icon": "ripple.png", 
-    "short": "xmr", 
-    "name": "Ripple",
-    "site": "https://ripple.com",
-    "twitter": "ripple",
+  "hitbtc": {
+    "name": "HitBTC",
+    "site": "https://hitbtc.com",
+    "twitter": "hitbtc",
     "country": "USA",
     "tags": {
       "tag": {
