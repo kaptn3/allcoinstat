@@ -1,11 +1,24 @@
 <template>
-  <input class="AppInput">
+  <input class="AppInput" v-on="inputListeners">
 </template>
 
 <script>
   export default {
-    name: 'AppInput'
-  }
+    name: 'AppInput',
+    computed: {
+      inputListeners: function () {
+        var vm = this
+        return Object.assign({},
+          this.$listeners,
+          {
+            input: function (event) {
+              vm.$emit('input', event.target.value)
+            }
+          }
+        )
+      }
+    }
+  };
 </script>
 
 <style scoped>
@@ -15,7 +28,7 @@
   height: 50px;
   width: 100%;
   border-radius: 100px;
-  border: solid 2px #efefef;
+  border: solid 2px var(--light-color);
   font-size: 15px;
   transition: .3s all ease;
   color: var(--dark-gray-color);
@@ -54,5 +67,9 @@
 .form-comment:focus,
 .AppInput:focus {
   border-color: #80bdff;
+}
+.error,
+.error:focus {
+  border: solid 2px var(--red-color);
 }
 </style>
