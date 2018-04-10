@@ -18,7 +18,7 @@
         <li class="info-block__log">
           <ModalSign/>
         </li>
-        <Modals class="info-block__item__mobile-menu"/>
+        <ModalMobileMenu class="info-block__item__mobile-menu"/>
         <InputCrypto :links="true" class="info-block__search"/>
       </ul>
     </nav>
