@@ -92,4 +92,19 @@
     border-radius: 0;
   }
 }
+.modal__main {
+  display: flex;
+  flex-wrap: wrap;
+}
+.modal__main__input {
+  margin-right: 20px;
+  max-width: 100%;
+  flex-grow: 1;
+}
+@media (max-width: 767.99px) {
+  .modal__main__input {
+    margin-right: 0;
+    margin-bottom: 20px;
+  }
+}
 </style>
