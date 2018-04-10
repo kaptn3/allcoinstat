@@ -40,7 +40,8 @@ h6 {
   line-height: 1.2;
   font-weight: 500;
   letter-spacing: normal;
-  }
+  margin-top: 0;
+}
 h1 {
   margin-bottom: 1.5rem;
   font-size: calc((32 / 16) * 1rem);
@@ -98,4 +99,12 @@ nav > ul {
 }
 .open-modal {
   overflow: hidden;
+}
+.fade-enter-active,
+.fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter,
+.fade-leave-to {
+  opacity: 0;
 }
