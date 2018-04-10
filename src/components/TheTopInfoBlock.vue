@@ -16,9 +16,9 @@
           <a class="info-block__item__value" href="#">$150B</a>
         </li>
         <li class="info-block__log">
-          <Modals/>
+          <ModalSign/>
         </li>
-        <Modals name="mobileMenu" class="info-block__item__mobile-menu"/>
+        <Modals class="info-block__item__mobile-menu"/>
         <InputCrypto :links="true" class="info-block__search"/>
       </ul>
     </nav>
@@ -28,14 +28,16 @@
 <script>  
   import AppInput from './AppInput';
   import InputCrypto from './InputCrypto';
-  import Modals from './Modals';
+  import ModalSign from './ModalSign';
+  import ModalMobileMenu from './ModalMobileMenu';
 
   export default {
     name: 'InfoBlock',
     components: {
       AppInput,
-      Modals,
-      InputCrypto
+      ModalSign,
+      InputCrypto,
+      ModalMobileMenu
     }
   };
 </script>
