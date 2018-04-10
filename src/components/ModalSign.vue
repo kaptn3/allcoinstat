@@ -52,20 +52,25 @@
                 class="form-input" 
                 placeholder="Email address"
                 required/>
+              <span v-show="short" class="error-length">Password is too short (minimum is 6 characters)</span>
               <AppInput 
+                v-model.trim="password"
+                :class="{ error: isError }"
                 type="password" 
                 name="password" 
                 class="form-input" 
                 placeholder="Password"
-                required/>
+                required
+                @blur="checkLength"/>
               <AppInput 
+                v-model.trim="confirm"
+                :class="{ error: isError }"
                 type="password" 
                 name="password" 
                 class="form-input" 
-                placeholder="Password again"
-                required
-                @blur="checkPasswords"/>
-              <AppButton class="btn btn_light-blue btn__sign">Sign up</AppButton>
+                placeholder="Confirm Password"
+                required/>
+              <AppButton :disabled="!validation && confirm" class="btn btn_light-blue btn__sign">Sign Up</AppButton>
             </div>
           </form>
         </div>
@@ -87,7 +92,35 @@
       AppInput,
       AppButton
     },
-    mixins: [toggle]
+    mixins: [toggle],
+    data () {
+      return {
+        confirm: '',
+        password: '',
+        short: false
+      }
+    },
+    computed: {
+      validation () {
+        if ((this.confirm.length) > 5 && (this.password.length > 5)) {
+          return this.confirm === this.password;
+        }
+      },
+      isError () {
+        if (!this.confirm) {
+          return false;
+        } else {
+          return !this.validation;
+        }
+      }
+    },
+    methods: {
+      checkLength () {
+        if (this.password.length < 6) {
+          this.short = true;
+        }
+      }
+    }
   }
 </script>
 
@@ -158,5 +191,10 @@
     margin: 20px auto 0 auto;
     font-weight: bold;
     color: var(--blue-color);
+  }
+  .error-length {
+    color: var(--red-color);
+    font-size: calc((12 / 16) * 1rem);
+    padding-left: 24px;
   }
 </style>
