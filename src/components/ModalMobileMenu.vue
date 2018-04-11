@@ -61,7 +61,10 @@
   .Modals {
     width: auto;
   }
-  
-
-  
+  .header__logo {
+    text-align: center;
+  }
+  .header__logo > a {
+    display: inline-block;
+  }
 </style>

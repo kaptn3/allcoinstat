@@ -180,13 +180,6 @@
   .form-input {
     margin-bottom: 10px;
   }
-  
-  .header__logo {
-    text-align: center;
-  }
-  .header__logo > a {
-    display: inline-block;
-  }
   .modal__mobile-login {
     margin: 20px auto 0 auto;
     font-weight: bold;
