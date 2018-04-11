@@ -1,8 +1,8 @@
 <template>
   <div class="AppTooltip">
-    <span @click="toggleShow">
+    <a :class="linkClass" @click="toggleShow">
       <slot name="link">Open</slot>
-    </span>
+    </a>
     <transition name="fade">
       <div v-if="isShowing" class="tooltip-content">
         <slot name="content">
@@ -18,11 +18,20 @@
 
   export default {
     name: 'AppTooltip',
-    mixins: [toggle]
+    mixins: [toggle],
+    props: {
+      linkClass: {
+        type: String,
+        default: 'AppTooltip-link'
+      }
+    }
   };
 </script>
 
-<style>
+<style scoped>
+a {
+  display: inline-block;
+}
 .AppTooltip {
   position: relative;
   display: inline-flex;
