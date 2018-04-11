@@ -2,13 +2,18 @@
   <footer class="footer">   
     <div class="container">
       <nav class="footer-menu">
-        <ul>
-          <li class="footer-menu__copyright">&copy; 2018 AllCoinStat</li>
+        <span class="footer-menu__copyright">&copy; 2018 AllCoinStat</span>
+        <AppTooltip class="footer-menu-mobile">
+          <span slot="link"><img src="/assets/ui-img/more.svg"></span>
+          <ul slot="content" class="footer-menu-mobile__list">
+            <li v-for="(value, key) in footerMenu" :key="key" class="footer-menu__item"><router-link :to="value.link">{{ key }}</router-link></li>
+          </ul>
+        </AppTooltip>
+
+        <ul class="footer-menu__list">
           <li v-for="(value, key) in footerMenu" :key="key" class="footer-menu__item"><router-link :to="value.link">{{ key }}</router-link></li>
-          <li class="footer-menu__item">
-            <Language/>
-          </li>
         </ul>
+        <Language/>
       </nav>  
     </div>
   </footer>
@@ -16,11 +21,13 @@
 
 <script>
   import Language from './Language';
+  import AppTooltip from './AppTooltip';
 
   export default {
     name: 'TheFooter',
     components: {
-      Language
+      Language,
+      AppTooltip
     },
     data () {
       return {
@@ -47,9 +54,27 @@
   .footer-menu {
     padding: 40px 0;
     font-weight: 500;
+    display: flex;
+    align-items: center;
   }
   .footer-menu__copyright,
   .footer-menu__item {
     padding-right: 30px;
+  }
+  @media (max-width: 767.99px) {
+    .footer-menu {
+      justify-content: space-between;
+    }
+    .footer-menu__list {
+      display: none;
+    }
+  }
+  @media (min-width: 768px) {
+    .footer-menu-mobile {
+      display: none;
+    }
+  }
+  .footer-menu-mobile__list {
+    list-style: none;
   }
 </style>
