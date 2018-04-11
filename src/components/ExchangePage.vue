@@ -68,11 +68,9 @@
             link: '/'
           }
         },
+        title: 'Exchange',
         chart: null,
         nameId: 'exchange',
-        metaInfo: {
-          title: 'Exchange'
-        },
         data: {},
         source: '/data/exchanges/'+ this.id + '/' + this.currency+ '.json',
       }
@@ -87,7 +85,6 @@
     created() {
       this.fetchData('/data/exchanges.json');
       this.initChart(this.source);
-       console.log(this.source);
     },
     beforeDestroy () {
       // Destroy chart if exists
@@ -108,6 +105,7 @@
       },
       distribution (data) {
         this.data = data[this.id];
+        this.title = this.data.name;
       },
       destroyChart () {
         if (this.chart) {
@@ -207,6 +205,11 @@
           console.log('No source');
         }
       }
+    },    
+    metaInfo () {
+      return {
+        title: this.title
+      }
     },
   };
 </script>
@@ -243,8 +246,6 @@
   .tooltip-help__link {
     height: 22px;
     width: 22px;
-    display: inline-block;
-    vertical-align: bottom;
     margin-left: 12px;
     margin-right: 12px;
   }

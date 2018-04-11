@@ -71,6 +71,7 @@
     data () {
       return {
         data: null,
+        title: 'Currency',
         tableData: {
           header: {
             "icon": "",
@@ -115,7 +116,8 @@
       },
       distribution (data, source) {
         if (source === this.source[0]) {
-          this.data = data;
+          this.data = data;          
+          this.title = this.data.name;
         } else {
           this.tableData.data = data;
         }
@@ -127,7 +129,12 @@
           return 'red'
         }
       }
-    }
+    },    
+    metaInfo () {
+      return {
+        title: this.title
+      }
+    },
   };
 </script>
 
