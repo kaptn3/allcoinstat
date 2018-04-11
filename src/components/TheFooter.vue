@@ -14,6 +14,7 @@
           <li v-for="(value, key) in footerMenu" :key="key" class="footer-menu__item"><router-link :to="value.link">{{ key }}</router-link></li>
         </ul>
         <Language/>
+        <span class="last-updated">Last updated: Aug 28, 2017 6:50 PM UTC</span>
       </nav>  
     </div>
   </footer>
@@ -56,6 +57,7 @@
     font-weight: 500;
     display: flex;
     align-items: center;
+    flex-wrap: wrap;
   }
   .footer-menu__copyright,
   .footer-menu__item {
@@ -76,5 +78,12 @@
   }
   .footer-menu-mobile__list {
     list-style: none;
+  }
+  .last-updated {
+    padding-top: 18px;
+    font-size: calc((12 / 16) * 1rem);
+    color: var(--light-gray-color);
+    font-weight: 500;
+    margin: 0 auto;
   }
 </style>
