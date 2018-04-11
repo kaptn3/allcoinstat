@@ -9,8 +9,8 @@
       <div class="block-info">
         <span class="block-info__head">Website</span>
         <a :href="data.site" class="block-info__value">{{ data.site }}</a>
-        <AppTooltip :link-class="'tooltip-help__link'" class="tooltip-help">
-          <img slot="link" src="/assets/ui-img/info.svg">
+        <AppTooltip class="tooltip-help">
+          <span slot="link" class="tooltip-help__link"><img src="/assets/ui-img/info.svg"></span>
           <div slot="content" class="tooltip-help__content">Volume is arguably the most important metric for a cryptocurrency, because of the amount of ways it can be broken down.</div>
         </AppTooltip>
       </div>
@@ -214,7 +214,7 @@
   };
 </script>
 
-<style>
+<style scoped>
   .ExchangePage {
     margin-bottom: 30px;
   }
@@ -248,6 +248,8 @@
     width: 22px;
     margin-left: 12px;
     margin-right: 12px;
+    display: inline-block;
+    vertical-align: bottom;
   }
   .tooltip-help__content {
     width: 300px;

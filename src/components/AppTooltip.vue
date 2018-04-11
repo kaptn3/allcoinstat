@@ -1,6 +1,6 @@
 <template>
   <div class="AppTooltip">
-    <a :class="linkClass" @click="toggleShow">
+    <a @click="toggleShow">
       <slot name="link">Open</slot>
     </a>
     <transition name="fade">
@@ -18,13 +18,7 @@
 
   export default {
     name: 'AppTooltip',
-    mixins: [toggle],
-    props: {
-      linkClass: {
-        type: String,
-        default: 'AppTooltip-link'
-      }
-    }
+    mixins: [toggle]
   };
 </script>
 
