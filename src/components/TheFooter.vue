@@ -73,7 +73,9 @@
     }
     .footer-menu__list {
       display: none;
-    },
+    }
+  }
+  @media (max-width: 991.99px) {
     .last-updated {
       padding-top: 18px;
       margin: 0 auto;

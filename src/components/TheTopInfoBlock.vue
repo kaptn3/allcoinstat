@@ -3,7 +3,7 @@
     <nav class="info-block__navbar">
       <ul>
         <li class="info-block__logo"><router-link to="/"><img src="../assets/img/logo.svg"></router-link></li>
-        <ul class="col-sm-12 col-md row info-block__list-blocks">
+        <ul class="col-sm-12 col-lg row info-block__list-blocks">
           <li class="info-block__item col">
             <span class="info-block__item__title">Market cap</span>
             <a class="info-block__item__value" href="#">$150B</a>
