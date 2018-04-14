@@ -1,10 +1,10 @@
 <template>
-  <div v-on-clickaway="close" class="AppTooltip">
-    <a @click="open(idTooltip)">
+  <div v-on-clickaway="hide" class="AppTooltip">
+    <a @click="show(idTooltip)">
       <slot name="link">Open</slot>
     </a>
     <transition name="fade">
-      <div v-if="modalName" class="tooltip-content">
+      <div v-if="tooltip" class="tooltip-content">
         <slot name="content">
           Tooltip
         </slot>
@@ -35,8 +35,6 @@ a {
 }
 .AppTooltip {
   position: relative;
-  display: inline-flex;
-  justify-content: center;
 }
 .tooltip-content {
   position: absolute;

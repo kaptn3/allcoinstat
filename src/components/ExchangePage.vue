@@ -243,6 +243,10 @@
   a.block-info__value {
     color: var(--blue-color);
   }
+  .tooltip-help {
+    display: inline-flex;
+    justify-content: center;
+  }
   .tooltip-help__link {
     height: 22px;
     width: 22px;
