@@ -11,7 +11,9 @@
           <a href="/"><img src="../assets/img/logo.svg"></a> 
         </div> 
         <div slot="main" class="modal__main">
-          <TheTopMenu/>
+          <div class="modal__main__menu" @click="close">
+            <TheTopMenu/>
+          </div>
           <ModalSign class="modal__mobile-login"/>
         </div>
       </ModalsTemplate>
@@ -66,5 +68,8 @@
   }
   .header__logo > a {
     display: inline-block;
+  }
+  .modal__main__menu {
+    width: 100%;
   }
 </style>
