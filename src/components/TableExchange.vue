@@ -72,3 +72,9 @@
     }
   };
 </script>
+
+<style scoped>
+  .router-link-exact-active {
+    color: var(--blue-color);
+  }
+</style>
