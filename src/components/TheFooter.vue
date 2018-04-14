@@ -69,6 +69,10 @@
     }
     .footer-menu__list {
       display: none;
+    },
+    .last-updated {
+      padding-top: 18px;
+      margin: 0 auto;
     }
   }
   @media (min-width: 768px) {
@@ -80,10 +84,9 @@
     list-style: none;
   }
   .last-updated {
-    padding-top: 18px;
+    margin-left: auto;
     font-size: calc((12 / 16) * 1rem);
     color: var(--light-gray-color);
     font-weight: 500;
-    margin: 0 auto;
   }
 </style>
