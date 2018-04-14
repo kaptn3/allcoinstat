@@ -60,11 +60,7 @@
         this.button.success = false;
         this.button.color = 'blue';
       },
-      closeCoin () {
-        console.log('close');
-      },
       getValue (newValue) {
-        console.log(newValue);
         if (newValue === 'focus') {
           this.resetButton();
         } else {
