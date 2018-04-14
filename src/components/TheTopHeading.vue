@@ -15,9 +15,9 @@
     border-top: 2px solid var(--light-color);
     text-align: center;
     color: var(--black-color);
-    h1 {
-      margin: 30px;
-      font-weight: 500;
-    }
+  }
+  .top-header h1 {
+    margin: 30px;
+    font-weight: 500;
   }
 </style>
