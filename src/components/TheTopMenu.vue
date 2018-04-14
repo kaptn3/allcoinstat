@@ -66,6 +66,9 @@
         background-color: var(--light-color);
       }
     }
+    .router-link-exact-active {
+      background-color: var(--light-color);
+    }
   }
   .top-menu__item {
     position: relative;
@@ -79,15 +82,13 @@
     .top-menu {
       border: 2px solid var(--light-color);
     }
-    .top-menu__item {
-      &:hover::after {
-        background-color: var(--blue-color);
-        height: 4px;
-        width: 100%;
-        content: "";
-        position: absolute;
-        margin: -2px auto;
-      }
+    .top-menu__item:hover::after {
+      background-color: var(--blue-color);
+      height: 4px;
+      width: 100%;
+      content: "";
+      position: absolute;
+      margin: -2px auto;
     }
     .top-menu__item a {
       &:hover,
@@ -95,6 +96,9 @@
       &:active {
         color: var(--black-color);
       }
+    }
+    .router-link-exact-active {
+      color: var(--black-color);
     }
   }
 </style>
