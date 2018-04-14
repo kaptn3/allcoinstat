@@ -42,5 +42,8 @@
     .main-content__top-content {
       flex-direction: column;
     }
+    .add-coin {
+      width: 100%;
+    }
   }
 </style>
