@@ -60,11 +60,11 @@
 }  
 .modal__close {
   position: absolute;
-  right: 20px;
-  top: 20px;
+  right: 25px;
+  top: 25px;
   display: block;
-  height: 15px;
-  width: 15px;
+  height: 20px;
+  width: 20px;
   cursor: pointer;
 }
 @media (max-height: 600px) {
