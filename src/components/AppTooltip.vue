@@ -1,5 +1,5 @@
 <template>
-  <div class="AppTooltip">
+  <div v-on-clickaway="toggleShow" class="AppTooltip">
     <a @click="toggleShow">
       <slot name="link">Open</slot>
     </a>
@@ -15,10 +15,16 @@
 
 <script>
   import { toggle } from './mixins/toggle';
+  import { mixin as clickaway } from 'vue-clickaway';
 
   export default {
     name: 'AppTooltip',
-    mixins: [toggle]
+    mixins: [ toggle, clickaway ],
+    methods: {
+      away: function() {
+        console.log('clicked away');
+      },
+    },
   };
 </script>
 
