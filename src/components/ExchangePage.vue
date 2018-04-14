@@ -225,12 +225,12 @@
     padding-bottom: 120px;
   }
   .blocks-info {
-    margin-right: -30px;
-    margin-left: -30px;
+    margin-right: -15px;
+    margin-left: -15px;
     padding-bottom: 50px;
   }
   .block-info {
-    padding: 15px 30px;
+    padding: 15px;
   }
   .block-info__head {
     display: block;
