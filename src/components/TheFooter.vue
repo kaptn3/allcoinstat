@@ -3,10 +3,10 @@
     <div class="container">
       <nav class="footer-menu">
         <span class="footer-menu__copyright">&copy; 2018 AllCoinStat</span>
-        <AppTooltip class="footer-menu-mobile">
+        <AppTooltip :id-tooltip="'footer-menu'" class="footer-menu-mobile">
           <span slot="link"><img src="/assets/ui-img/more.svg"></span>
           <ul slot="content" class="footer-menu-mobile__list">
-            <li v-for="(value, key) in footerMenu" :key="key" class="footer-menu__item"><router-link :to="value.link">{{ key }}</router-link></li>
+            <li v-for="(value, key) in footerMenu" :key="key" class="footer-menu-mobile__item"><router-link :to="value.link">{{ key }}</router-link></li>
           </ul>
         </AppTooltip>
 
@@ -67,6 +67,10 @@
     .footer-menu {
       justify-content: space-between;
     }
+    .footer-menu-mobile {
+      display: inline-flex;
+      justify-content: center;
+    }
     .footer-menu__list {
       display: none;
     },
@@ -82,11 +86,18 @@
   }
   .footer-menu-mobile__list {
     list-style: none;
+    padding-left: 0;
+    margin: 0;
+    width: 150px;
+    text-align: center;
   }
   .last-updated {
     margin-left: auto;
     font-size: calc((12 / 16) * 1rem);
     color: var(--light-gray-color);
     font-weight: 500;
+  }
+  .footer-menu-mobile__item {
+    padding: 12px 14px;
   }
 </style>
