@@ -5,9 +5,12 @@
     :custom-label="nameWithLang" 
     placeholder="Search" 
     label="name" 
-    track-by="name">
+    track-by="name"
+    @open="check('focus')"
+    @input="check"
+    @close="check('close')">
     <template slot="option" slot-scope="props">
-      <router-link v-if="links" :to="{ name: 'currency', params: { id: props.option.short } }" class="options__link">
+      <router-link v-if="links" :to="{ name: 'overview', params: { id: props.option.short } }" class="options__link">
         <img :src="'//allcoinstat.com/img/icons/16x16/' + props.option.name.toLowerCase() + '.png'" class="multiselect__element__icon"> 
         <span class="multiselect__element__short">{{ props.option.short }}</span>
         <span>{{ props.option.name }}</span>
@@ -64,6 +67,13 @@
       distribution (data) {
         for (let key in data) {
           this.options.push(data[key]);
+        }
+      },
+      check (value) {
+        if (value) {
+          this.$emit('get', value);
+        } else {
+          this.$emit('get', this.value);
         }
       }
     }
