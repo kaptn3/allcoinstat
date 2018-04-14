@@ -1,6 +1,6 @@
 <template>
-  <AppTooltip class="Language">
-    <span slot="link">Change language</span>
+  <AppTooltip :id-tooltip="'language'" class="Language">
+    <span slot="link">Change language</span> 
     <ul slot="content" class="lang-list">
       <li 
         v-for="(value, key) in languages" 

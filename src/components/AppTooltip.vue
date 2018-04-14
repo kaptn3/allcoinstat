@@ -1,10 +1,10 @@
 <template>
-  <div v-on-clickaway="toggleShow" class="AppTooltip">
-    <a @click="toggleShow">
+  <div v-on-clickaway="close" class="AppTooltip">
+    <a @click="open(idTooltip)">
       <slot name="link">Open</slot>
     </a>
     <transition name="fade">
-      <div v-if="isShowing" class="tooltip-content">
+      <div v-if="modalName" class="tooltip-content">
         <slot name="content">
           Tooltip
         </slot>
@@ -20,11 +20,12 @@
   export default {
     name: 'AppTooltip',
     mixins: [ toggle, clickaway ],
-    methods: {
-      away: function() {
-        console.log('clicked away');
-      },
-    },
+    props: {
+      idTooltip: {
+        type: String,
+        default: ''
+      }
+    }
   };
 </script>
 

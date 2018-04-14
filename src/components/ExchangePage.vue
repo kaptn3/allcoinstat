@@ -9,7 +9,7 @@
       <div class="block-info">
         <span class="block-info__head">Website</span>
         <a :href="data.site" class="block-info__value">{{ data.site }}</a>
-        <AppTooltip class="tooltip-help">
+        <AppTooltip :id-tooltip="'language'" class="tooltip-help">
           <span slot="link" class="tooltip-help__link"><img src="/assets/ui-img/info.svg"></span>
           <div slot="content" class="tooltip-help__content">Volume is arguably the most important metric for a cryptocurrency, because of the amount of ways it can be broken down.</div>
         </AppTooltip>
