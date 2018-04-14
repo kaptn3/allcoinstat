@@ -9,9 +9,12 @@ import App from './App.vue';
 import UiPage from './components/UiPage.vue';
 import MainPage from './components/MainPage.vue';
 import ExchangePage from './components/ExchangePage.vue';
-import CurrencyPage from './components/CurrencyPage.vue';
 import ExchangesPage from './components/ExchangesPage.vue';
 import WatchList from './components/WatchList.vue';
+
+import CurrencyPage from './components/CurrencyPage.vue';
+import CurrencyPageOverview from './components/CurrencyPageOverview.vue';
+import CurrencyPageExchanges from './components/CurrencyPageExchanges.vue';
 
 Vue.config.productionTip = false;
 
@@ -35,10 +38,21 @@ const router = new VueRouter({
       component: UiPage
     },
     {
-      path: '/currency/:id/:menu?',
+      path: '/currency/:id',
       component: CurrencyPage,
       name: "currency",
-      props: true
+      props: true,
+      children: [
+        {
+          name: 'overview',
+          path: 'overview',
+          component: CurrencyPageOverview
+        },
+        {
+          path: 'exchanges',
+          component: CurrencyPageExchanges
+        }
+      ]
     },
     {
       path: '/exchange/:id/:currency?',

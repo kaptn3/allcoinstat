@@ -2,7 +2,7 @@
   <div class="crypto-menu">
     <nav class="crypto-menu__navbar">
       <ul class="crypto-menu__ul">
-        <li v-for="(value, key) in cryptoMenu" :key="key" class="crypto-menu__item"><router-link :to="{ name: 'currency', params: { menu: value.link } }">{{ key }}</router-link></li>
+        <li v-for="(value, key) in cryptoMenu" :key="key" class="crypto-menu__item"><router-link :to="value.link">{{ key }}</router-link></li>
       </ul>
     </nav>
   </div><!-- end top menu -->
@@ -60,12 +60,13 @@
     margin-bottom: -2px;
     border: 2px solid transparent;
     border-radius: 7px 7px 0 0;
-    &:hover,
-    &:focus {
-      color: var(--black-color);
-      border: 2px solid var(--light-color);
-      border-bottom: 2px solid #fff;
-    }
+  }
+  .crypto-menu__item a:hover,
+  .crypto-menu__item a:focus,
+  a.router-link-exact-active {
+    color: var(--black-color);
+    border: 2px solid var(--light-color);
+    border-bottom: 2px solid #fff;
   }
 
 </style>
