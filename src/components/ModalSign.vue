@@ -118,6 +118,8 @@
       checkLength () {
         if (this.password.length < 6) {
           this.short = true;
+        } else {
+          this.short = false;
         }
       }
     }
