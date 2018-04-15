@@ -2,7 +2,7 @@
   <div v-if="data" class="CurrencyPage">
     <div class="currency__top row justify-content-between">
       <div class="currency__header">
-        <img :src="'//allcoinstat.com/img/icons/32x32/' + data.name.toLowerCase() + '.png'" class="multiselect__element__icon">
+        <img :src="data.icon" class="multiselect__element__icon">
         <h2>{{ data.name }} ({{ data.short.toUpperCase() }})</h2>
         <AppRank>{{ data.rank }}</AppRank>
       </div>

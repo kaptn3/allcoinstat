@@ -1,5 +1,6 @@
 {
   "name": "Bitcoin",
+  "icon": "//allcoinstat.com/img/icons/32x32/bitcoin.png",
   "rank": 1,
   "short": "btc",
   "usd": [233, 33],

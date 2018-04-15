@@ -1,20 +1,26 @@
 {
   "Kraken": {
-    "pair": "BTC/USD",
-    "price-pair": 11,
-    "price-usd": "7,444",
-    "day-high": "44,333",
-    "day-low": "7,444",
-    "volume": "42,23",
-    "volume-perc": 44
+    "icon": "//www.poloniex.com/favicon.ico?v=102014",
+    "data": {
+      "pair": "BTC/USD",
+      "price-pair": 11,
+      "price-usd": "7,444",
+      "day-high": "44,333",
+      "day-low": "7,444",
+      "volume": "42,23",
+      "volume-perc": 44
+    }
   },
   "Poloniex": {
-    "pair": "BTC/USD",
-    "price-pair": 14,
-    "price-usd": "7,444",
-    "day-high": "44,333",
-    "day-low": "7,444",
-    "volume": "42,23",
-    "volume-perc": 44
+    "icon": "//www.poloniex.com/favicon.ico?v=102014",
+    "data": {
+      "pair": "BTC/USD",
+      "price-pair": 14,
+      "price-usd": "7,444",
+      "day-high": "44,333",
+      "day-low": "7,444",
+      "volume": "42,23",
+      "volume-perc": 44
+    }
   }
 }

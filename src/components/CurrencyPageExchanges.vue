@@ -16,10 +16,10 @@
         <tr 
           v-for="(value, key) in tableData.data"
           :key="key">
-          <td class="icon fix-mobile"><img :src="'//allcoinstat.com/img/icons/16x16/' + key.toLowerCase() + '.png'"></td>
+          <td class="icon fix-mobile"><img :src="value.icon"></td>
           <td class="name"><router-link :to="{ name: 'exchange', params: { id: key.toLowerCase() } }" class="link">{{ key }}</router-link></td>
 
-          <td v-for="(value, key) in value" :key="key" :class="key">{{ value }}</td> 
+          <td v-for="(value, key) in value.data" :key="key" :class="key">{{ value }}</td> 
         </tr>
       </tbody>
     </AppTable>

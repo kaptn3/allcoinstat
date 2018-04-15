@@ -1,6 +1,7 @@
 [
   { 
     "name": "Bitcoin", 
+    "icon": "//allcoinstat.com/img/icons/16x16/bitcoin.png",
     "short": "btc",
     "market": "191,023,476,496.00", 
     "pair": "XVG/BTC", 
@@ -10,7 +11,8 @@
     "calc24": "4343,434,33"
   },
   { 
-    "name": "Ethereum", 
+    "name": "Ethereum",
+    "icon": "//allcoinstat.com/img/icons/16x16/ethereum.png",
     "short": "eth",
     "market": "191,476,496.00", 
     "pair": "XVG/USD", 
