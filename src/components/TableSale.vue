@@ -1,5 +1,5 @@
 <template>
-  <AppTable :text-button="'View more'">
+  <AppTable :text-button="'View more'" class="AppTable">
     <thead slot="table-header">
       <tr>
         <th 
@@ -72,3 +72,9 @@
     }
   };
 </script>
+
+<style scoped>
+  .AppTable {
+    overflow-x: auto;
+  }
+</style>
