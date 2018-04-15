@@ -10,8 +10,8 @@
         <div slot="main">
           <form>
             <div class="modal__main">
-              <AppButton class="btn btn_red btn__sign" type="button">Login with Google</AppButton>
-              <AppButton class="btn btn_blue btn__sign" type="button">Login with Facebook</AppButton>
+              <AppButton class="btn btn_red btn__sign" type="button" @click="auth">Login with Google</AppButton>
+              <AppButton class="btn btn_blue btn__sign" type="button" @click="auth">Login with Facebook</AppButton>
               <p class="modal__or">or</p>
               <AppInput 
                 type="email" 
@@ -43,8 +43,8 @@
         <div slot="main">
           <form class="sign-up__form">
             <div class="modal__main">
-              <AppButton class="btn btn_red btn__sign" type="button">Sign up with Google</AppButton>
-              <AppButton class="btn btn_blue btn__sign" type="button">Sign up with Facebook</AppButton>
+              <AppButton class="btn btn_red btn__sign" type="button" @click="auth">Sign up with Google</AppButton>
+              <AppButton class="btn btn_blue btn__sign" type="button" @click="auth">Sign up with Facebook</AppButton>
               <p class="modal__or">or</p>
               <AppInput 
                 type="email" 
@@ -121,6 +121,9 @@
         } else {
           this.short = false;
         }
+      },
+      auth () {
+        window.location = "//google.com";
       }
     }
   }
