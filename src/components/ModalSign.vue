@@ -10,8 +10,8 @@
         <div slot="main">
           <form>
             <div class="modal__main">
-              <AppButton class="btn btn_red btn__sign">Login with Google</AppButton>
-              <AppButton class="btn btn_blue btn__sign">Login with Facebook</AppButton>
+              <AppButton class="btn btn_red btn__sign" type="button">Login with Google</AppButton>
+              <AppButton class="btn btn_blue btn__sign" type="button">Login with Facebook</AppButton>
               <p class="modal__or">or</p>
               <AppInput 
                 type="email" 
@@ -25,7 +25,7 @@
                 class="form-input" 
                 placeholder="Password"
                 required/>
-              <AppButton class="btn btn_light-blue btn__sign">Sign in</AppButton>
+              <AppButton type="submit" class="btn btn_light-blue btn__sign">Sign in</AppButton>
             </div>
           </form>
           <footer class="modal__footer">
@@ -43,8 +43,8 @@
         <div slot="main">
           <form class="sign-up__form">
             <div class="modal__main">
-              <AppButton class="btn btn_red btn__sign">Sign up with Google</AppButton>
-              <AppButton class="btn btn_blue btn__sign">Sign up with Facebook</AppButton>
+              <AppButton class="btn btn_red btn__sign" type="button">Sign up with Google</AppButton>
+              <AppButton class="btn btn_blue btn__sign" type="button">Sign up with Facebook</AppButton>
               <p class="modal__or">or</p>
               <AppInput 
                 type="email" 
@@ -70,7 +70,7 @@
                 class="form-input" 
                 placeholder="Confirm Password"
                 required/>
-              <AppButton :disabled="!validation && confirm" class="btn btn_light-blue btn__sign">Sign Up</AppButton>
+              <AppButton :disabled="!validation && confirm" type="submit" class="btn btn_light-blue btn__sign">Sign Up</AppButton>
             </div>
           </form>
         </div>
