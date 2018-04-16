@@ -15,12 +15,12 @@
         <td class="num">{{ key + 1 }}</td>
         <td class="icon"><img :src="value.icon"></td>
         <td class="name">{{ value.name }}</td>
-        <td class="market-cap">{{ value.market }}</td>
+        <td class="market-cap">{{ value["market-cap"] }}</td>
         <td class="price">{{ value.price }}</td>
-        <td class="volume-24h">{{ value.volume }}</td>
+        <td class="volume-24h">{{ value["volume-24h"] }}</td>
         <td :class="colorValue(value.hour)" class="hour">{{ value.hour }}</td>
         <td :class="colorValue(value.day)" class="day">{{ value.day }}</td>
-        <td :class="colorValue(value.seven_days)" class="seven-days">{{ value.seven_days }}</td>
+        <td :class="colorValue(value.seven_days)" class="seven-days">{{ value["seven-days"] }}</td>
         <td class="sale">buy</td>          
       </tr>
     </tbody>
