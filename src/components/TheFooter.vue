@@ -83,7 +83,6 @@
   }
   @media (max-width: 575.99px) {
     .footer-menu {
-      justify-content: flex-start;
       font-size: .875rem;
     }
     .footer-menu__copyright,
