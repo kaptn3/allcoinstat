@@ -70,14 +70,13 @@
                   required
                   @blur="checkLength">
               </AppInput>
-              <AppInput>
+              <AppInput class="form-input">
                 <input
                   slot="content" 
                   v-model.trim="confirm"
                   :class="{ error: isError }"
                   type="password" 
-                  name="password" 
-                  class="form-input" 
+                  name="password"
                   placeholder="Confirm Password"
                   required>
               </AppInput>

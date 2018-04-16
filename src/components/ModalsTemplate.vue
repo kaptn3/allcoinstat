@@ -22,7 +22,7 @@
 
 <style scoped>
 .modal {
-  position: fixed;
+  position: absolute;
   z-index: 889;
   top: 0;
   left: 0;
