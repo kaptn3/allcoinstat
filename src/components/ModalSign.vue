@@ -13,18 +13,22 @@
               <AppButton class="btn btn_red btn__sign" type="button" @click="auth">Login with Google</AppButton>
               <AppButton class="btn btn_blue btn__sign" type="button" @click="auth">Login with Facebook</AppButton>
               <p class="modal__or">or</p>
-              <AppInput 
-                type="email" 
-                name="email" 
-                class="form-input" 
-                placeholder="Email address"
-                required/>
-              <AppInput 
-                type="password" 
-                name="password" 
-                class="form-input" 
-                placeholder="Password"
-                required/>
+              <AppInput class="form-input">
+                <input
+                  slot="content"         
+                  type="email" 
+                  name="email"  
+                  placeholder="Email address"
+                  required>
+              </AppInput>
+              <AppInput class="form-input">
+                <input
+                  slot="content"
+                  type="password" 
+                  name="password"
+                  placeholder="Password"
+                  required>
+              </AppInput>
               <AppButton type="submit" class="btn btn_light-blue btn__sign">Sign in</AppButton>
             </div>
           </form>
@@ -46,30 +50,37 @@
               <AppButton class="btn btn_red btn__sign" type="button" @click="auth">Sign up with Google</AppButton>
               <AppButton class="btn btn_blue btn__sign" type="button" @click="auth">Sign up with Facebook</AppButton>
               <p class="modal__or">or</p>
-              <AppInput 
-                type="email" 
-                name="email" 
-                class="form-input" 
-                placeholder="Email address"
-                required/>
+              <AppInput class="form-input">
+                <input
+                  slot="content"         
+                  type="email" 
+                  name="email"  
+                  placeholder="Email address"
+                  required>
+              </AppInput>
               <span v-show="short" class="error-length">Password is too short (minimum is 6 characters)</span>
-              <AppInput 
-                v-model.trim="password"
-                :class="{ error: isError }"
-                type="password" 
-                name="password" 
-                class="form-input" 
-                placeholder="Password"
-                required
-                @blur="checkLength"/>
-              <AppInput 
-                v-model.trim="confirm"
-                :class="{ error: isError }"
-                type="password" 
-                name="password" 
-                class="form-input" 
-                placeholder="Confirm Password"
-                required/>
+              <AppInput class="form-input">
+                <input 
+                  slot="content" 
+                  v-model.trim="password"
+                  :class="{ error: isError }"
+                  type="password" 
+                  name="password"
+                  placeholder="Password"
+                  required
+                  @blur="checkLength">
+              </AppInput>
+              <AppInput>
+                <input
+                  slot="content" 
+                  v-model.trim="confirm"
+                  :class="{ error: isError }"
+                  type="password" 
+                  name="password" 
+                  class="form-input" 
+                  placeholder="Confirm Password"
+                  required>
+              </AppInput>
               <AppButton :disabled="!validation && confirm" type="submit" class="btn btn_light-blue btn__sign">Sign Up</AppButton>
             </div>
           </form>
