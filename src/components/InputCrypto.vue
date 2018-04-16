@@ -1,28 +1,30 @@
 <template>
-  <multiselect 
-    v-model="value" 
-    :options="options" 
-    :custom-label="nameWithLang" 
-    placeholder="Search" 
-    label="name" 
-    track-by="name"
-    @open="check('focus')"
-    @input="check"
-    @close="check('close')">
-    <template slot="option" slot-scope="props">
-      <router-link v-if="links" :to="{ name: 'overview', params: { id: props.option.short } }" class="options__link">
-        <img :src="props.option.icon" class="multiselect__element__icon"> 
-        <span class="multiselect__element__short">{{ props.option.short }}</span>
-        <span>{{ props.option.name }}</span>
-      </router-link>
-      <span v-else class="options__link">
-        <img :src="props.option.icon" class="multiselect__element__icon"> 
-        <span class="multiselect__element__short">{{ props.option.short }}</span>
-        <span>{{ props.option.name }}</span>
-      </span>
-    </template>
-    <span slot="noResult">No elements found.</span>s
-  </multiselect>
+  <div class="InputCrypto">
+    <multiselect 
+      v-model="value" 
+      :options="options" 
+      :custom-label="nameWithLang" 
+      placeholder="Search" 
+      label="name" 
+      track-by="name"
+      @open="check('focus')"
+      @input="check"
+      @close="check('close')">
+      <template slot="option" slot-scope="props">
+        <router-link v-if="links" :to="{ name: 'overview', params: { id: props.option.short } }" class="options__link">
+          <img :src="props.option.icon" class="multiselect__element__icon"> 
+          <span class="multiselect__element__short">{{ props.option.short }}</span>
+          <span>{{ props.option.name }}</span>
+        </router-link>
+        <span v-else class="options__link">
+          <img :src="props.option.icon" class="multiselect__element__icon"> 
+          <span class="multiselect__element__short">{{ props.option.short }}</span>
+          <span>{{ props.option.name }}</span>
+        </span>
+      </template>
+      <span slot="noResult">No elements found.</span>s
+    </multiselect>
+  </div>
 </template>
 
 <script>
@@ -81,6 +83,10 @@
 </script>
 
 <style>
+  .InputCrypto {
+    border-radius: 100px;
+    border: solid 2px #efefef;
+  }
   .multiselect {
     position: relative;
   }
@@ -91,14 +97,14 @@
   }
   .multiselect__input {
     padding: 0 24px;
+    border-radius: 100px;
     height: 50px;
     width: 100%;
-    border-radius: 100px;
-    border: solid 2px #efefef;
     font-size: 15px;
     transition: .3s all ease;
     color: var(--dark-gray-color);
     outline: 0;
+    border: none;
   }
   .multiselect__input::-webkit-input-placeholder {
     opacity: .7;

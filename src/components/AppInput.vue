@@ -1,5 +1,7 @@
 <template>
-  <input class="AppInput" v-on="inputListeners">
+  <div class="AppInput">
+    <input class="AppInput__field" v-on="inputListeners">
+  </div>
 </template>
 
 <script>
@@ -22,34 +24,40 @@
 </script>
 
 <style scoped>
-.AppInput,
-.form-comment {
+.AppInput {
+  border-radius: 100px;
+  border: solid 2px #efefef;
+}
+.AppInput__field {
   padding: 0 24px;
+  border-radius: 100px;
   height: 50px;
   width: 100%;
-  border-radius: 100px;
-  border: solid 2px var(--light-color);
   font-size: 15px;
   transition: .3s all ease;
   color: var(--dark-gray-color);
   outline: 0;
+  border: none;
 }
 .form-comment {
+  border-radius: 6px;
+}
+.form-comment > .AppInput__field {
   border-radius: 6px;
   padding: 15px 24px 25px 24px;
   min-height: 90px;
   line-height: 1.7;
 }
-.form-comment::-webkit-input-placeholder {
+.form-comment input::-webkit-input-placeholder {
   opacity: .7;
 }
-.form-comment::-moz-placeholder {
+.form-comment input::-moz-placeholder {
   opacity: .7;
 }
-.form-comment:-moz-placeholder {
+.form-comment input:-moz-placeholder {
   opacity: .7;
 }
-.form-comment:-ms-input-placeholder {
+.form-comment input:-ms-input-placeholder {
   opacity: .7;
 }
 .AppInput::-webkit-input-placeholder {
@@ -64,7 +72,7 @@
 .AppInput:-ms-input-placeholder {
   opacity: .7;
 }
-.form-comment:focus,
+.form-comment input:focus,
 .AppInput:focus {
   border-color: #80bdff;
 }
