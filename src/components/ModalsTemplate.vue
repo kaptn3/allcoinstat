@@ -2,7 +2,7 @@
   <div class="modal">
     <div class="modal__wrapper" @click.self="$emit('close')">
       <div class="modal__container">
-        <span class="modal__close" @click="$emit('close')"><img src="../assets/ui-img/close.svg"></span>
+        <span class="modal__close" @click="$emit('close')"><img src="/assets/ui-img/close.svg"></span>
         <header class="modal__header">
           <slot name="header">
             <h1>Form</h1>

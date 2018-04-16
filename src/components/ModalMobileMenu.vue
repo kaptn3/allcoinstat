@@ -1,6 +1,6 @@
 <template>
   <div class="Modals">
-    <a href="javascript:void(0)" @click="open('mobileMenu')"><img src="../assets/ui-img/menu.svg"></a>
+    <a href="javascript:void(0)" @click="open('mobileMenu')"><img src="/assets/ui-img/menu.svg"></a>
     <transition name="fade" mode="out-in">
       <!-- mobile menu -->
       <ModalsTemplate
