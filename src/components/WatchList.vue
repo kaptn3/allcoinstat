@@ -4,13 +4,13 @@
       <h2>Watchlist</h2>
       <ModalAddCoin/>
     </div>
-    <TableSale/>
+    <Table/>
   </div><!-- end Whatchlist -->
 </template>
 
 <script>
   import ModalAddCoin from './ModalAddCoin';
-  import TableSale from './TableSale';
+  import Table from './TableWatchList';
 
   export default {
     name: 'WatchList',
@@ -18,7 +18,7 @@
       title: 'Watchlist',
     },
     components: {
-      TableSale,
+      Table,
       ModalAddCoin
     }
   };

@@ -105,22 +105,6 @@ tbody tr:hover {
   text-align: center;
   white-space: pre;
 }
-@media (max-width: 510px) {
-  .day,
-  .seven-days {
-    display: none;
-  }
-}
-@media (max-width: 730px) {
-  .volume-24h {
-    display: none;
-  }
-}
-@media (max-width: 890px) {
-  .market-cap {
-    display: none;
-  }
-}
 .btn-view {
   margin: 10px auto;
 }

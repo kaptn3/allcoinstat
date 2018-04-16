@@ -20,7 +20,7 @@
         <td class="volume-24h">{{ value["volume-24h"] }}</td>
         <td :class="colorValue(value.hour)" class="hour">{{ value.hour }}</td>
         <td :class="colorValue(value.day)" class="day">{{ value.day }}</td>
-        <td :class="colorValue(value.seven_days)" class="seven-days">{{ value["seven-days"] }}</td>
+        <td :class="colorValue(value['seven-days'])" class="seven-days">{{ value["seven-days"] }}</td>
         <td class="sale">buy</td>          
       </tr>
     </tbody>
@@ -74,7 +74,21 @@
 </script>
 
 <style scoped>
-  .AppTable {
-    overflow-x: auto;
+  @media (max-width: 510px) {
+    .day,
+    .seven-days,
+    .sale {
+      display: none;
+    }
+  }
+  @media (max-width: 730px) {
+    .volume-24h {
+      display: none;
+    }
+  }
+  @media (max-width: 890px) {
+    .market-cap {
+      display: none;
+    }
   }
 </style>
