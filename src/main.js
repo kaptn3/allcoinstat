@@ -50,7 +50,7 @@ const router = new VueRouter({
         },
         {
           path: 'forum',
-          redirect: 'overview'
+          alias: 'overview'
         },
         {
           path: 'exchanges',
