@@ -1,5 +1,5 @@
 <template>
-  <AppTable :show-button="true" :text-button="'View full chart'">
+  <AppTable :text-button="'View full chart'">
     <thead slot="table-header">
       <tr>
         <th 

@@ -3,7 +3,7 @@
     <h2>Exchanges {{ data.name.toLowerCase() }} markets</h2>
     <p>Trading in Ethereum, or any other financial asset like crude oil, offers many opportunities. However, it can be difficult to navigate between brokers, spreads and sky-high management fees. That’s why managing your own investments based on price variances makes sense for many trading beginners. </p>
 
-    <AppTable :show-button="true" :text-button="'View all'" class="currency__exchanges">
+    <AppTable :text-button="'View all'" class="currency__exchanges">
       <thead slot="table-header">
         <tr>
           <th 
@@ -86,5 +86,8 @@
 <style scoped>
   .currency__exchanges {
     margin-top: 30px;
+  }
+  th {
+    white-space: nowrap;
   }
 </style>
