@@ -49,12 +49,28 @@ const router = new VueRouter({
           component: CurrencyPageOverview
         },
         {
+          path: 'social',
+          redirect: 'overview'
+        },
+        {
           path: 'forum',
-          alias: 'overview'
+          redirect: 'overview'
         },
         {
           path: 'exchanges',
           component: CurrencyPageExchanges
+        },
+        {
+          path: 'assets',
+          redirect: 'overview'
+        },
+        {
+          path: 'predict',
+          redirect: 'overview'
+        },
+        {
+          path: 'alerts',
+          redirect: 'overview'
         }
       ]
     },
