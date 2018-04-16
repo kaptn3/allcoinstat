@@ -2,8 +2,7 @@ export const toggle = {
   data() {
     return {
       isShowing: false,
-      modalName: '',
-      tooltip: ''
+      modalName: ''
     }
   },
   methods: {
@@ -17,12 +16,6 @@ export const toggle = {
     close(name) {
       document.body.classList.remove('open-modal');
       this.modalName = '';
-    },
-    show(name) {
-      this.tooltip = name;
-    },
-    hide () {
-      this.tooltip = '';
     }
   }
 }

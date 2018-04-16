@@ -9,10 +9,12 @@
       <div class="block-info">
         <span class="block-info__head">Website</span>
         <a :href="data.site" class="block-info__value">{{ data.site }}</a>
-        <AppTooltip :id-tooltip="'language'" class="tooltip-help">
-          <span slot="link" class="tooltip-help__link"><img src="/assets/ui-img/info.svg"></span>
-          <div slot="content" class="tooltip-help__content">Volume is arguably the most important metric for a cryptocurrency, because of the amount of ways it can be broken down.</div>
-        </AppTooltip>
+        <v-popover offset="16" class="tooltip-help">
+          <a class="tooltip-help__link"><img src="/assets/ui-img/info.svg"></a>
+          <template slot="popover"> 
+            <div class="tooltip-help__content">Volume is arguably the most important metric for a cryptocurrency, because of the amount of ways it can be broken down.</div>
+          </template>
+        </v-popover>
       </div>
       <div class="block-info">
         <span class="block-info__head">Twitter</span>
@@ -36,14 +38,12 @@
   import Highcharts from 'highcharts';
   import TableExchange from './TableExchange';
   import AppTags from './AppTags';
-  import AppTooltip from './AppTooltip';
 
   export default {
     name: 'ExchangePage',
     components: {
       TableExchange,
-      AppTags,
-      AppTooltip
+      AppTags
     },
     props: {
       id: {
@@ -244,14 +244,12 @@
     color: var(--blue-color);
   }
   .tooltip-help {
-    display: inline-flex;
-    justify-content: center;
+    display: inline-block;
+    margin: 0 12px;
   }
   .tooltip-help__link {
     height: 22px;
     width: 22px;
-    margin-left: 12px;
-    margin-right: 12px;
     display: inline-block;
     vertical-align: bottom;
   }
@@ -272,8 +270,13 @@
     .block-info__tags {
       display: inline-block;
     }
+  }
+  @media (max-width: 575.99px) {
     .tooltip-help__content {
-      width: auto;
+      width: 200px;
+    }
+    .tooltip-help {
+      margin: 0 6px;
     }
   }
 </style>

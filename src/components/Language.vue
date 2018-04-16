@@ -1,24 +1,21 @@
 <template>
-  <AppTooltip :id-tooltip="'language'" class="Language">
-    <span slot="link">Change language</span> 
-    <ul slot="content" class="lang-list">
-      <li 
-        v-for="(value, key) in languages" 
-        :key="value.link" class="lang-list__item">
-        <a :href="value.link">{{ key }}</a>
-      </li>
-    </ul>
-  </AppTooltip>
+  <v-popover offset="16">
+    <a>Change language</a>
+    <template slot="popover"> 
+      <ul class="lang-list">
+        <li 
+          v-for="(value, key) in languages" 
+          :key="value.link" class="lang-list__item">
+          <a :href="value.link">{{ key }}</a>
+        </li>
+      </ul>
+    </template>
+  </v-popover>
 </template>
 
 <script>
-  import AppTooltip from './AppTooltip';
-
   export default {
     name: 'Language',
-    components: {
-      AppTooltip
-    },
     data () {
       return {
         languages: {
@@ -37,7 +34,7 @@
   }
 </script>
 
-<style scoped>
+<style>
 .lang-list {
   padding: 0;
   margin: 0;

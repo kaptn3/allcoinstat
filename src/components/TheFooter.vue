@@ -3,12 +3,14 @@
     <div class="container">
       <nav class="footer-menu">
         <span class="footer-menu__copyright">&copy; 2018 AllCoinStat</span>
-        <AppTooltip :id-tooltip="'footer-menu'" class="footer-menu-mobile">
-          <span slot="link"><img src="/assets/ui-img/more.svg"></span>
-          <ul slot="content" class="footer-menu-mobile__list">
-            <li v-for="(value, key) in footerMenu" :key="key" class="footer-menu-mobile__item"><router-link :to="value.link">{{ key }}</router-link></li>
-          </ul>
-        </AppTooltip>
+        <v-popover offset="16" class="footer-menu-mobile">
+          <a><img src="/assets/ui-img/more.svg"></a>
+          <template slot="popover"> 
+            <ul class="footer-menu-mobile__list">
+              <li v-for="(value, key) in footerMenu" :key="key" class="footer-menu-mobile__item"><router-link :to="value.link">{{ key }}</router-link></li>
+            </ul>
+          </template>
+        </v-popover>
 
         <ul class="footer-menu__list">
           <li v-for="(value, key) in footerMenu" :key="key" class="footer-menu__item"><router-link :to="value.link">{{ key }}</router-link></li>
@@ -22,13 +24,11 @@
 
 <script>
   import Language from './Language';
-  import AppTooltip from './AppTooltip';
 
   export default {
     name: 'TheFooter',
     components: {
-      Language,
-      AppTooltip
+      Language
     },
     data () {
       return {
@@ -101,6 +101,7 @@
     margin: 0;
     width: 150px;
     text-align: center;
+    font-weight: 500;
   }
   .last-updated {
     margin-left: auto;

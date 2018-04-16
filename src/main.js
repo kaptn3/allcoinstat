@@ -1,9 +1,11 @@
 import Vue from 'vue';
 import VueRouter from 'vue-router';
 import Meta from 'vue-meta';
+import VTooltip from 'v-tooltip';
 
 Vue.use(VueRouter);
 Vue.use(Meta);
+Vue.use(VTooltip);
 
 import App from './App.vue';
 import UiPage from './components/UiPage.vue';

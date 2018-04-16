@@ -11,4 +11,5 @@
 <style>
   @import "normalize.css/normalize.css";
   @import "../assets/css/main.css";
+  @import "../assets/css/tooltip.css";
 </style>
