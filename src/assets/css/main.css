@@ -98,7 +98,8 @@ nav > ul {
   align-items: center;
 }
 .open-modal {
-  overflow: hidden;
+  position: fixed;
+  width: 100%;
 }
 .fade-enter-active,
 .fade-leave-active {
