@@ -15,12 +15,12 @@
         <td class="num">{{ key + 1 }}</td>
         <td class="icon"><img :src="value.icon"></td>
         <td class="name">{{ value.name }}</td>
-        <td class="market">{{ value.market }}</td>
+        <td class="market-cap">{{ value.market }}</td>
         <td class="price">{{ value.price }}</td>
-        <td class="volume">{{ value.volume }}</td>
+        <td class="volume-24h">{{ value.volume }}</td>
         <td :class="colorValue(value.hour)" class="hour">{{ value.hour }}</td>
         <td :class="colorValue(value.day)" class="day">{{ value.day }}</td>
-        <td :class="colorValue(value.seven_days)" class="seven_days">{{ value.seven_days }}</td>
+        <td :class="colorValue(value.seven_days)" class="seven-days">{{ value.seven_days }}</td>
         <td class="sale">buy</td>          
       </tr>
     </tbody>
@@ -39,23 +39,23 @@
       return {
         tableData: {
           data: [
-            { icon: '/img/bitcoin.png', name: 'Titcoin', market: '191,023,476,496.00', price: '11 301,10', volume: '6,250,120,000.00', hour: -0.2, day: -1.46, seven_days: 6.39 },
-            { icon: '/img/monero.png', name: 'Litcoin', market: '181,023,476,496.00', price: '1 301,10', volume: '6,250,120,000.00', hour: -0.2, day: -1.46, seven_days: 3.39 },
-            { icon: '/img/ripple.png', name: 'Bitcoin', market: '191,023,476,496.00', price: '11 301,10', volume: '6,250,120,000.00', hour: -0.2, day: -1.46, seven_days: 6.39 },
-            { icon: '/img/ethereum.png', name: 'Litcoin', market: '181,023,476,496.00', price: '1 301,10', volume: '6,250,120,000.00', hour: -0.2, day: -1.46, seven_days: 3.39 },
-            { icon: '', name: 'Bitcoin', market: '191,023,476,496.00', price: '11 301,10', volume: '6,250,120,000.00', hour: -0.2, day: -1.46, seven_days: 6.39 },
-            { icon: '', name: 'Litcoin', market: '181,023,476,496.00', price: '1 301,10', volume: '6,250,120,000.00', hour: -0.2, day: -1.46, seven_days: 3.39 }
+            { icon: '/img/bitcoin.png', name: 'Titcoin', "market-cap": '191,023,476,496.00', price: '11 301,10', "volume-24h": '6,250,120,000.00', hour: -0.2, day: -1.46, "seven-days": 6.39 },
+            { icon: '/img/monero.png', name: 'Litcoin', "market-cap": '181,023,476,496.00', price: '1 301,10', "volume-24h": '6,250,120,000.00', hour: -0.2, day: -1.46, "seven-days": 3.39 },
+            { icon: '/img/ripple.png', name: 'Bitcoin', "market-cap": '191,023,476,496.00', price: '11 301,10', "volume-24h": '6,250,120,000.00', hour: -0.2, day: -1.46, "seven-days": 6.39 },
+            { icon: '/img/ethereum.png', name: 'Litcoin', "market-cap": '181,023,476,496.00', price: '1 301,10', "volume-24h": '6,250,120,000.00', hour: -0.2, day: -1.46, "seven-days": 3.39 },
+            { icon: '', name: 'Bitcoin', "market-cap": '191,023,476,496.00', price: '11 301,10', "volume-24h": '6,250,120,000.00', hour: -0.2, day: -1.46, "seven-days": 6.39 },
+            { icon: '', name: 'Litcoin', "market-cap": '181,023,476,496.00', price: '1 301,10', "volume-24h": '6,250,120,000.00', hour: -0.2, day: -1.46, "seven-days": 3.39 }
           ],        
           header: {
             num: '№', 
             icon: ' ', 
             name: 'Name', 
-            market: 'Market Cap',
+            "market-cap": 'Market Cap',
             price: 'Price',
-            volume: 'Volume (24h)',
+            "volume-24h": 'Volume (24h)',
             hour: '% 1h',
             day: '% 24h',
-            seven_days: '% 7d',
+            "seven-days": '% 7d',
             sale: 'Sale'
           }
         }

@@ -106,8 +106,8 @@ tbody tr:hover {
   white-space: pre;
 }
 @media (max-width: 510px) {
-  .p-24h,
-  .p-7h {
+  .day,
+  .seven-days {
     display: none;
   }
 }
