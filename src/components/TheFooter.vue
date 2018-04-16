@@ -63,6 +63,12 @@
   .footer-menu__item {
     padding-right: 30px;
   }
+  @media (max-width: 991.99px) {
+    .last-updated {
+      padding-top: 18px;
+      margin: 0 auto;
+    }
+  }
   @media (max-width: 767.99px) {
     .footer-menu {
       justify-content: space-between;
@@ -75,10 +81,9 @@
       display: none;
     }
   }
-  @media (max-width: 991.99px) {
-    .last-updated {
-      padding-top: 18px;
-      margin: 0 auto;
+  @media (max-width: 575.99px) {
+    .footer-menu {
+      justify-content: flex-start;
     }
   }
   @media (min-width: 768px) {
