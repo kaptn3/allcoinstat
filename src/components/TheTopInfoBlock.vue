@@ -3,16 +3,16 @@
     <nav class="info-block__navbar">
       <ul>
         <li class="info-block__logo"><router-link to="/"><img src="../assets/img/logo.svg"></router-link></li>
-        <ul class="col-sm-12 col-lg row align-items-center info-block__list-blocks">
-          <li class="info-block__item col">
+        <ul class="col-sm-12 col-lg row align-items-center justify-content-around info-block__list-blocks">
+          <li class="info-block__item col-4">
             <span class="info-block__item__title">Market cap</span>
             <a class="info-block__item__value" href="#">$150B</a>
           </li>
-          <li class="info-block__item col">
-            <span class="info-block__item__title">24H Volume</span>
+          <li class="info-block__item col-4">
+            <span class="info-block__item__title">24h volume</span>
             <a class="info-block__item__value" href="#">$150B</a>
           </li>
-          <li class="info-block__item col">
+          <li class="info-block__item col-4">
             <span class="info-block__item__title">BTC dominance</span>
             <a class="info-block__item__value" href="#">$150B</a>
           </li>
@@ -88,17 +88,13 @@
   .info-block__list-blocks {
     list-style: none;
     margin: 0;
+    padding: 0;
+    flex-wrap: nowrap;
   }
   @media (max-width: 991.99px) {
     .info-block__list-blocks {
       width: 100%;
       margin-bottom: 25px;
-    }
-    .info-block__item:nth-child(1) {
-      text-align: left;
-    }
-    .info-block__item:nth-child(3) {
-      text-align: right;
     }
     .info-block__logo {
       display: none;
@@ -120,6 +116,14 @@
     }
     .info-block__item__mobile-menu {
       display: block;
+    }
+  }
+  @media (max-width: 575.99px) {
+    .info-block__item__title {
+      font-size: calc((14 / 16) * 1rem);
+    }
+    .info-block__item {
+      padding: 0;
     }
   }
 </style>
