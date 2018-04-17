@@ -126,4 +126,11 @@
       padding: 0;
     }
   }
+  @media (max-width: 380px) {
+    .col-4 {
+      flex: auto;
+      max-width: none;
+      width: auto;
+    }
+  }
 </style>
