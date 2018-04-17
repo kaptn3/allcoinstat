@@ -92,7 +92,7 @@
     </div>
 
     <div class="col-4">
-      <InputCrypto/>
+      <SearchCrypto/>
     </div>
 
     <div>
@@ -144,7 +144,7 @@
   import AppButton from './AppButton';
   import TheCryptoMenu from './TheCryptoMenu';
   import AppTags from './AppTags';
-  import InputCrypto from './InputCrypto';
+  import SearchCrypto from './SearchCrypto';
   import AppInput from './AppInput';
   import AppTable from './AppTable';
 
@@ -154,7 +154,7 @@
       AppButton,
       TheCryptoMenu,
       AppTags,
-      InputCrypto,
+      SearchCrypto,
       AppInput,
       AppTable
     },

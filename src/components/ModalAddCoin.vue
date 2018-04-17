@@ -11,7 +11,7 @@
         @close="close();resetButton();">
         <h3 slot="header">Choose coin and add to the watchlist</h3>
         <div slot="main" class="modal__main">      
-          <InputCrypto class="modal__main__input" required @get="getValue"/>
+          <SearchCrypto class="modal__main__input" required @get="getValue"/>
           <AppButton :style="{ background: 'var(--' + button.color + '-color)' }" class="btn btn__add-coin" @click="addCoin">
             <img v-if="button.success" class="btn__tick" src="/assets/ui-img/tick.svg">
             <span v-else class="btn-text">+ Add coin</span>
@@ -26,7 +26,7 @@
   import { toggle } from './mixins/toggle';
   import ModalsTemplate from './ModalsTemplate';
   import AppInput from './AppInput';
-  import InputCrypto from './InputCrypto';
+  import SearchCrypto from './SearchCrypto';
   import AppButton from './AppButton';
 
   export default {
@@ -35,7 +35,7 @@
       ModalsTemplate,
       AppInput,
       AppButton,
-      InputCrypto
+      SearchCrypto
     },
     mixins: [toggle],
     data () {

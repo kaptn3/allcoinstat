@@ -22,7 +22,7 @@
           <ModalSign/>
         </li>
         <ModalMobileMenu class="info-block__item__mobile-menu"/>
-        <InputCrypto :links="true" class="info-block__search"/>
+        <SearchCrypto :links="true" class="info-block__search"/>
       </ul>
     </nav>
   </div>
@@ -30,7 +30,7 @@
 
 <script>  
   import AppInput from './AppInput';
-  import InputCrypto from './InputCrypto';
+  import SearchCrypto from './SearchCrypto';
   import ModalSign from './ModalSign';
   import ModalMobileMenu from './ModalMobileMenu';
 
@@ -39,7 +39,7 @@
     components: {
       AppInput,
       ModalSign,
-      InputCrypto,
+      SearchCrypto,
       ModalMobileMenu
     }
   };

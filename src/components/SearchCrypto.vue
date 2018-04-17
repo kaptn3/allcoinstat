@@ -1,5 +1,5 @@
 <template>
-  <div class="InputCrypto">
+  <div class="SearchCrypto">
     <multiselect 
       v-model="value" 
       :options="options" 
@@ -31,7 +31,7 @@
   import Multiselect from 'vue-multiselect';
 
   export default {
-    name: 'InputCrypto',
+    name: 'SearchCrypto',
     components: {
       Multiselect
     },    
@@ -83,7 +83,7 @@
 </script>
 
 <style>
-  .InputCrypto {
+  .SearchCrypto {
     border-radius: 100px;
     border: solid 2px #efefef;
   }
