@@ -20,4 +20,9 @@
     margin: 30px;
     font-weight: 500;
   }
+  @media (max-width: 575.99px) {
+    .top-header h1 {
+      font-size: calc((24 / 16) * 1rem);
+    }
+  }
 </style>
