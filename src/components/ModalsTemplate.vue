@@ -2,7 +2,7 @@
   <div class="modal">
     <div class="modal__wrapper" @click.self="$emit('close')">
       <div class="modal__container">
-        <span class="modal__close" @click="$emit('close')"><img src="/assets/ui-img/close.svg"></span>
+        <a class="modal__close" @click="$emit('close')"><img src="/assets/ui-img/close.svg"></a>
         <header class="modal__header">
           <slot name="header">
             <h1>Form</h1>
@@ -82,8 +82,9 @@
     align-items: center;
   }
   .modal__close {
-    top: 23px;
-    right: 23px;
+    top: 5px;
+    width: 24px;
+    height: 24px;
   }
   .modal__container,
   .add-coin .modal__container {
