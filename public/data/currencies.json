@@ -1,22 +1,22 @@
-{
-  "btc": {
+[
+  {
     "short": "btc", 
     "name": "Bitcoin",
     "icon": "//allcoinstat.com/img/icons/16x16/bitcoin.png"
   },
-  "eth": { 
+  { 
     "short": "eth", 
     "name": "Ethereum",
     "icon": "//allcoinstat.com/img/icons/16x16/ethereum.png"
   },
-  "hmr": {
+  {
     "short": "hmr", 
     "name": "Monero",
     "icon": "//allcoinstat.com/img/icons/16x16/monero.png"
   },
-  "xmr": {
+  {
     "short": "xmr", 
     "name": "Ripple",
     "icon": "//allcoinstat.com/img/icons/16x16/ripple.png"
   }
-}
+]

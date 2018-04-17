@@ -3,10 +3,13 @@
     <multiselect 
       v-model="value" 
       :options="options" 
-      :custom-label="nameWithLang" 
+      :custom-label="nameWithLang"
+      :loading="isLoading"
+      :max-height="400"
       placeholder="Search" 
       label="name" 
       track-by="name"
+      @search-change="fetchData('/data/currencies.json')"
       @open="check('focus')"
       @input="check"
       @close="check('close')">
@@ -44,11 +47,9 @@
     data () {
       return {
         value: [],
-        options: []
+        options: [],
+        isLoading: false
       }
-    },
-    created() {
-      this.fetchData('/data/currencies.json');
     },
     methods: {
       nameWithLang ({ name }) {
@@ -56,20 +57,20 @@
       },
       fetchData (source) {
         if (source) {
+          this.isLoading = true;
           fetch(source)
             .then(response => response.json())
             .then(data => {
-              this.distribution(data);
+              this.options = data;
+              this.isLoading = false;
             })
             .catch(error => console.error(error));
         } else {
           console.log('No source');
         }
       },
-      distribution (data) {
-        for (let key in data) {
-          this.options.push(data[key]);
-        }
+      clearData () {
+        this.options = []
       },
       check (value) {
         if (value) {
@@ -77,6 +78,8 @@
         } else {
           this.$emit('get', this.value);
         }
+        this.clearData();
+        console.log(this.value);
       }
     }
   };
@@ -125,13 +128,12 @@
     position: absolute;
     background-color: #fff;
     color: var(--dark-gray-color);
-    padding: 8px 0;
+    padding: 0;
     box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.16);
     z-index: 100;
     width: 100%;
     list-style: none;
     margin: 0;
-    max-height: 400px;
     overflow-y: auto;
   }
   .multiselect__option {
@@ -144,7 +146,7 @@
   }
   @media (max-width: 767.99px) {
     .multiselect__option {
-      padding: 15px 0 15px 24px;
+      padding: 10px 0 10px 24px;
     }
   }
   .multiselect__option a {
