@@ -94,6 +94,12 @@
       width: 100%;
       margin-bottom: 25px;
     }
+    .info-block__item:nth-child(1) {
+      text-align: left;
+    }
+    .info-block__item:nth-child(3) {
+      text-align: right;
+    }
     .info-block__logo {
       display: none;
       margin-bottom: 20px;
