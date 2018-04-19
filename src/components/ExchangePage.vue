@@ -29,7 +29,31 @@
         <AppTags :tags="data.tags" class="block-info__tags"/>
       </div>
     </div>
-    <div :id="nameId" class="chart" />
+    <div class="chart">
+      <div :id="nameId" />
+      <div class="zoom">
+        <div class="zoom__stock">
+          <span class="zoom__label">Zoom</span>
+          <div class="zoom__stock__content">
+            <a 
+              v-for="value in zoom.area" 
+              :key="value" 
+              :class="{ active: isZoomActive === value }"
+              @click="loadChart(value, 'area')">{{ value }}</a>
+          </div>
+        </div>
+        <div class="zoom__stock">
+          <span class="zoom__label">Candlesticks</span>
+          <div class="zoom__stock__content">
+            <a 
+              v-for="value in zoom.candle" 
+              :key="value" 
+              :class="{ active: isZoomActive === value }"
+              @click="loadChart(value, 'candlestick')">{{ value }}</a>
+          </div>
+        </div>
+      </div>
+    </div>
     <TableExchange/><!-- таблица только для примера, без данных -->
   </div>
 </template>
@@ -68,6 +92,11 @@
             link: '/'
           }
         },
+        zoom: {
+          area: ['6h', '1d', '2d', '1w'],
+          candle: ['5-min', '15-min', '30-min', '2-hr']
+        },
+        isZoomActive: '6h',
         title: 'Exchange',
         chart: null,
         nameId: 'exchange',
@@ -79,18 +108,22 @@
       '$route'() {
         this.fetchData('/data/exchanges.json');
         this.source = '/data/exchanges/'+ this.id + '/' + this.currency+ '.json';
-        this.initChart(this.source);
+        this.initChart(this.source, 'area');
       }
     },
     created() {
       this.fetchData('/data/exchanges.json');
-      this.initChart(this.source);
+      this.initChart(this.source, 'area');//type: 'candlestick',
     },
     beforeDestroy () {
       // Destroy chart if exists
       this.destroyChart();
     },
     methods: {
+      loadChart (period, type) {
+        this.initChart('/data/exchanges/'+ this.id + '/' + this.currency + '/' + period + '.json', type);
+        this.isZoomActive = period;
+      },
       fetchData (source) {
         if (source) {
           fetch(source)
@@ -112,7 +145,7 @@
           this.chart.destroy()
         }
       },
-      initChart (source) {
+      initChart (source, type) {
         if (source) {
           fetch(source)
             .then(response => response.json())
@@ -167,7 +200,7 @@
                   }],
                   selected: 1,
                   buttonTheme: {
-                    padding: 12
+                    height: 25
                   },
                   inputEnabled: false,
                   verticalAlign: 'bottom',
@@ -175,7 +208,7 @@
                 },
                 series: [{
                   name: this.data.name,
-                  type: 'area',
+                  type: type,
                   data: data,
                   gapSize: 5,
                   tooltip: {
@@ -278,5 +311,42 @@
     .tooltip-help {
       margin: 0 6px;
     }
+  }
+  .zoom__label {
+    color: #b1b1b1;
+    font-weight: 500;
+  }
+  .zoom {
+    padding-top: 36px;
+    display: flex;
+  }
+  @media (max-width: 767.99px) {
+    .zoom {
+      flex-direction: column;
+    }
+  }
+  .zoom__stock {
+    display: flex;
+    align-items: center;
+    padding-right: 36px;
+  }
+  .zoom__stock__content {
+    margin-left: 20px;
+    overflow: hidden;
+    border-radius: 100px;
+    border: 2px solid var(--light-color);
+    display: flex;
+  }
+  .zoom__stock__content > a {
+    padding: 15px 12px;
+    border-left: 1px solid var(--light-color);
+    border-right: 1px solid var(--light-color);
+    display: block;
+    font-weight: 500;
+  }
+  .active,
+  .zoom__stock__content > a:hover {
+    color: #fff;
+    background: var(--blue-color);
   }
 </style>
