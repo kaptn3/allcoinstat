@@ -39,12 +39,12 @@
       return {
         tableData: {
           data: [
-            { icon: '/img/bitcoin.png', name: 'Titcoin', "market-cap": '191,023,476,496.00', price: '11 301,10', "volume-24h": '6,250,120,000.00', hour: -0.2, day: -1.46, "seven-days": 6.39 },
-            { icon: '/img/monero.png', name: 'Litcoin', "market-cap": '181,023,476,496.00', price: '1 301,10', "volume-24h": '6,250,120,000.00', hour: -0.2, day: -1.46, "seven-days": 3.39 },
-            { icon: '/img/ripple.png', name: 'Bitcoin', "market-cap": '191,023,476,496.00', price: '11 301,10', "volume-24h": '6,250,120,000.00', hour: -0.2, day: -1.46, "seven-days": 6.39 },
-            { icon: '/img/ethereum.png', name: 'Litcoin', "market-cap": '181,023,476,496.00', price: '1 301,10', "volume-24h": '6,250,120,000.00', hour: -0.2, day: -1.46, "seven-days": 3.39 },
-            { icon: '', name: 'Bitcoin', "market-cap": '191,023,476,496.00', price: '11 301,10', "volume-24h": '6,250,120,000.00', hour: -0.2, day: -1.46, "seven-days": 6.39 },
-            { icon: '', name: 'Litcoin', "market-cap": '181,023,476,496.00', price: '1 301,10', "volume-24h": '6,250,120,000.00', hour: -0.2, day: -1.46, "seven-days": 3.39 }
+            { icon: '//allcoinstat.com/img/icons/16x16/bitcoin.png', name: 'Bitcoin', "market-cap": '191,023,476,496.00', price: '11 301,10', "volume-24h": '6,250,120,000.00', hour: -0.2, day: -1.46, "seven-days": 6.39 },
+            { icon: '//allcoinstat.com/img/16x16/monero.png', name: 'Litcoin', "market-cap": '181,023,476,496.00', price: '1 301,10', "volume-24h": '6,250,120,000.00', hour: -0.2, day: -1.46, "seven-days": 3.39 },
+            { icon: '//allcoinstat.com/img/16x16/img/ripple.png', name: 'Bitcoin', "market-cap": '191,023,476,496.00', price: '11 301,10', "volume-24h": '6,250,120,000.00', hour: -0.2, day: -1.46, "seven-days": 6.39 },
+            { icon: '//allcoinstat.com/img/16x16/img/ethereum.png', name: 'Litcoin', "market-cap": '181,023,476,496.00', price: '1 301,10', "volume-24h": '6,250,120,000.00', hour: -0.2, day: -1.46, "seven-days": 3.39 },
+            { icon: '//allcoinstat.com/img/16x16', name: 'Bitcoin', "market-cap": '191,023,476,496.00', price: '11 301,10', "volume-24h": '6,250,120,000.00', hour: -0.2, day: -1.46, "seven-days": 6.39 },
+            { icon: '//allcoinstat.com/img/16x16/bitcoin-cash.png', name: 'Litcoin', "market-cap": '181,023,476,496.00', price: '1 301,10', "volume-24h": '6,250,120,000.00', hour: -0.2, day: -1.46, "seven-days": 3.39 }
           ],        
           header: {
             num: '№', 

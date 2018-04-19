@@ -7,6 +7,7 @@
         <AppRank>{{ data.rank }}</AppRank>
       </div>
       <div class="col currency__data">
+        <choose/>
         <span class="currency__data__label">MarketCap</span>
         <span class="currency__data__amount">{{ data.market[0] }} <span :class="colorValue(data.market[1])">({{ data.market[1] }}%)</span></span>    
         <span class="currency__data__label">24 high</span>
@@ -31,13 +32,15 @@
   import Menu from './TheCryptoMenu';
   import AppButton from './AppButton';
   import AppRank from './AppRank';
+  import Choose from './ChooseCurrency';
 
   export default {
     name: 'CurrencyPage',
     components: {
       Menu,
       AppButton,
-      AppRank
+      AppRank,
+      Choose
     },
     props: {
       id: {
