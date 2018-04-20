@@ -14,7 +14,7 @@
         :key="key">
         <td class="num">{{ key + 1 }}</td>
         <td class="icon"><img :src="value.icon"></td>
-        <td class="market"><router-link :to="{ name: 'exchange', params: { currency: value.short } }" class="link">{{ value.name }}</router-link></td>
+        <td class="name market"><router-link :to="{ name: 'exchange', params: { currency: value.short } }" class="link">{{ value.name }}</router-link></td>
         <td class="pair">{{ value.pair }}</td>
         <td class="priceBtc">{{ value.priceBtc }}</td>
         <td class="volume">{{ value.volume }}</td>
