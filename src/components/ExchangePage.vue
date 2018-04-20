@@ -34,11 +34,12 @@
       <div class="zoom">
         <div class="zoom__stock">
           <span class="zoom__label">Zoom</span>
-          <div class="zoom__stock__content">
+          <div class="zoom__stock__content zoom__stock__content-area">
             <a 
               v-for="value in zoom.area" 
               :key="value" 
               :class="{ active: isZoomActive === value }"
+              class="col" 
               @click="loadChart(value, 'area')">{{ value }}</a>
           </div>
         </div>
@@ -49,6 +50,7 @@
               v-for="value in zoom.candle" 
               :key="value" 
               :class="{ active: isZoomActive === value }"
+              class="col"
               @click="loadChart(value, 'candlestick')">{{ value }}</a>
           </div>
         </div>
@@ -93,27 +95,27 @@
           }
         },
         zoom: {
-          area: ['6h', '1d', '2d', '1w'],
-          candle: ['5-min', '15-min', '30-min', '2-hr']
+          area: ['All', '6h', '1d', '2d', '4d', '1w', '2w', '1m'],
+          candle: ['5-min', '15-min', '30-min', '2-hr', '4-hr', '1-day', '2-day']
         },
         isZoomActive: '6h',
         title: 'Exchange',
         chart: null,
         nameId: 'exchange',
         data: {},
-        source: '/data/exchanges/'+ this.id + '/' + this.currency+ '.json',
+        source: '/data/exchanges/'+ this.id + '/' + this.currency + '/6h.json',
       }
     },
     watch: {
       '$route'() {
         this.fetchData('/data/exchanges.json');
-        this.source = '/data/exchanges/'+ this.id + '/' + this.currency+ '.json';
+        this.source = '/data/exchanges/'+ this.id + '/' + this.currency + '/6h.json';
         this.initChart(this.source, 'area');
       }
     },
     created() {
       this.fetchData('/data/exchanges.json');
-      this.initChart(this.source, 'area');//type: 'candlestick',
+      this.initChart(this.source, 'area');
     },
     beforeDestroy () {
       // Destroy chart if exists
@@ -165,46 +167,8 @@
                   gapGridLineWidth: 0
                 },
                 rangeSelector: {
-                  buttons: [{
-                    type: 'hour',
-                    count: 6,
-                    text: '6h'
-                  }, {
-                    type: 'day',
-                    count: 1,
-                    text: '24h'
-                  }, {
-                    type: 'day',
-                    count: 2,
-                    text: '2d'
-                  },{
-                    type: 'day',
-                    count: 4,
-                    text: '4d'
-                  },{
-                    type: 'week',
-                    count: 1,
-                    text: '1w'
-                  },{
-                    type: 'week',
-                    count: 2,
-                    text: '2w'
-                  },{
-                    type: 'month',
-                    count: 1,
-                    text: '1m'
-                  },{
-                    type: 'all',
-                    count: 1,
-                    text: 'All'
-                  }],
-                  selected: 1,
-                  buttonTheme: {
-                    height: 25
-                  },
-                  inputEnabled: false,
-                  verticalAlign: 'bottom',
-                  y: 30
+                  enabled: false,
+                  inputEnabled: false
                 },
                 series: [{
                   name: this.data.name,
@@ -289,6 +253,49 @@
   .tooltip-help__content {
     width: 300px;
   }
+  .zoom {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  .zoom__label {
+    color: #b1b1b1;
+    font-weight: 500;
+    margin-right: 20px;
+  }
+  .zoom__stock {
+    padding-top: 36px;
+    display: flex;
+    align-items: center;
+  }
+  .zoom__stock__content {
+    overflow: hidden;
+    border-radius: 100px;
+    border: 2px solid var(--light-color);
+    display: flex;
+  }
+  .zoom__stock__content-area {
+    margin-right: 36px;
+  }
+  .zoom__stock__content > a {
+    border-left: 1px solid var(--light-color);
+    border-right: 1px solid var(--light-color);
+    font-weight: 500;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    height: 50px;
+    padding: 0;
+    width: 64px;
+  }
+  .zoom__stock__content-area > a {
+    width: 50px;
+  }
+  .active,
+  .zoom__stock__content > a:hover {
+    color: #fff;
+    background: var(--blue-color);
+  }
   @media (max-width: 767.99px) {
     .blocks-info {
       flex-direction: column;
@@ -303,6 +310,13 @@
     .block-info__tags {
       display: inline-block;
     }
+    .zoom__stock {
+      align-items: flex-start;
+      flex-direction: column;
+    }
+    .zoom__label {
+      padding-bottom: 8px;
+    }
   }
   @media (max-width: 575.99px) {
     .tooltip-help__content {
@@ -311,42 +325,15 @@
     .tooltip-help {
       margin: 0 6px;
     }
-  }
-  .zoom__label {
-    color: #b1b1b1;
-    font-weight: 500;
-  }
-  .zoom {
-    padding-top: 36px;
-    display: flex;
-  }
-  @media (max-width: 767.99px) {
-    .zoom {
-      flex-direction: column;
+    .zoom__stock {
+      width: 100%
     }
-  }
-  .zoom__stock {
-    display: flex;
-    align-items: center;
-    padding-right: 36px;
-  }
-  .zoom__stock__content {
-    margin-left: 20px;
-    overflow: hidden;
-    border-radius: 100px;
-    border: 2px solid var(--light-color);
-    display: flex;
-  }
-  .zoom__stock__content > a {
-    padding: 15px 12px;
-    border-left: 1px solid var(--light-color);
-    border-right: 1px solid var(--light-color);
-    display: block;
-    font-weight: 500;
-  }
-  .active,
-  .zoom__stock__content > a:hover {
-    color: #fff;
-    background: var(--blue-color);
+    .zoom__stock__content {
+      width: 100%;
+    }
+    .zoom__stock__content > a {
+      font-size: .875rem;
+      width: 100%;
+    }
   }
 </style>
