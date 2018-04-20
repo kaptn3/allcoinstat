@@ -123,6 +123,7 @@
     },
     methods: {
       loadChart (period, type) {
+        period = period.toLowerCase();
         this.initChart('/data/exchanges/'+ this.id + '/' + this.currency + '/' + period + '.json', type);
         this.isZoomActive = period;
       },
