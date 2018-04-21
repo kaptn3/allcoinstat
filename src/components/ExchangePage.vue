@@ -2,11 +2,11 @@
   <div class="ExchangePage">
     <h2>{{ data.name }}</h2>
     <div class="blocks-info row">
-      <div class="block-info">
+      <div class="block-info col-lg col-xl-2">
         <span class="block-info__head">Vol 24</span>
         <span class="block-info__value">$ 2222</span>
       </div>
-      <div class="block-info">
+      <div class="block-info col-lg col-xl-3">
         <span class="block-info__head">Website</span>
         <a :href="data.site" class="block-info__value">{{ data.site }}</a>
         <v-popover offset="16" class="tooltip-help">
@@ -16,15 +16,15 @@
           </template>
         </v-popover>
       </div>
-      <div class="block-info">
+      <div class="block-info col-lg col-xl-2">
         <span class="block-info__head">Twitter</span>
         <a :href="'//twitter.com/' + data.twitter" class="block-info__value">@{{ data.twitter }}</a>
       </div>
-      <div class="block-info">
+      <div class="block-info col-lg col-xl-2">
         <span class="block-info__head">Country</span>
         <span class="block-info__value">{{ data.country }}</span>
       </div>
-      <div class="block-info">
+      <div class="block-info col-lg col-xl-3">
         <span class="block-info__head">Tags</span>
         <AppTags :tags="data.tags" class="block-info__tags"/>
       </div>
@@ -226,9 +226,6 @@
     margin-right: -15px;
     margin-left: -15px;
     padding-bottom: 50px;
-  }
-  .block-info {
-    padding: 15px;
   }
   .block-info__head {
     display: block;
