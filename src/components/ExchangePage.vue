@@ -8,7 +8,7 @@
       </div>
       <div class="block-info col-lg col-xl-3">
         <span class="block-info__head">Website</span>
-        <a :href="data.site" class="block-info__value">{{ data.site }}</a>
+        <a :href="data.site" class="block-info__value" target="_blank">{{ data.site }}</a>
         <v-popover offset="16" class="tooltip-help">
           <a class="tooltip-help__link"><img src="/assets/ui-img/info.svg"></a>
           <template slot="popover"> 
@@ -18,7 +18,7 @@
       </div>
       <div class="block-info col-lg col-xl-2">
         <span class="block-info__head">Twitter</span>
-        <a :href="'//twitter.com/' + data.twitter" class="block-info__value">@{{ data.twitter }}</a>
+        <a :href="'//twitter.com/' + data.twitter" class="block-info__value" target="_blank">@{{ data.twitter }}</a>
       </div>
       <div class="block-info col-lg col-xl-2">
         <span class="block-info__head">Country</span>
