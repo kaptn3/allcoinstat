@@ -50,7 +50,7 @@ td {
 td,
 th {
   border-bottom: 1px solid var(--border-gray);
-  text-align: right;
+  text-align: left;
   transition: .3s all ease;
 }
 th {
@@ -70,12 +70,7 @@ td.price {
 .name {
   font-weight: bold;
 }
-.name,
-.currency {
-  text-align: left;
-}
-.num,
-.icon {
+.sale {
   text-align: center;
 }
 .icon {

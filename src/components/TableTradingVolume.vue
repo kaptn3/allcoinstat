@@ -80,4 +80,8 @@
   .link {
     color: var(--blue-color);
   }
+  .share,
+  .volume {
+    text-align: right;
+  }
 </style>
