@@ -227,6 +227,10 @@
     margin-left: -15px;
     padding-bottom: 50px;
   }
+  .block-info {
+    padding-top: 15px;
+    padding-bottom: 15px;
+  }
   .block-info__head {
     display: block;
     padding-bottom: 7px;
