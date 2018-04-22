@@ -79,7 +79,6 @@
           this.$emit('get', this.value);
         }
         this.clearData();
-        console.log(this.value);
       }
     }
   };
