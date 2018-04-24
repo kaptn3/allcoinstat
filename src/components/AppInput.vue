@@ -44,10 +44,10 @@
   border-radius: 100px;
   border: solid 2px #efefef;
   width: 100%;
+  overflow: hidden;
 }
 input {
   padding: 0 24px;
-  border-radius: 100px;
   height: 50px;
   width: 100%;
   font-size: 15px;

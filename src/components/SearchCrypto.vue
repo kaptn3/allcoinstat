@@ -88,6 +88,7 @@
   .SearchCrypto {
     border-radius: 100px;
     border: solid 2px #efefef;
+    overflow: hidden;
   }
   .multiselect {
     position: relative;
@@ -99,7 +100,6 @@
   }
   .multiselect__input {
     padding: 0 24px;
-    border-radius: 100px;
     height: 50px;
     width: 100%;
     font-size: 15px;
