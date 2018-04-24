@@ -1,25 +1,32 @@
 <template>
-  <footer class="footer">   
-    <div class="container">
-      <nav class="footer-menu">
-        <span class="footer-menu__copyright">&copy; 2018 AllCoinStat</span>
-        <v-popover offset="16" class="footer-menu-mobile">
-          <a><img src="/assets/ui-img/more.svg"></a>
-          <template slot="popover"> 
-            <ul class="footer-menu-mobile__list">
-              <li v-for="(value, key) in footerMenu" :key="key" class="footer-menu-mobile__item"><router-link :to="value.link">{{ key }}</router-link></li>
-            </ul>
-          </template>
-        </v-popover>
+  <div class="footer container">
+    <div class="footer-content">
+      <div class="footer-content-cell menu">
+        <div class="copyleft">© 2018 AllCoinStat</div>
 
-        <ul class="footer-menu__list">
-          <li v-for="(value, key) in footerMenu" :key="key" class="footer-menu__item"><router-link :to="value.link">{{ key }}</router-link></li>
+        <ul class="footer-menu">
+          <li class="footer-mobile-menu">
+            <v-popover offset="16" class="footer-menu-mobile">
+              <a><img src="/assets/ui-img/more.svg"></a>
+              <template slot="popover"> 
+                <ul class="footer-menu-mobile__list">
+                  <li v-for="(value, key) in footerMenu" :key="key" class="footer-menu-mobile__item"><router-link :to="value.link">{{ key }}</router-link></li>
+                </ul>
+              </template>
+            </v-popover>
+          </li> 
+          <li v-for="(value, key) in footerMenu" :key="key"><router-link :to="value.link">{{ key }}</router-link></li>
+          <li class="choose-lang"><Language/></li>
         </ul>
-        <Language/>
-        <span class="last-updated">Last updated: Aug 28, 2017 6:50 PM UTC</span>
-      </nav>  
+      </div>
+
+      <div class="footer-content-cell updated">
+        Last updated: Apr 24, 2018 07:34 UTC
+      </div>
+
     </div>
-  </footer>
+  </div>
+
 </template>
 
 <script>
@@ -37,7 +44,7 @@
             link: '/'
           },
           Advertise: {
-            link: '/'
+            link: 'https://docs.google.com/forms/d/1eKrqWz6NGVhME7an6lkhDCBZjhUJvgMbqVzM3mnAYIs/viewform?edit_requested=true&embedded=true'
           },
           FAQ: {
             link: '/'
@@ -52,61 +59,14 @@
 </script>
 
 <style scoped>
-  .footer-menu {
-    padding: 40px 0;
-    font-weight: 500;
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-  }
-  .footer-menu__copyright,
-  .footer-menu__item {
-    padding-right: 30px;
-  }
-  @media (max-width: 991.99px) {
-    .last-updated {
-      padding-top: 18px;
-      margin: 0 auto;
-    }
-  }
-  @media (max-width: 767.99px) {
-    .footer-menu {
-      justify-content: space-between;
-    }
-    .footer-menu-mobile {
-      display: inline-flex;
-      justify-content: center;
-    }
-    .footer-menu__list {
-      display: none;
-    }
-  }
-  @media (max-width: 575.99px) {
-    .footer-menu {
-      font-size: .875rem;
-    }
-    .footer-menu__copyright,
-    .footer-menu-mobile {
-      padding-right: 6px;
-    }
-  }
   @media (min-width: 768px) {
-    .footer-menu-mobile {
-      display: none;
+    .footer {
+      padding-right: 15px;
+      padding-left: 15px;
     }
   }
   .footer-menu-mobile__list {
-    list-style: none;
-    padding-left: 0;
-    margin: 0;
-    width: 150px;
     text-align: center;
-    font-weight: 500;
-  }
-  .last-updated {
-    margin-left: auto;
-    font-size: calc((12 / 16) * 1rem);
-    color: var(--light-gray-color);
     font-weight: 500;
   }
   .footer-menu-mobile__item {
