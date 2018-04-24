@@ -80,6 +80,7 @@
   }  
   @media (min-width: 992px) {
     .top-menu {
+      border-radius: 6px;
       border: 2px solid var(--light-color);
     }
     .top-menu__item:hover::after {
