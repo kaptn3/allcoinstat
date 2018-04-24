@@ -159,7 +159,7 @@
                   borderWidth: 2
                 },
                 title: {
-                  text: 'Exchange rate over time'
+                  text: this.id[0].toUpperCase() + this.id.substring(1) + ' exchange volume'
                 },
                 subtitle: {
                   text: 'Exchange rate'
