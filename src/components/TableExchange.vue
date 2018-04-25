@@ -96,6 +96,8 @@
   }
   .mobile-icons {
     position: absolute;
+    left: 0;
+    top: -1px;
     display: none;
     background: #fff;
     box-shadow: 12px 0 8px -5px rgba(0, 0, 0, .16);
