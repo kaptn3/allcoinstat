@@ -78,7 +78,7 @@ td.price {
   padding-right: 10px;
 }
 .icon > img {
-  vertical-align: baseline;
+  vertical-align: top;
   max-width: unset;
 }
 .td-hover,

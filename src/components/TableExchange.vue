@@ -64,6 +64,9 @@
     created () {
       this.fetchData('/data/exchanges/tableData.json');
     },
+    mounted () {
+      tableScript.tableScroll();
+    },
     methods: {
       fetchData (source) {
         if (source) {
