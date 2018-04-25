@@ -255,6 +255,7 @@
   }
   .tooltip-help__content {
     width: 300px;
+    line-height: 1.5;
   }
   .zoom {
     display: flex;
@@ -273,13 +274,22 @@
   .zoom__stock__content {
     overflow: hidden;
     border-radius: 100px;
-    border: 2px solid var(--light-color);
     display: flex;
   }
   .zoom__stock__content-area {
     margin-right: 36px;
   }
+  .zoom__stock__content > a:nth-child(1) {
+    border-left: var(--border);
+    border-radius: 25px 0 0 25px;
+  }
+  .zoom__stock__content > a:last-child {
+    border-right: var(--border);
+    border-radius: 0 25px 25px 0;
+  }
   .zoom__stock__content > a {
+    border-top: var(--border);
+    border-bottom: var(--border);
     border-left: 1px solid var(--light-color);
     border-right: 1px solid var(--light-color);
     font-weight: 500;
@@ -294,10 +304,11 @@
   .zoom__stock__content-area > a {
     width: 50px;
   }
-  .active,
+  a.active,
   .zoom__stock__content > a:hover {
     color: #fff;
     background: var(--blue-color);
+    border-color: var(--blue-color);
   }
   @media (max-width: 1139.99px) {
     .block-info {

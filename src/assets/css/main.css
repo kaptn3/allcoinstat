@@ -9,6 +9,7 @@
   --light-color: #efefef;
   --border-gray: #d6d6d8;
   --hover-table-tr: #f7f7fb;
+  --border: 2px solid var(--light-color);
 }
 * {
   box-sizing: border-box;
