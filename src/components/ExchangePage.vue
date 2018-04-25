@@ -308,6 +308,7 @@
     .block-info__head {
       width: 25%;
       display: inline-block;
+      padding: 0;
     }
     .block-info__tags {
       display: inline-block;
