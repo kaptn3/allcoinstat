@@ -79,6 +79,7 @@ td.price {
 }
 .icon > img {
   vertical-align: top;
+  width: 100%;
 }
 .td-hover,
 th:hover,

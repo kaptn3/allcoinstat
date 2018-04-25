@@ -1,32 +1,42 @@
 <template>
-  <AppTable :text-button="'View full chart'">
-    <thead slot="table-header">
-      <tr>
-        <th 
-          v-for="(value, key) in tableData.header" 
-          :key="key"
-          :class="key">{{ value }}</th>
-      </tr>
-    </thead>
-    <tbody slot="table-body">
-      <tr 
-        v-for="(value, key) in tableData.data"
-        :key="key">
-        <td class="num">{{ key + 1 }}</td>
-        <td class="icon"><img :src="value.icon"></td>
-        <td class="name"><router-link :to="{ name: 'exchange', params: { currency: value.short } }" class="link">{{ value.name }}</router-link></td>
-        <td class="pair">{{ value.pair }}</td>
-        <td class="priceBtc">{{ value.priceBtc }}</td>
-        <td class="volume">{{ value.volume }}</td>
-        <td class="calcPrice">{{ value.calcPrice }}</td>
-        <td class="calc24">{{ value.calc24 }}</td>          
-      </tr>
-    </tbody>
-  </AppTable>
+  <div class="table-exchange">
+    <div class="mobile-icons">
+      <div class="mobile-icons__head" />
+      <div v-for="(value, key) in tableData.data"
+           :key="key">
+        <img :src="value.icon">
+      </div>
+    </div>
+    <AppTable :text-button="'View full chart'">
+      <thead slot="table-header">
+        <tr>
+          <th 
+            v-for="(value, key) in tableData.header" 
+            :key="key"
+            :class="key">{{ value }}</th>
+        </tr>
+      </thead>
+      <tbody slot="table-body">
+        <tr 
+          v-for="(value, key) in tableData.data"
+          :key="key">
+          <td class="num">{{ key + 1 }}</td>
+          <td class="icon"><img :src="value.icon"></td>
+          <td class="name"><router-link :to="{ name: 'exchange', params: { currency: value.short } }" class="link">{{ value.name }}</router-link></td>
+          <td class="pair">{{ value.pair }}</td>
+          <td class="priceBtc">{{ value.priceBtc }}</td>
+          <td class="volume">{{ value.volume }}</td>
+          <td class="calcPrice">{{ value.calcPrice }}</td>
+          <td class="calc24">{{ value.calc24 }}</td>          
+        </tr>
+      </tbody>
+    </AppTable>
+  </div>
 </template>
 
 <script>
-  import AppTable from './AppTable';
+  import AppTable from './AppTable';  
+  import tableScript from '../assets/js/tableScroll.js';
 
   export default {
     name: 'TableExchange',
@@ -76,5 +86,21 @@
 <style scoped>
   .router-link-exact-active {
     color: var(--blue-color);
+  }
+  .table-exchange {
+    position: relative;
+  }
+  .mobile-icons {
+    position: absolute;
+    display: none;
+    background: #fff;
+    box-shadow: 8px 0 8px -3px rgba(0, 0, 0, .16);
+  }
+  .mobile-icons > div {
+    padding: 15px 10px 16px 10px;
+    border-bottom: 1px solid var(--border-gray);
+  }
+  div.mobile-icons__head {
+    padding: 0;
   }
 </style>
