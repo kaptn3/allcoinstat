@@ -140,7 +140,7 @@
     width: 100%;
   }
   .options__link {
-    padding: 10px 0 10px 24px;
+    padding: 10px 0 10px 0;
     display: block;
   }
   @media (max-width: 767.99px) {
