@@ -26,7 +26,7 @@
     color: var(--blue-color);
     border: 1px solid var(--blue-color);
     display: inline-block;
-    margin-right: 10px;
+    margin-right: 5px;
   }
   .tag:hover,
   .tag:focus {
