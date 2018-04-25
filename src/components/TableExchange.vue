@@ -3,7 +3,8 @@
     <div class="mobile-icons">
       <div class="mobile-icons__head" />
       <div v-for="(value, key) in tableData.data"
-           :key="key">
+           :key="key"
+           class="icon">
         <img :src="value.icon">
       </div>
     </div>
@@ -94,7 +95,7 @@
     position: absolute;
     display: none;
     background: #fff;
-    box-shadow: 8px 0 8px -3px rgba(0, 0, 0, .16);
+    box-shadow: 12px 0 8px -5px rgba(0, 0, 0, .16);
   }
   .mobile-icons > div {
     padding: 15px 10px 16px 10px;
