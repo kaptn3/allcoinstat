@@ -28,8 +28,6 @@
     "postcss-nesting": "^4.2.1",
     "postcss-preset-env": "^3.2.2",
     "postcss-reporter": "^5.0.0",
-    "stylelint": "^9.1.1",
-    "stylelint-config-standard": "^18.2.0",
     "vue-template-compiler": "^2.5.13"
   },
   "babel": {
@@ -52,25 +50,6 @@
       "vue/no-unused-vars": "off"
     }
   },
-  "stylelint": {
-    "extends": "stylelint-config-standard",
-    "rules": {
-      "font-family-no-missing-generic-family-keyword": null,
-      "declaration-block-no-duplicate-properties": null,
-      "declaration-block-semicolon-newline-after": null,
-      "declaration-block-trailing-semicolon": null,
-      "block-closing-brace-newline-before": null,
-      "block-opening-brace-newline-after": null,
-      "block-closing-brace-newline-after": null,
-      "font-family-no-duplicate-names": null,
-      "comment-whitespace-inside": null,
-      "rule-empty-line-before": null,
-      "number-leading-zero": null,
-      "max-empty-lines": null,
-      "no-empty-source": null,
-      "indentation": null
-    }
-  },
   "postcss": {
     "plugins": {
       "postcss-html": {},
@@ -78,12 +57,10 @@
       "postcss-nesting": {},
       "postcss-preset-env": {},
       "autoprefixer": {},
-      "stylelint": {},
       "postcss-reporter": {
         "clearReportedMessages": true,
         "throwError": true,
         "plugins": [
-          "stylelint",
           "postcss-import"
         ]
       }
