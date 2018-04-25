@@ -85,13 +85,13 @@
 </script>
 
 <style>
-  .SearchCrypto {
+  .multiselect {
+    position: relative;
+  }
+  .multiselect__tags {
     border-radius: 100px;
     border: solid 2px #efefef;
     overflow: hidden;
-  }
-  .multiselect {
-    position: relative;
   }
   @media (max-width: 767.99px) {
     .multiselect {
