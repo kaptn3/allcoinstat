@@ -15,7 +15,10 @@
               </template>
             </v-popover>
           </li> 
-          <li v-for="(value, key) in footerMenu" :key="key"><router-link :to="value.link">{{ key }}</router-link></li>
+          <li v-for="(value, key) in footerMenu" :key="key">
+            <router-link v-if="value.external === false" :to="value.link">{{ key }}</router-link>
+            <a v-if="value.external" :href="value.link">{{ key }}</a>
+          </li>
           <li class="choose-lang"><Language/></li>
         </ul>
       </div>
@@ -41,16 +44,20 @@
       return {
         footerMenu: {
           About: {
-            link: '/'
+            link: '/',
+            external: false
           },
           Advertise: {
-            link: 'https://docs.google.com/forms/d/1eKrqWz6NGVhME7an6lkhDCBZjhUJvgMbqVzM3mnAYIs/viewform?edit_requested=true&embedded=true'
+            link: 'https://docs.google.com/forms/d/1eKrqWz6NGVhME7an6lkhDCBZjhUJvgMbqVzM3mnAYIs/viewform?edit_requested=true&embedded=true',
+            external: true
           },
           FAQ: {
-            link: '/'
+            link: '/',
+            external: false
           },
           'Request Form': {
-            link: '/'
+            link: '/',
+            external: false
           }
         }
       }
