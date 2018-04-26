@@ -10,7 +10,10 @@
               <a><img src="/assets/ui-img/more.svg"></a>
               <template slot="popover"> 
                 <ul class="footer-menu-mobile__list">
-                  <li v-for="(value, key) in footerMenu" :key="key" class="footer-menu-mobile__item"><router-link :to="value.link">{{ key }}</router-link></li>
+                  <li v-for="(value, key) in footerMenu" :key="key" class="footer-menu-mobile__item">
+                    <router-link v-if="value.external === false" :to="value.link">{{ key }}</router-link>
+                    <a v-if="value.external" :href="value.link">{{ key }}</a>
+                  </li>
                 </ul>
               </template>
             </v-popover>
