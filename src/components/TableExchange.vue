@@ -61,10 +61,8 @@
         }
       }
     },
-    created () {
-      this.fetchData('/data/exchanges/tableData.json');
-    },
     mounted () {
+      this.fetchData('/data/exchanges/tableData.json');
       tableScript.tableScroll();
     },
     methods: {

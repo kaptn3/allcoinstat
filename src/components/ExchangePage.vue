@@ -113,7 +113,7 @@
         this.initChart(this.source, 'area');
       }
     },
-    created() {
+    mounted () {
       this.fetchData('/data/exchanges.json');
       this.initChart(this.source, 'area');
     },

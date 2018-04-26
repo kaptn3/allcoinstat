@@ -53,7 +53,7 @@
         }
       }
     },
-    created () {
+    mounted () {
       this.fetchData(this.source);
     },
     methods: {

@@ -61,7 +61,7 @@
         this.fetchData(this.source);
       }
     },
-    created () {
+    mounted () {
       this.fetchData(this.source);
     },
     methods: {

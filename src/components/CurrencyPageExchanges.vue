@@ -54,7 +54,7 @@
         source: ['/data/currencies/'+ this.$route.params.id + '/currency.json', '/data/currencies/'+ this.$route.params.id + '/exchanges.json']
       }
     },
-    created () {
+    mounted () {
       this.fetchData(this.source);
     },
     methods: {
