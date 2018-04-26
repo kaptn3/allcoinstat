@@ -254,8 +254,10 @@
     vertical-align: bottom;
   }
   .tooltip-help__content {
-    width: 300px;
+    max-width: 300px;
     line-height: 1.5;
+    padding: 5px;
+    font-size: 15px;
   }
   .zoom {
     display: flex;
