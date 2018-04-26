@@ -38,7 +38,7 @@
             <a 
               v-for="value in zoom.area" 
               :key="value" 
-              :class="{ active: isZoomActive === value }"
+              :class="{ active: isZoomActive === value.toLowerCase() }"
               class="col" 
               @click="loadChart(value, 'area')">{{ value }}</a>
           </div>
@@ -306,7 +306,7 @@
   .zoom__stock__content-area > a {
     width: 50px;
   }
-  a.active,
+  .zoom__stock__content > a.active,
   .zoom__stock__content > a:hover {
     color: #fff;
     background: var(--blue-color);
