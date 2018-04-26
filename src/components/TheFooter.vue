@@ -79,6 +79,7 @@
     text-align: center;
     font-weight: 500;
     padding-left: 0;
+    margin: 0;
   }
   .footer-menu-mobile__item {
     padding: 12px 14px;
