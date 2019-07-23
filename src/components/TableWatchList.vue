@@ -13,7 +13,7 @@
         v-for="(value, key) in tableData.data"
         :key="key">
         <td class="num">{{ key + 1 }}</td>
-        <td class="icon"><img :src="value.icon"></td>
+        <td class="icon"><img :src="value.icon" class="crypto__icon"></td>
         <td class="name">{{ value.name }}</td>
         <td class="market-cap">{{ value["market-cap"] }}</td>
         <td class="price">{{ value.price }}</td>
@@ -52,10 +52,10 @@
       return {
         tableData: {
           data: [
-            { icon: '//allcoinstat.com/img/icons/16x16/bitcoin.png', name: 'Bitcoin', "market-cap": '191,023,476,496.00', price: '11 301,10', "volume-24h": '6,250,120,000.00', hour: -0.2, day: -1.46, "seven-days": 6.39, watch: true },
-            { icon: '//allcoinstat.com/img/icons/16x16/ripple.png', name: 'Ripple', "market-cap": '181,023,476,496.00', price: '1 301,10', "volume-24h": '6,250,120,000.00', hour: -0.2, day: -1.46, "seven-days": 3.39, watch: true },
-            { icon: '//allcoinstat.com/img/icons/16x16/bitcoin-cash.png', name: 'Bitcoin Cash', "market-cap": '191,023,476,496.00', price: '11 301,10', "volume-24h": '6,250,120,000.00', hour: -0.2, day: -1.46, "seven-days": 6.39, watch: true },
-            { icon: '//allcoinstat.com/img/icons/16x16/monero.png', name: 'Monero', "market-cap": '181,023,476,496.00', price: '1 301,10', "volume-24h": '6,250,120,000.00', hour: -0.2, day: -1.46, "seven-days": 3.39, watch: true }
+            { icon: 'https://img.icons8.com/offices/16/000000/bitcoin.png', name: 'Bitcoin', "market-cap": '191,023,476,496.00', price: '11 301,10', "volume-24h": '6,250,120,000.00', hour: -0.2, day: -1.46, "seven-days": 6.39, watch: true },
+            { icon: 'https://img.icons8.com/offices/16/000000/bitcoin.png', name: 'Ripple', "market-cap": '181,023,476,496.00', price: '1 301,10', "volume-24h": '6,250,120,000.00', hour: -0.2, day: -1.46, "seven-days": 3.39, watch: true },
+            { icon: 'https://img.icons8.com/offices/16/000000/bitcoin.png', name: 'Bitcoin Cash', "market-cap": '191,023,476,496.00', price: '11 301,10', "volume-24h": '6,250,120,000.00', hour: -0.2, day: -1.46, "seven-days": 6.39, watch: true },
+            { icon: 'https://img.icons8.com/offices/16/000000/bitcoin.png', name: 'Monero', "market-cap": '181,023,476,496.00', price: '1 301,10', "volume-24h": '6,250,120,000.00', hour: -0.2, day: -1.46, "seven-days": 3.39, watch: true }
           ],        
           header: {
             num: '№', 
@@ -91,6 +91,9 @@
   .view__icon svg {
     width: 18px;
     height: auto;
+  }
+  .crypto__icon {
+    width: 18px;
   }
   @media (max-width: 350px) {
     .view {

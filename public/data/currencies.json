@@ -2,21 +2,21 @@
   {
     "short": "btc", 
     "name": "Bitcoin",
-    "icon": "//allcoinstat.com/img/icons/16x16/bitcoin.png"
+    "icon": "https://img.icons8.com/offices/16/000000/bitcoin.png"
   },
   { 
     "short": "eth", 
     "name": "Ethereum",
-    "icon": "//allcoinstat.com/img/icons/16x16/ethereum.png"
+    "icon": "https://img.icons8.com/offices/16/000000/bitcoin.png"
   },
   {
     "short": "hmr", 
     "name": "Monero",
-    "icon": "//allcoinstat.com/img/icons/16x16/monero.png"
+    "icon": "https://img.icons8.com/offices/16/000000/bitcoin.png"
   },
   {
     "short": "xmr", 
     "name": "Ripple",
-    "icon": "//allcoinstat.com/img/icons/16x16/ripple.png"
+    "icon": "https://img.icons8.com/offices/16/000000/bitcoin.png"
   }
 ]

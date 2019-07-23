@@ -15,13 +15,13 @@
       return {
         topMenu: {
           Growing: {
-            link: '/growing'
+            link: '/'
           },
           Falling: {
-            link: '/falling'
+            link: '#'
           },
           Arbitrage: {
-            link: '/arbitrage'
+            link: '#'
           },
           Exchanges: {
             link: '/exchanges'
@@ -30,13 +30,13 @@
             link: '/watchlist'
           },
           Forum: {
-            link: '/forum'
+            link: '#'
           },
           Portfolio: {
-            link: '/portfolio'
+            link: '#'
           },
           Alerts: {
-            link: '/alerts'
+            link: '#'
           }
         }
       }
