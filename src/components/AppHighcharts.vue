@@ -34,8 +34,6 @@
       // Check wheather the chart configuration object is passed, as well as the constructor is valid
       if (this.options && Highcharts[this.typeChart]) {
         this.chart = new Highcharts[this.typeChart](this.$el, this.options);
-      } else {
-        (!this.options) ? console.warn('The "options" parameter was not passed.') : console.warn(`'${this.typeChart}' constructor-type is incorrect. Sometimes this error is casued by the fact, that the corresponding module wasn't imported.`)
       }
     },
     beforeDestroy () {

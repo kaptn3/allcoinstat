@@ -64,9 +64,6 @@
               this.options = data;
               this.isLoading = false;
             })
-            .catch(error => console.error(error));
-        } else {
-          console.log('No source');
         }
       },
       clearData () {

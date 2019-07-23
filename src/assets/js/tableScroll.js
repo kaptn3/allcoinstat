@@ -8,7 +8,6 @@ module.exports = {
       if (table.scrollLeft > 32) {
         icons.style.display = 'block';
         fakeHead.style.paddingBottom = headerTable.clientHeight + 1 + 'px';
-        console.log();
       } else {
         icons.style.display = 'none';
       }

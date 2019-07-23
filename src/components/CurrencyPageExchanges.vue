@@ -66,9 +66,6 @@
               .then(data => {
                 this.distribution(data, source[i]);
               })
-              .catch(error => console.error(error));
-          } else {
-            console.log('No source');
           }
         }
       },
